@@ -1,31 +1,34 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
   <circle cx="50" cy="50" r="50" fill="#FFC107"/>
   <g fill="#000000" stroke="#000000">
-    <!-- အပြင်ဘက် စက်ဝိုင်းကွင်း (stroke-width: 9.0 သို့ ပြောင်းထားသည်) -->
+    <!-- အပြင်ဘက် စက်ဝိုင်းကွင်း (stroke-width: 9.0) -->
     <circle cx="50" cy="50" r="32" fill="none" stroke-width="9.0"/>
-
-    <!-- ဝင်ရိုးချောင်း ၈ ချောင်း (stroke-width: 9.0) -->
+    
+    <!-- ဝင်ရိုးချောင်း ၈ ချောင်း (အဖြောင့်များ stroke-width: 9.0) -->
     <g fill="none" stroke-width="9.0" stroke-linecap="round">
-      <path d="M 50,50 Q 55,30 50,10"/>
-      <path d="M 50,50 Q 70,55 90,50"/>
-      <path d="M 50,50 Q 45,70 50,90"/>
-      <path d="M 50,50 Q 30,45 10,50"/>
-      <path d="M 50,50 Q 70,35 78,22"/>
-      <path d="M 50,50 Q 65,70 78,78"/>
-      <path d="M 50,50 Q 30,65 22,78"/>
-      <path d="M 50,50 Q 35,30 22,22"/>
+      <path d="M 50,50 L 50,10"/>
+      <path d="M 50,50 L 90,50"/>
+      <path d="M 50,50 L 50,90"/>
+      <path d="M 50,50 L 10,50"/>
+      <path d="M 50,50 L 78,22"/>
+      <path d="M 50,50 L 78,78"/>
+      <path d="M 50,50 L 22,78"/>
+      <path d="M 50,50 L 22,22"/>
     </g>
 
-    <!-- Center Hub: Ultra-Fine Symmetrical Wave -->
+    <!-- Center Hub: 5 Wave Bars with Original Size & Wider Gaps -->
     <circle cx="50" cy="50" r="14" fill="#000000" stroke="none"/>
     <g fill="#FFC107" stroke="none">
-      <rect x="41" y="48.5" width="1.4" height="3" rx="0.7"/>
-      <rect x="43.8" y="45" width="1.4" height="10" rx="0.7"/>
-      <rect x="46.6" y="42" width="1.4" height="16" rx="0.7"/>
-      <rect x="49.3" y="39.5" width="1.4" height="21" rx="0.7"/>
-      <rect x="52.0" y="42" width="1.4" height="16" rx="0.7"/>
-      <rect x="54.8" y="45" width="1.4" height="10" rx="0.7"/>
-      <rect x="57.6" y="48.5" width="1.4" height="3" rx="0.7"/>
+      <!-- အပြင်ဆုံး ဘယ်ဘက် -->
+      <rect x="39.6" y="47" width="1.8" height="6" rx="0.9"/>
+      <!-- အတွင်း ဘယ်ဘက် -->
+      <rect x="44.4" y="43.5" width="1.8" height="13" rx="0.9"/>
+      <!-- အလယ် အတုံးရှည် -->
+      <rect x="49.1" y="39.5" width="1.8" height="21" rx="0.9"/>
+      <!-- အတွင်း ညာဘက် -->
+      <rect x="53.8" y="43.5" width="1.8" height="13" rx="0.9"/>
+      <!-- အပြင်ဆုံး ညာဘက် -->
+      <rect x="58.6" y="47" width="1.8" height="6" rx="0.9"/>
     </g>
   </g>
 </svg>
