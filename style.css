@@ -118,7 +118,7 @@ body.dark-mode #fixedTitle {
 
 /* 3. Reading Mode အတွက်ပါ ထည့်ချင်ရင် */
 body.reading-mode #fixedTitle {
-  background-color: #f5eef0;   /* Reading mode နောက်ခံ */
+  background-color: #f4ecd8;   /* Reading mode နောက်ခံ */
   color: #433422;
   border: 1px solid rgba(67, 52, 34, 0.2);
 }
