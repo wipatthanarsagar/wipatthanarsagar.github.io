@@ -300,18 +300,39 @@ body:not(.dark-mode) .gallery-item .text {
   font-size: 1rem;   /* စာအရွယ် */
   font-weight: bold;
   font-family: "Myanmar Text", sans-serif !important; /* 🌟 ဤလိုင်းလေး ဖြည့်ပေးပါ (စာလုံးစနစ် တူညီသွားစေရန်) */ 
-  background-color: black;
+  background-color: #ffffff;
   color: #EAB308;
   padding: 3px 7px;
-border-radius: 20px;    
+border-radius: 9999px;    
   
   /* အနားသတ် အဝါရောင် ပါးပါးလေး */
   border: 1px solid rgba(255, 215, 0, 0.3); 
     
   z-index: 9999;
   pointer-events: none;
+transition: background-color 0.3s, color 0.3s;
+
 }
 
+
+/* 2. Dark Mode ရောက်သွားရင် နောက်ခံ အမဲပြောင်းမည် */
+body.dark-mode #fixedTitle {
+  background-color: #000000;   /* နောက်ခံ အမဲရောင် */
+  color: #EAB308;              /* စာသား အဝါရောင် */
+  border: 1px solid rgba(255, 215, 0, 0.3);
+}
+
+/* 3. Reading Mode အတွက်ပါ ထည့်ချင်ရင် */
+body.reading-mode #fixedTitle {
+  background-color: #f4ecd8;   /* Reading mode နောက်ခံ */
+  color: #433422;
+  border: 1px solid rgba(67, 52, 34, 0.2);
+}
+
+
+
+
+    
 .fixed-logo {
   position: fixed; /* နေရာကို ပုံသေထားရန် */
   bottom: 110px;    /* အောက်ခြေ menu bar ရဲ့ အမြင့်ထက် နည်းနည်းပိုထားပါ */
