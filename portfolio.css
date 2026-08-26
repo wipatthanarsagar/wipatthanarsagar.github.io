@@ -310,8 +310,6 @@ border-radius: 9999px;
     
   z-index: 9999;
   pointer-events: none;
-transition: background-color 0.3s, color 0.3s;
-
 }
 
 
