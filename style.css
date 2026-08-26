@@ -108,6 +108,20 @@ main {
 }
 
 
+/* 2. Dark Mode ရောက်သွားရင် နောက်ခံ အမဲပြောင်းမည် */
+body.dark-mode #fixedTitle {
+  background-color: #000000;   /* နောက်ခံ အမဲရောင် */
+  color: #EAB308;              /* စာသား အဝါရောင် */
+  border: 1px solid rgba(255, 215, 0, 0.3);
+}
+
+/* 3. Reading Mode အတွက်ပါ ထည့်ချင်ရင် */
+body.reading-mode #fixedTitle {
+  background-color: #f5eef0;   /* Reading mode နောက်ခံ */
+  color: #433422;
+  border: 1px solid rgba(67, 52, 34, 0.2);
+}
+
 
 
 /* အခြားမူရင်း style မတွေ့ရင် */
