@@ -85,7 +85,8 @@ body.dark-mode .top-controls {
 }
 
 body.readimg-mode .svg-nav-icon {
-    color: #000000;
+    color:  #433422;
+    fill:  #433422;
 }
 
 body.dark-mode .svg-nav-icon {
@@ -93,7 +94,7 @@ body.dark-mode .svg-nav-icon {
 }
 
 body.readimg-mode .nav-text {
-    color: #000000;
+    color:  #433422;
 }
 
 body.dark-mode .nav-text {
@@ -123,7 +124,8 @@ body.dark-mode .nav-text {
 }
 
 body.readimg-mode .setting-btn {
-    color: #000000;
+    color:  #433422;
+    fill:  #433422;
 }
 
 body.dark-mode .setting-btn {
