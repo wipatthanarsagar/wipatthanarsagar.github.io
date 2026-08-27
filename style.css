@@ -1,436 +1,159 @@
-/* ၁။ Layout အခြေခံ (Sepia Theme) */
-body.sepia-mode {
-    margin: 0;
-    font-family: 'Pyidaungsu', sans-serif;
-    /* Font ကြီးလျှင် ဘေးတိုက် Scroll မဖြစ်အောင် ထိန်းချုပ်ခြင်း */
-    overflow-x: hidden; 
-    position: relative;
-    width: 100%;
+Body {
+  font-family: "Myanmar Text", sans-serif;
+  background-color: #ffffff;
+  color: #EAB308; /* စာအဝါ */
+  margin: 0;
+  padding: 0;
 }
 
-.container {
-    max-width: 700px;
-    margin: 0 auto;
-    padding-bottom: 80px;
-    padding-top: 70px; /* Top Bar နဲ့ မငြိစေရန် အပေါ်မှ နေရာချန်ထားခြင်း */
-    width: 100%;
-    box-sizing: border-box;
+/* 📝 Main content */
+main {
+  padding: 5rem 0.5rem 5rem; /* bottom padding = 5rem, category bar အောက် မဖုံးအောင် */
+  text-align: center;
 }
 
-/* ၂။ Top Bar & Setting Controls */
-.top-controls {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px; 
-    background: #eadebc;
-    position: fixed; 
-    top: 0;
-    left: 0;
-    /* ဖုန်းမျက်နှာပြင် အကျယ်အတိအကျယူရန် vw ကိုသုံးသည် */
-    width: 100vw; 
-    height: 60px; 
-    z-index: 1000;
-    border-bottom: 1px solid #d4c5a0;
-    box-sizing: border-box;
+/* 🌟 Active link style (soft gold) */
+.bottom-nav a.active {
+  background-color: rgba(255, 215, 0, 0.2); /* အဖျော့ အဝါ */
+  box-shadow: 0 0 6px rgba(255, 215, 0, 0.3); /* အဖျော့ shadow */
+  text-decoration: none;
 }
 
-.back-link {
-    display: flex;
-    align-items: center;    /* ဒေါင်လိုက် အလယ်ချရန် */
-    justify-content: center;
-    text-decoration: none;
-    color: #443300;
-    gap: 6px;               /* icon နဲ့ စာကြား အကွာအဝေး */
-    background: transparent !important;
-    border: none !important;
-    padding: 0;
-    cursor: pointer;        /* လက်ညှိုးပုံစံ */
-    font-weight: bold;      /* စာသားအထူ */
-    transition: 0.2s;
-}
-.back-link:hover { opacity: 0.8; }
-
-.nav-icon-svg {
-    display: inline-block;
-    color: #443300;
+/* 📚 Bottom Category Bar */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  background-color: #222;
+  padding: 0.8rem 0; 
+  z-index: 5;
 }
 
-.nav-text {
-    font-size: 18px !important;
-    font-weight: bold;
-    line-height: 1;         /* စာသား၏ line-height ကို 1 ထားမှ တည့်ပါမည် */
-}
-
-/* ညာဘက်က ခလုတ်စုစည်းမှု (Layout မှန်စေရန်) */
-.right-controls {
-    display: flex;
-    align-items: center;
-    color: #443300;
-    gap: 15px; 
-    font-size: 20px !important;
-}
-
-.setting-btn {
-    display: inline-flex !important;
-    align-items: center;
-    justify-content: center;
-    color: #443300;
-    padding: 0 !important;
-    background: transparent !important;
-    border: none !important;
-    cursor: pointer;
-    transition: 0.2s;
-}
-.setting-btn:hover { opacity: 0.8; }
-
-/* အလယ်က ဂဏန်း (25/30) နေရာမှန်စေရန် */
-#font-size-display {
-    margin: 0 8px;
-    font-weight: bold;
-    color: #443300;
-    font-size: 1.2rem;
-}
-
-/* ၃။ Setting Menu Popup */
-.setting-overlay {
-    position: fixed;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(0,0,0,0.5);
-    display: none;
-    z-index: 1100;
-}
-
-.setting-content {
-    background: #f4ecd8;
-    width: 300px;
-    position: absolute;
-    top: 65px;
-    right: 20px;
-    padding: 0;
-    max-height: 80vh;
-    border-radius: 12px;
-    border: 2px solid #443300;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-}
-
-.setting-body {
-    padding: 0 20px 20px 20px;
-    overflow-y: auto;
-    flex-grow: 1;
-}
-
-.setting-item {
-    display: block;
-    width: 100%;
-    padding: 12px;
-    margin: 8px 0;
-    background: #eadebc;
-    border: 1px solid #443300;
-    border-radius: 50px;
-    color: #443300;
-    font-weight: bold;
-    cursor: pointer;
-    text-align: center;
-    font-size: 16px !important;
-    transition: 0.2s;
-}
-.setting-item:hover { background: #dcd0b2; }
-
-/* ၁။ အသစ်လုပ်ရန် ခလုတ် (Refresh) */
-.setting-menu-refresh {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    width: 100%;
-    padding: 12px;
-    margin: 8px 0;
-    background: #eadebc;
-    border: 1px solid #443300;
-    color: #443300;
-    border-radius: 50px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: 0.2s;
-}
-.setting-menu-refresh:hover { background: #dcd0b2; }
-
-.setting-menu-refresh .nav-icon {
-    font-size: 20px !important;
-    line-height: 1;
-}
-
-.setting-menu-refresh .nav-text {
-    font-size: 16px !important;
-}
-
-/* Setting Header နှင့် ပိတ်ရန်ခလုတ် */
-.setting-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 0px;
-    padding: 10px 15px;
-    background: #f4ecd8;
-    border-bottom: 1px solid #d4c5a0;
-}
-
-.setting-title {
-    margin: 0;
-    color: #443300;
-    font-size: 1.5rem;
-    font-weight: bold;
-}
-
-.setting-close-btn {
-    font-size: 32px;
-    color: #443300;
-    cursor: pointer;
-    line-height: 1;
-    font-weight: bold;
-}
-
-.setting-close-btn:hover {
-    color: #b38b00;
-}
-/*စက်တင် ထွက် ခလုပ်အဆုံး*/
-
-/* ၄။ Floating Buttons (Left Side) */
-.floating-left-group {
-    position: fixed;
-    bottom: 25px;
-    left: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center; 
-    gap: 12px; 
-    z-index: 999;
-}
-
-.toc-toggle-btn {
-    /* အညိုအကြည်ရောင် (နောက်ဆုံးက 0.8 သည် အရောင်စူးမှု) */
-    background: rgba(68, 51, 0, 0.8) !important; 
-    
-    color: #f4ecd8;
-    border: none;
-    width: 45px;  
-    height: 45px; 
-     /* ဖြည့်စွက်ရမည့်အပိုင်း - အလယ်ကွက်တိကျစေရန် */
-    display: flex;
-    align-items: center;     /* အထက်အောက် အလယ်ညှိပေးတာ */
-    justify-content: center;
-    font-size: 26px;
-    border-radius: 50%; 
-    cursor: pointer;
-    font-weight: bold;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    text-align: center;
-    transition: 0.2s;
-    /* Blur (ဝါးခြင်း) ကို လုံးဝဖြုတ်လိုက်ပါပြီ */
-}
-.toc-toggle-btn:hover { background: rgba(68, 51, 0, 1) !important; }
-
-.top-btn {
-    background: #443300;
-    color: #f4ecd8;
-    width: 40px;  
-    height: 40px; 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%; 
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 20px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    opacity: 0.8; 
-    transition: 0.3s;
-}
-
-.top-btn:hover {
-    opacity: 1;
-    transform: scale(1.1); 
-}
-
-/* ၅။ မာတိကာ Popup Overlay */
-.toc-overlay {
-    position: fixed;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(0,0,0,0.6);
-    display: none;
-    z-index: 1050;
-}
-
-/* ၁။ မာတိကာ Box အပြင်ဘောင် (Header နဲ့ List ကို ခွဲထုတ်ထားပါသည်) */
-.toc-content {
-    background: #f4ecd8;
-    width: 85%; 
-    max-width: 400px;
-    margin: 50px auto;
-    padding: 0; /* အရေးကြီးသည်- Padding ကို ဖြုတ်ပြီး အထဲက Item များတွင် ညှိပါမည် */
-    border-radius: 12px;
-    border: 2px solid #443300;
-    position: relative;
-    max-height: 80vh; 
-    display: flex; 
-    flex-direction: column; 
-    overflow: hidden; /* အပြင်ဘောင်ကြီး တစ်ခုလုံး မရွေ့စေရန် */
-}
-
-/* ၂။ "မာတိကာ" ခေါင်းစဉ် (မရွေ့ဘဲ Fixed ဖြစ်နေမည့်အပိုင်း) */
-.toc-content h1 {
-    margin: 0;
-    padding: 10px 15px;
-    background: #eadebc; /* ခေါင်းစဉ်ကို အရောင်ခွဲထားခြင်း */
-    border-bottom: 2px solid #443300;
-    font-size: 1.5rem;
-    color: #443300;
-}
-
-/* ၃။ "×" ပိတ်သည့်ခလုတ် (မရွေ့ဘဲ Fixed ဖြစ်နေမည့်အပိုင်း) */
-.close-btn {
-    position: absolute;
-    right: 15px; 
-    top: 15px; /* ခေါင်းစဉ်နဲ့ တစ်တန်းတည်း ဖြစ်အောင် ညှိထားပါသည် */
-    font-size: 30px;
-    color: #443300;
-    cursor: pointer;
-    z-index: 10;
-}
-
-/* ၄။ မာတိကာ စာရင်းများ (Scroll ဆွဲ၍ရမည့်အပိုင်း) */
-.toc-list { 
-    list-style: none; 
-    padding: 10px 25px; /* အထဲရောက်မှ ဘေး Padding ပြန်ပေးပါသည် */
-    margin: 0; 
-    overflow-y: auto; /* စာရင်းများရင် ဤနေရာ၌သာ Scroll ဆွဲနိုင်ပါသည် */
-    flex-grow: 1; 
-}
-
-/* ၅။ မာတိကာထဲက Link များ Style (စာလုံးပြာနှင့် မျဉ်းပြာ ဖြုတ်ထားသည်) */
-.toc-list li a {
-    color: #443300 !important; 
-    text-decoration: none !important; /* အောက်က မျဉ်းပြာတားတာကို ဖြုတ်ခြင်း */
-    display: block;
-    padding: 12px 0;
-    border-bottom: 1px solid #d4c5a0;
-    font-weight: bold;
-    transition: 0.2s;
-}
-.toc-list li a:hover { color: #b38b00 !important; }
-
-/* နှိပ်ပြီးသား Link များကိုလည်း အပြာရောင်/ခရမ်းရောင် မပြောင်းစေရန် */
-.toc-list li a:visited {
-    color: #443300 !important; }
-
-/* ခေါင်းစဉ်ကြီးလျှင် အောက်ကြောင်းဆင်းပေးရန် ပြင်ဆင်ချက် */
-.book-header h1, 
-.book-header h2 { 
-    inline-size: 100%;
-    overflow-wrap: break-word; 
-    word-break: break-word;}
-
-/* စာကိုယ်ပိုင်း Font ကြီးလျှင် ဘေးမကားစေရန် ပြင်ဆင်ချက် */
-.content-area { 
-    padding: 20px; 
-    line-height: 2.0; 
-    font-size: 19px; 
-    white-space: pre-line;
-    width: 100%;
-    box-sizing: border-box;
-    overflow-wrap: break-word; 
-    word-wrap: break-word;}
-
-@media print {
-    .top-controls, 
-    .floating-left-group, 
-    .setting-overlay, 
-    .toc-overlay,
-    #modeToggle {
-        display: none !important; }
-
-    .container {
-        width: 100% !important;
-        margin: 0 !important;
-        padding: 0 !important;  }
-
-     /* ၃။ စာသားအမည်း၊ နောက်ခံအဖြူ ဖြစ်စေရန် */
-    body {
-        background: #ffffff !important; 
-        color: #000000 !important; }
-
-    /* ၄။ စာသားအားလုံးကို အမည်းရောင်ဖြစ်စေရန် */
-    * {
-        color: #000000 !important;
-        background: transparent !important;
-    }}
-
-/* Fullscreen ခလုတ် Style */
-.fullscreen-round-btn {
-    width: 40px;
-    height: 40px;
+/* အပေါ်ဆုံးက လိုဂို ပုံအတွက် အစ */
+/* Avatar အတွက် လိုအပ်သော CSS */
+.avatar-container {
+    width: 120px;
+    height: 120px;
+    margin: 1rem auto;
     border-radius: 50%;
-    border: 1px solid #443300;
-    background: rgba(234, 222, 188, 0.4);
-    color: #443300;
-    cursor: pointer;
-    position: fixed; 
-    font-size: 20px; 
-    top: 80px;
-    left: 20px;
+    border: 1px solid #FFD700;
+    padding: 5px;
     display: flex;
-    align-items: center;
     justify-content: center;
-    z-index: 2000; 
-    transition: 0.3s;}
-.fullscreen-round-btn:hover { background: rgba(234, 222, 188, 0.8); }
+    align-items: center;
+}
 
-/* Focus Mode အသက်ဝင်ချိန် */
-body.focus-mode .top-controls .back-link,
-body.focus-mode .top-controls .right-controls,
-body.focus-mode .floating-left-group,
-body.focus-mode .book-header {
-    display: none !important;}
+.avatar {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+}
+/* အပေါ်ဆုံးက လိုဂို ပုံအတွက် အဆုံး */
 
-body.focus-mode .top-controls {
-    background: transparent !important;
-    border: none !important;
-    box-shadow: none !important;}
+.bottom-nav a {
+  display: flex;            /* vertical layout */
+  flex-direction: column;   /* emoji အပေါ်၊ စာ အောက် */
+  align-items: center;
+  color: #EAB308;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 4px 6px;
+  border-radius: 6px;
+  transition: background-color 0.3s ease; font-size: 16px;
+}
+.bottom-nav a:hover { background-color: rgba(255, 215, 0, 0.1); }
 
-/* မာတိကာတွင် လက်ရှိဖတ်နေသည့် အခန်းကို Highlight ပြရန် */
-.toc-list li a.active-chapter {
-    color: #b38b00 !important; 
-    font-weight: bold !important;
-    border-left: 3px solid #443300;
-    padding-left: 10px;}
+.bottom-nav a .icon {
+  font-size: 18px;       /* emoji အရွယ်အစား */
+  margin-bottom: 4px;    /* emoji နဲ့ စာကြား အကွာအဝေး */
+}
 
-/*မာတိကာ အတွင်းမှ စာလုံးဆိုဒ် အစ*/
-/* ခေါင်းစဉ်ကြီးအတွက် CSS */
-.main-title {
-    font-size: 22px !important;    /* စာလုံးဆိုဒ်ကို ၂၂ ပေးထားပါသည် */
-    font-weight: bold !important;  /* စာလုံးကို အထူးပြု (Bold) လုပ်ထားပါသည် */
-    text-decoration: none;}
+/* --- Binance / Telegram Style Top Header Bar --- */
+.top-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 56px; /* App Bar Standard Height */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+  box-sizing: border-box;
+  z-index: 9999;
+  
+  /* Light Mode အခြေခံ အရောင်များ */
+  background-color: #ffffff;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
 
-/* ခေါင်းစဉ်ငယ်အတွက် CSS */
-.sub-title {
-    font-size: 22px !important;    /* စာလုံးဆိုဒ်ကို ၁၆ သို့ လျှော့ထားပါသည် */
-    font-weight: normal !important; /* စာလုံးကို ပုံမှန်အတိုင်းထားပါသည် */
-    padding-left: 20px !important;  /* ဘေးကို နည်းနည်းတိုးပြီး ခေါင်းစဉ်ငယ်ပုံစံသွင်းသည် */
-    text-decoration: none;}
+/* ဘယ်ဘက် Logo နှင့် စာသား အပြင်အဆင် */
+.top-bar-left .brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
 
-/*သုတ္တန်အတွက် css*/
-.title  {
-    font-size: 20px !important;    /* စာလုံးဆိုဒ်ကို ၁၆ သို့ လျှော့ထားပါသည် */
-    font-weight: normal !important; /* စာလုံးကို ပုံမှန်အတိုင်းထားပါသည် */
-    padding-left: 20px !important;  /* ဘေးကို နည်းနည်းတိုးပြီး ခေါင်းစဉ်ငယ်ပုံစံသွင်းသည် */
-    text-decoration: none;
-}/*မာတိကာ အတွင်းမှ စာလုံးဆိုဒ် အဆုံး*/
+.brand-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #121212;
+  transition: color 0.3s ease;
+}
 
-/* စာသားကို Select လုပ်လိုက်တဲ့အခါ ပေါ်မယ့်အရောင် အစ */
+.logo-icon {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+}
+
+/* ညာဘက် ခလုတ်ထည့်ရန် Container */
+.top-bar-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* --- Dark Mode ရောက်ပါက Header Bar အရောင်ပြောင်းလဲခြင်း --- */
+body.dark-mode .top-bar {
+  background-color: #121212;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .brand-title {
+  color: #EAB308; /* Dark mode တွင် အဝါရောင် စာသား */
+}
+
+/* --- Reading Mode အရောင်ပြောင်းလဲခြင်း --- */
+body.reading-mode .top-bar {
+  background-color: #f4ecd8;
+  border-bottom: 1px solid rgba(67, 52, 34, 0.15);
+}
+
+body.reading-mode .brand-title {
+  color: #433422;
+}
+
+/* --- Main Content အပေါ်သို့ မရောက်စေရန် Padding ထည့်ခြင်း --- */
+main {
+  padding-top: 4.5rem !important; /* Top Bar Height (56px) ထက် အနည်းငယ် ပိုပေးထားခြင်း */
+}
+
+.fixed-logo {
+  position: fixed; /* နေရာကို ပုံသေထားရန် */
+  bottom: 110px;    /* အောက်ခြေ menu bar ရဲ့ အမြင့်ထက် နည်းနည်းပိုထားပါ */
+  left: 10px;      /* ပင်မခလုတ်ရှိမယ့် ဘယ်ဘက်အခြမ်းမှာ ထားရန် */
+  z-index: 1000;   /* တခြားအရာတွေရဲ့ အပေါ်မှာ ပေါ်နေစေရန် */
+}
+
+/* စာသားကို Select လုပ်လိုက်တဲ့အခါ ပေါ်မယ့်အရောင် */
 ::selection {
     background-color: #ffcc00 !important; /* အရှင်ဘုရား ကြိုက်နှစ်သက်သော အဝါရောင် */
     color: #000000 !important;           /* စာလုံးအရောင်ကို အမည်းရောင်ပြောင်းခြင်း */
@@ -440,269 +163,205 @@ body.focus-mode .top-controls {
 ::-moz-selection {
     background-color: #ffcc00 !important;
     color: #000000 !important;
-}/* စာသားကို Select လုပ်လိုက်တဲ့အခါ ပေါ်မယ့်အရောင် အဆုံး */
+}
 
-/* စာလုံးအထူအပါး အတွက် Style အစ */
-.setting-item-group {
-    padding: 12px;
-    background: #eadebc;
-    border: 1px solid #443300;
-    border-radius: 6px;
-    margin: 8px 0;
-    text-align: center;}
+.fixed-logo img {
+  width: 80px;     /* 8mm ခန့်ရှိသော pixel အတိုင်းအတာ (လိုအပ်သလို ပြင်နိုင်သည်) */
+  height: 80px;
+  border-radius: 50%; /* လိုဂိုကို အဝိုင်းပုံစံ ဖြစ်စေချင်လျှင် သုံးပါ */
+  object-fit: cover;
+  transition: 0.3s;
+}
+.fixed-logo img:hover { transform: scale(1.05); }
 
-.setting-title2 {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 5px;
-    color: #443300;
-    font-size: 16px !important;}
+/* --- ဓာတ်ပုံဘေးဆွဲ CSS အစ --- */
 
-.weight-spinner-wrapper {
-    display: flex;
-    justify-content: center;
-    gap: 12px;}
+/* ၂။ ခေါင်းစဉ် အလှပြင်ဆင်ခြင်း */
+.section-title {
+    font-size: 1.1rem;
+    margin: 60px 0 10px 5px;
+    padding-left: 12px;
+    background-color:#121212; 
+    border-radius:20px;
+    border: 1px solid rgba(255, 215, 0, 0.3); 
+    margin-top: 100px;
+    color: #EAB308;
+    text-align: center;
+}
 
-.spinner-box {
+/* အောက်ဆုံးကြေညာစာအတွက် အစ */
+/* 🏢 အချက်အလက်များစုစည်းမှု အပြင်ဘက်ဘောင် */
+.info-section {
+    margin-top: 100px;
+    padding: 0; /* ဘေး Padding ဖျောက်လိုက်မှ ဘေးအပြည့်ကပ်မှာပါ */
     display: flex;
     flex-direction: column;
-    align-items: center;
-    background: #f4ecd8;
-    border: 1px solid #443300;
-    border-radius: 4px;
-    width: 40px;
+    gap: 10px; 
+    align-items: center; 
+    width: 100%; /* ဘောင်တစ်ခုလုံး ၁၀၀% အကျယ်ယူရန် */
 }
 
-.spinner-box button {
-    background: none;
-    color: #443300;
-    border: none;
-    cursor: pointer;
-    padding: 5px;
-    width: 100%;
-    transition: 0.2s;
+/* 📦 အချက်အလက်ပြ ကွက်လပ်တစ်ခုချင်းစီ (1000017054.jpg ပုံစံအတိုင်း) */
+.info-box {
+    background-color: #121212; 
+    color: #EAB308;            
+    padding: 12px 20px;        
+    border-radius: 50px; /* ထောင့်ကို အနည်းငယ်ပဲ ဝိုင်းရန် */
+    font-size: 15px;           
+    font-weight: 500;          
+    width: 100%; /* ဖုန်းမှာရော Desktop မှာပါ ဘေးအပြည့် ဆန့်ထွက်ရန် */
+    max-width: 100%; /* အကျယ်ကို ကန့်သတ်မထားဘဲ အပြည့်ပေးလိုက်ခြင်း */
+    text-align: center;        
+    margin: 0;                 
+    box-sizing: border-box; 
+    border: 1px solid rgba(234, 179, 8, 0.15); 
 }
-.spinner-box button:hover { background: #eadebc; }
 
-.spinner-box span {
-    font-size: 1.3rem;
-    font-weight: bold;
-    color: #443300; 
-    padding: 5px 0;}/* စာလုံးအထူအပါး အတွက် Style အဆုံး */
+/* 🖥️ Desktop ပေါ်တွင် ဝဘ်ဆိုက်တစ်ခုလုံး 720px အတိုင်း တသမတ်တည်းဖြစ်အောင် ထိန်းညှိခြင်း */
+@media (min-width: 768px) {
+    
+    /* ၁။ အောက်ခြေ အချက်အလက်ပြကွက်များကိုပါ 720px သို့ ညှိခြင်း */
+    .info-section {
+        max-width: 720px;
+        margin-left: auto;
+        margin-right: auto;
+    }
 
-/* နှိပ်လိုက်ရင် အဝါရောင် ပေါ်ရန် အစ*/
-/* ၁။ တစ်ကမ္ဘာလုံးရှိ နှိပ်သမျှ အရာအားလုံးအတွက် (Safari အပါအဝင်) */
-* { /* ဖုန်းမှာ နှိပ်လိုက်ရင် ပေါ်တဲ့ အပြာရောင်ကို အဝါဖျော့ပြောင်းခြင်း (iOS Safari အတွက် အဓိက) */
-    -webkit-tap-highlight-color:
-    rgba(255, 204, 0, 0.4) !important;}
+    /* ၂။ ပင်မ Content တစ်ခုလုံးကို 720px အကျယ်ဖြင့် ထိန်းခြင်း */
+    main {
+        max-width: 720px;       /* ကွန်ပျူတာပေါ်တွင် 720px ထက် ပိုမကားရန် */
+        margin-left: auto;      /* ဘယ်ဘက် ဘေးအနား ကွက်လပ် ချန်ရန် */
+        margin-right: auto;     /* ညာဘက် ဘေးအနား ကွက်လပ် ချန်ရန် */
+        box-sizing: border-box; /* padding ကြောင့် ဘောင်ကျော်မထွက်စေရန် */
+    }
+}
 
-/* ၂။ Desktop မှာ Tab ခလုတ်နှိပ်လို့ဖြစ်ဖြစ်၊ Mouse နဲ့နှိပ်လို့ဖြစ်ဖြစ် ပေါ်တဲ့ အပြာရောင်ဘောင်ကို ဖျောက်ခြင်း */
-*:focus {
-    outline: 2px solid #ffcc00 !important; /* အပြာရောင်အစား အဝါရောင်ဘောင်ပြောင်းခြင်း */
-    outline-offset: 1px;}
+/* အောက်ဆုံးကြေညာစာအတွက် အဆုံး */
 
-/* ၃။ Safari မှာ ခလုတ်တွေ နှိပ်လိုက်တဲ့အခါ အပြာရောင် Highlight ဖြစ်တာကို တားဆီးရန် */
-button:active, a:active {
-    background-color: rgba(255, 204, 0, 0.2) !important;
-}/* နှိပ်လိုက်ရင် အဝါရောင် ပေါ်ရန် အဆုံး*/
+/* ၃။ ပုံများကို ဘေးတိုက် Scroll ဆွဲနိုင်အောင် လုပ်ဆောင်ခြင်း (Container) */
+.gallery-list {
+    display: flex;             /* ပုံများကို ဘေးချင်းကပ်စီရန် */
+    overflow-x: auto;          /* ပိုနေသောပုံများကို ဘေးသို့ဆွဲကြည့်ရန် */
+    gap: 15px;                 /* ပုံတစ်ပုံနှင့်တစ်ပုံကြား အကွာအဝေး */
+    padding: 10px 5px;
+    scroll-behavior: smooth;   /* ဆွဲလိုက်ရင် ချောမွေ့စွာသွားရန် */
+    margin-top: 20px;          /* အပေါ်က ပုံနဲ့ အကွာအဝေး */
+    scrollbar-width: none;     /* Firefox အတွက် */
+    -ms-overflow-style: none;  /* IE အတွက် */
+    -webkit-overflow-scrolling: touch; /* iPhone မှာ ဆွဲရတာ ချောမွေ့စေရန် */
+}
 
-/* paper.html ထဲတွင် ဖိထားမှ စာရွေးလိုတဲ့ ကုဒ် အစ*/
-article {
-    /* ပုံမှန်အားဖြင့် စာရွေးလို့မရအောင် ပိတ်ထားမယ် */
-    -webkit-user-select: none;
-    user-select: none;
-    -webkit-tap-highlight-color: transparent;
-}/* paper.html ထဲတွင် ဖိထားမှ စာရွေးလိုတဲ့ ကုဒ် အဆုံး*/
+/* Chrome နှင့် Safari ဘောက်ဇာများအတွက် Scroll bar ဖျောက်ရန် */
+.gallery-list::-webkit-scrollbar {
+    display: none;
+}
 
-/* ===== Modern Preset System ===== */
-.preset-group,
-.adjust-group {
+/* ၄။ ဓာတ်ပုံကတ် တစ်ခုချင်းစီ၏ အရွယ်အစားနှင့် အလှအပ (Link ပါဝင်သည်) */
+.gallery-item {
+    flex: 0 0 240px;           /* ပုံတစ်ပုံ၏ အကျယ်ကို ၂၄၀ pixel အသေထားရန် */
+    background: #ffffff;
+    border-radius: 12px;       /* ထောင့်များကို ဝိုင်းရန် */
+    overflow: hidden;          /* ပုံများ ဘောင်အပြင်မထွက်ရန် */
+    border: 1px solid #eee;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    text-decoration: none; 
     display: flex;
-    justify-content: center;
-    gap: 8px;
-    margin-top: 12px;}
-
-.preset-btn,
-.adjust-group button {
-    background: #f4ecd8;
-    border: 1px solid #443300;
-    color: #443300;
-    padding: 8px 14px;
-    border-radius: 50px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: 0.2s;}
-
-.preset-btn:hover,
-.adjust-group button:hover {
-    transform: translateY(-1px);
-    background: #eadebc;
+    flex-direction: column;
+    transition: 0.3s;
 }
+.gallery-item:hover { transform: translateY(-5px); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
 
-.preset-btn.active-preset {
-    background: #443300;
-    color: #f4ecd8;}
-
-#lh-display,
-#ls-display {
-
-    min-width: 55px;
-    text-align: center;
-    background: #f4ecd8;
-    border: 1px solid #443300;
-    border-radius: 6px;
-    padding: 8px 10px;
-    font-weight: bold;
-    color: #443300;
-}
-
-
-/* ===== Optimized Setting UI ===== */
-
-.preset-group {
-    display: flex;
-    gap: 8px;
-    justify-content: center;
-    margin-bottom: 15px;
-}
-
-.preset-btn {
-    background: #f4ecd8;
-    border: 1px solid #443300;
-    color: #443300;
-    padding: 6px 14px;
-    border-radius: 50px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: 0.15s ease;
-}
-
-.preset-btn.active-preset {
-    background: #443300;
-    color: #f4ecd8;
-}
-
-.spinner-wrapper {
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-}
-
-.font-size-control {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 15px;
-}
-
-.font-size-control button {
-    width: 36px;
-    height: 36px;
-    border: 1px solid #443300;
-    background: #f4ecd8;
-    color: #443300;
-    border-radius: 50%;
-    font-size: 22px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: 0.2s;
-}
-.font-size-control button:hover { background: #eadebc; }
-
-#font-size-display {
-    min-width: 50px;
-    text-align: center;
-    padding: 6px 10px;
-    background: #f4ecd8;
-    border: 1px solid #443300;
-    border-radius: 6px;
-    font-weight: bold;
-    color: #443300;
-}
-
-/* ==
-   TOC HEADER
-== */
-.toc-header {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 20px;
-}
-
-
-/* ==
-   TOC SEARCH BAR
-== */
-#toc-search {
-    flex: 1;
-    padding: 10px 14px;
-    border: none;
-    border-radius: 12px;
-    font-size: 14px;
-    outline: none;}
-
-/* ==
-   TOC JUMP BUTTONS
-== */
-.toc-jump-buttons {
-    position: absolute;
-    right: 16px;
-    bottom: 16px;
-    display: flex;
-    gap: 10px;
-    z-index: 50;
-    width: fit-content;
-}
-
-/* Jump Buttons */
-.toc-jump-buttons button {
-    width: 42px;
-    height: 42px;
-    border: none;
-    border-radius: 50%;
-    font-size: 20px;
-    cursor: pointer;
-    transition: transform 0.2s ease;
-}
-
-/* Hover */
-
-.toc-jump-buttons button:hover {
-    transform: scale(1.08);
-}
-/* TOC JUMP BUTTONS အဆုံး*/
-
-.raw-text p {
-    /* 1.5em ထက် နည်းချင်ရင် 0.8em ဒါမှမဟုတ် 1em လို့ ပြောင်းနိုင်ပါတယ် */
-    margin-bottom: 1.5em; 
+/* ၅။ ဓာတ်ပုံများ ဖုန်း Screen ပေါ်တွင် အံကိုက်ဖြစ်အောင် ထိန်းခြင်း */
+.gallery-item img {
+    width: 100%;               /* ကတ်အကျယ်အတိုင်း ဖြန့်ရန် */
+    height: 250px;             /* အမြင့်ကို ၂၅၀ သို့ တိုးထားပါ */
+    object-fit: cover;         /* ပုံစံမပျက်ဘဲ အကွက်ထဲ အပြည့်ဖြည့်ရန် */
+    object-position: top;      /* အပေါ်ပိုင်း (ဦးခေါင်းပိုင်း) ကို အဓိကပြရန် */
     display: block;
 }
 
-/*raw-text စာကြောင်းကြား အတွက်သုံးသည်။*/
-.big-gap {
-    height: 40px;   /* ကြီးချင်ရင် 80-120px */
-    width: 100%;
-}/*raw-text စာကြောင်းကြား အတွက်သုံးသည်။*/
+/* ၆။ ပုံအောက်မှ စာသားအား ခလုတ်ဒီဇိုင်း ပြောင်းလဲခြင်း */
+.gallery-item .text {
+    margin: 12px auto;         /* အပေါ်အောက် အကွာအဝေးထားပြီး ခလုတ်ကို အလယ်ဗဟိုပို့ရန် */
+    padding: 8px 24px;         /* စာသားဘေးပတ်ပတ်လည် Background အကျယ် (Padding) */
+    font-size: 15px;           /* စာလုံးဆိုဒ် နည်းနည်းကြီးလိုက်ခြင်း */
+    font-weight: bold;         /* စာလုံးကို အထူ (Bold) လုပ်ခြင်း */
+    text-align: center;
+    color: #000000;            /* စာလုံးအရောင်ကို အဖြူရောင်ပြောင်းခြင်း */
+    background-color: #EAB308; /* စာသားနောက်ခံ */
+    border-radius: 50px;       /* ခလုတ်ထောင့်လေးတွေကို ဝိုင်းဝိုင်းလေး ဖြစ်စေရန် */
+    display: inline-block;     /* စာသားအကျယ်အတိုင်းပဲ နောက်ခံအရောင်ယူရန် */
+    box-shadow: 0 2px 6px rgba(255, 204, 0, 0.3); /* ခလုတ်လေး ကြွနေသတ်ပုံစံ Shadow ထည့်ခြင်း */
+    transition: background-color 0.2s ease;
+}
+.gallery-item:hover .text { background-color: #d4a017; }
 
-/* ==========================================================================
-   🌟 ခေါင်းစဉ်များ အပေါ်စာနှင့် ကွက်တိ ကွာကျသွားစေရန် Selector အမှန်ဖြင့် ဖမ်းခြင်း
-   ========================================================================== */
-/* h1 (ခေါင်းစဉ်ကြီး) အတွက် သီးသန့် အကွာအဝေး */
-.content-area h1 {
-    margin-top: 200px !important;    /* အပေါ်စာနဲ့ အဝေးကြီး ခွာချင်ရင် */
-    margin-bottom: 40px !important;
+/* --- ဓာတ်ပုံဘေးဆွဲ CSS အဆုံး --- */
+
+/* --- ခလုပ်ဘေးဆွဲ style.css အစ --- */
+/* ၁။ ခလုတ်များအားလုံးကို အုပ်ထားသော အပြင်ဘက်ဘောင် (Container) */
+.scroll-wrapper {
+    display: flex;                   /* ခလုတ်များကို ဘေးတိုက်စီရန် */
+    overflow-x: auto;                /* ဘေးတိုက် Scroll ဆွဲနိုင်ရန် */
+    white-space: nowrap;             /* ခလုတ်များ အောက်ကြောင်းမဆင်းစေရန် */
+    gap: 10px;                       /* ခလုတ်တစ်ခုချင်းစီကြား အကွာအဝေး */
+    padding: 10px;                   /* ဘေးပတ်လည် အကွာအဝေး */
+    -webkit-overflow-scrolling: touch; /* ဖုန်းတွင် ချောမွေ့စွာ Scroll ဆွဲနိုင်ရန် */
+    margin-top: 20px; 
 }
 
-/* h2 (ခေါင်းစဉ်လတ်) အတွက် သီးသန့် အကွာအဝေး */
-.content-area h2 {
-    margin-top: 180px !important;    /* အပေါ်စာနဲ့ အသင့်အတင့်ပဲ ခွာချင်ရင် */
-    margin-bottom: 35px !important;
+/* ၂။ ခလုတ်တစ်ခုချင်းစီ၏ ပုံစံ (Button Style) */
+.app-link {
+    display: flex;                   /* စာသားကို အလယ်ဗဟို ပို့ရန် */
+    align-items: center;             /* စာသားကို အထက်/အောက် ဗဟိုညှိရန် */
+    justify-content: center;         /* စာသားကို ဘယ်/ညာ ဗဟိုညှိရန် */
+    text-align: center;              /* စာသားကို ဗဟိုချက်ထားရန် */
+    width: 150px;                    /* အလျား ၁၅၀ */
+    height: 75px;                    /* အနံ ၁၅၀ (စတုရန်းပုံစံ) */
+    flex: 0 0 150px;                 /* Scroll ထဲတွင် အရွယ်အစား မပြောင်းလဲရန် */
+    background-color: #E0E0E0;       /* နောက်ခံအရောင် */
+    color: rgba(0, 136, 204, 0.7);   /* စာသားအရောင် */
+    text-decoration: none;           /* လင့်ခ်မျဉ်းတားကို ဖျောက်ရန် */
+    font-size: 1.2rem;               /* စာသားအရွယ်အစား */
+    border-radius: 75px;             /* ထောင့်ဝိုင်းပုံစံ */
+    border: 2px solid #E0E0E0;       /* အနားသတ်ဘောင် */
+    white-space: normal;             /* စာသားရှည်လျှင် အောက်ကြောင်းဆင်းရန် */
+    padding: 10px;                   /* ခလုတ်အတွင်း စာသားအကွာအဝေး */
+    transition: 0.3s;
+}
+.app-link:hover { background-color: #d1d1d1; border-color: #d1d1d1; transform: scale(1.05); }
+
+/* --- အရောင်အတွက် အပိုင်း အစ --- */
+.viber-text {
+  color:rgba(115, 96, 242, 0.6) !important;
 }
 
-/* h3 (ခေါင်းစဉ်ငယ်) အတွက် သီးသန့် အကွာအဝေး */
-.content-area h3 {
-    margin-top: 150px !important;    /* အပေါ်စာနဲ့ နည်းနည်းပဲ ခွာချင်ရင် */
-    margin-bottom: 30px !important;
+.tiktok-text {
+    color: #121212 !important;
 }
+
+.youtube-text {
+    color:rgba(255, 0, 51, 0.6) !important;
+}
+
+.facebook-text {
+    color:rgba(24, 119, 242, 0.6) !important;
+}
+/* --- အရောင်အတွက် အပိုင်း အဆုံး --- */
+
+/* --- ခလုပ်ဘေးဆွဲ style.css အဆုံး --- */
+
+/* နှိပ်လိုက်ရင် အဝါရောင် ပေါ်ရန် အစ */
+* {
+    -webkit-tap-highlight-color: rgba(255, 204, 0, 0.4) !important;
+}
+
+*:focus {
+    outline: 2px solid #ffcc00 !important;
+    outline-offset: 1px;
+}
+
+button:active, a:active {
+    background-color: rgba(255, 204, 0, 0.2) !important;
+}
+/* နှိပ်လိုက်ရင် အဝါရောင် ပေါ်ရန် အဆုံး */
