@@ -7,7 +7,7 @@ Body {
 }
 
 /* 🌗 Dark mode toggle fixed top-right */
-#modeToggle {
+/*#modeToggle {
   position: fixed;
   top: 1rem;
   right: 1rem;
@@ -17,7 +17,28 @@ Body {
   cursor: pointer;
   transition: 0.2s;
 }
+#modeToggle:hover { transform: scale(1.1); }*/
+
+
+
+/* 🌗 Dark mode toggle - Top Bar အတွင်း သပ်ရပ်စွာ ကပ်ရန် */
+#modeToggle {
+  position: static; /* fixed ကို ဖျောက်လိုက်ပါသည် */
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+}
 #modeToggle:hover { transform: scale(1.1); }
+
+
+
+
 
 /* 📝 Main content */
 main {
