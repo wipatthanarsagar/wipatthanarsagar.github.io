@@ -100,8 +100,8 @@ body.dark-mode #modeToggle {
 
 /* 📖 Reading Mode ရောက်လျှင် Icon အရောင် အမည်းပြောင်းရန် */
 body.reading-mode #modeToggle {
-  color: #121212;
-  fill: #121212; /* SVG Icon အသုံးပြုထားပါက အရောင်အမည်းပြောင်းရန် */
+  color:  #433422;
+  fill:  #433422; /* SVG Icon အသုံးပြုထားပါက အရောင်အမည်းပြောင်းရန် */
 }
 
 /* --- paper.html အတွက် သီးသန့် Dark Mode စာသားအဖြူရောင် --- */
