@@ -65,6 +65,7 @@ body.dark-mode .top-controls {
     width: 24px;
     height: 24px;
     display: inline-block;
+    color: #000000;
     vertical-align: middle;
 }
 
@@ -73,7 +74,6 @@ body.dark-mode .top-controls {
     font-weight: 900 !important;
     line-height: 1 !important;
     display: inline-block;
-    color: #000000;
     margin-top: -4px;    /* လိုအပ်ပါက အပေါ်ကို 2px လောက် တိုးမြှင့်ပေးပါသည် */
 }
 
@@ -84,14 +84,21 @@ body.dark-mode .top-controls {
     line-height: 1;         /* စာသား၏ line-height ကို 1 ထားမှ တည့်ပါမည် */
 }
 
-body.readimg-mode .nav-icon .nav-text {
+body.readimg-mode .svg-nav-icon {
     color: #000000;
 }
 
-body.dark-mode .nav-icon .nav-text {
+body.dark-mode .svg-nav-icon {
     color: #ffffff;
 }
 
+body.readimg-mode .nav-text {
+    color: #000000;
+}
+
+body.dark-mode .nav-text {
+    color: #ffffff;
+}
 
 
 /* ညာဘက်က ခလုတ်စုစည်းမှု (Layout မှန်စေရန်) */
