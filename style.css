@@ -87,6 +87,118 @@ main {
 }
 
 
+
+
+
+
+
+
+    /* --- Binance / Telegram Style Top Header Bar --- */
+.top-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 56px; /* App Bar Standard Height */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+  box-sizing: border-box;
+  z-index: 9999;
+  
+  /* Light Mode အခြေခံ အရောင်များ */
+  background-color: #ffffff;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* ဘယ်ဘက် Logo နှင့် စာသား အပြင်အဆင် */
+.top-bar-left .brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.brand-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #121212;
+  transition: color 0.3s ease;
+}
+
+.logo-icon {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+}
+
+/* ညာဘက် Darkmode ခလုတ် */
+#modeToggle {
+  position: static; /* Fixed အဟောင်းကို ဖျောက်ပြီး Header ထဲ အံကိုက်ဝင်စေရန် */
+  background: transparent;
+  border: none;
+  font-size: 1.3rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+  border-radius: 50%;
+  color: #121212;
+  transition: transform 0.2s ease, background-color 0.2s ease, color 0.3s ease;
+}
+
+#modeToggle:hover {
+  transform: scale(1.08);
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* --- Dark Mode ရောက်ပါက Header Bar အရောင်ပြောင်းလဲခြင်း --- */
+body.dark-mode .top-bar {
+  background-color: #121212;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .brand-title {
+  color: #EAB308; /* Dark mode တွင် အဝါရောင် စာသား */
+}
+
+body.dark-mode #modeToggle {
+  color: #ffffff;
+}
+
+body.dark-mode #modeToggle:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* --- Reading Mode အရောင်ပြောင်းလဲခြင်း --- */
+body.reading-mode .top-bar {
+  background-color: #f4ecd8;
+  border-bottom: 1px solid rgba(67, 52, 34, 0.15);
+}
+
+body.reading-mode .brand-title {
+  color: #433422;
+}
+
+/* --- Main Content အပေါ်သို့ မရောက်စေရန် Padding ထည့်ခြင်း --- */
+main {
+  padding-top: 4.5rem !important; /* Top Bar Height (56px) ထက် အနည်းငယ် ပိုပေးထားခြင်း */
+}
+
+
+
+
+
+
+
+
+
+
+
+
 /* 🔝 Fixed Top-Left Title - Telegram Style Rounded Border */
 #fixedTitle {
   position: fixed;
