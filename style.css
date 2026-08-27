@@ -134,27 +134,6 @@ main {
   align-items: center;
 }
 
-/* ညာဘက် Darkmode ခလုတ် */
-#modeToggle {
-  position: static; /* Fixed အဟောင်းကို ဖျောက်ပြီး Header ထဲ အံကိုက်ဝင်စေရန် */
-  background: transparent;
-  border: none;
-  font-size: 1.3rem;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 6px;
-  border-radius: 50%;
-  color: #121212;
-  transition: transform 0.2s ease, background-color 0.2s ease, color 0.3s ease;
-}
-
-#modeToggle:hover {
-  transform: scale(1.08);
-  background-color: rgba(0, 0, 0, 0.05);
-}
-
 /* --- Dark Mode ရောက်ပါက Header Bar အရောင်ပြောင်းလဲခြင်း --- */
 body.dark-mode .top-bar {
   background-color: #121212;
@@ -163,14 +142,6 @@ body.dark-mode .top-bar {
 
 body.dark-mode .brand-title {
   color: #EAB308; /* Dark mode တွင် အဝါရောင် စာသား */
-}
-
-body.dark-mode #modeToggle {
-  color: #ffffff;
-}
-
-body.dark-mode #modeToggle:hover {
-  background-color: rgba(255, 255, 255, 0.1);
 }
 
 /* --- Reading Mode အရောင်ပြောင်းလဲခြင်း --- */
