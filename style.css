@@ -6,35 +6,42 @@ Body {
   padding: 0;
 }
 
-/* 🌗 Dark mode toggle fixed top-right */
-/*#modeToggle {
-  position: fixed;
-  top: 1rem;
-  right: 1rem;
-  background: transparent;
-  border: none;
-  font-size: 1.5rem;
-  cursor: pointer;
-  transition: 0.2s;
-}
-#modeToggle:hover { transform: scale(1.1); }*/
+
+
 
 
 
 /* 🌗 Dark mode toggle - Top Bar အတွင်း သပ်ရပ်စွာ ကပ်ရန် */
 #modeToggle {
-  position: static; /* fixed ကို ဖျောက်လိုက်ပါသည် */
+  position: static;
   background: transparent;
   border: none;
+  outline: none;
+  box-shadow: none;
   font-size: 1.5rem;
   cursor: pointer;
-  transition: 0.2s;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 4px;
+  color: #121212; /* ရိုးရိုး Mode (Light Mode) တွင် Icon ကို အမည်းရောင်ထားခြင်း */
 }
-#modeToggle:hover { transform: scale(1.1); }
+
+#modeToggle:hover { 
+  transform: scale(1.1); 
+}
+
+/* 🌙 Dark Mode ရောက်လျှင် Icon အရောင် အဖြူပြောင်းရန် */
+body.dark-mode #modeToggle {
+  color: #ffffff;
+  fill: #ffffff; /* SVG Icon အသုံးပြုထားပါက အရောင်အဖြူပြောင်းရန် */
+}
+
+/* 📖 Reading Mode ရောက်လျှင် Icon အရောင် အမည်းပြောင်းရန် */
+body.reading-mode #modeToggle {
+  color: #121212;
+  fill: #121212; /* SVG Icon အသုံးပြုထားပါက အရောင်အမည်းပြောင်းရန် */
+}
 
 
 
