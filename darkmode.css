@@ -92,7 +92,17 @@ body {
 }
 
 
+/* 🌙 Dark Mode ရောက်လျှင် Icon အရောင် အဖြူပြောင်းရန် */
+body.dark-mode #modeToggle {
+  color: #ffffff;
+  fill: #ffffff; /* SVG Icon အသုံးပြုထားပါက အရောင်အဖြူပြောင်းရန် */
+}
 
+/* 📖 Reading Mode ရောက်လျှင် Icon အရောင် အမည်းပြောင်းရန် */
+body.reading-mode #modeToggle {
+  color: #121212;
+  fill: #121212; /* SVG Icon အသုံးပြုထားပါက အရောင်အမည်းပြောင်းရန် */
+}
 
 /* --- paper.html အတွက် သီးသန့် Dark Mode စာသားအဖြူရောင် --- */
 
