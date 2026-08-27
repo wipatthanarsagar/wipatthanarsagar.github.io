@@ -7,46 +7,6 @@ Body {
 }
 
 
-
-
-
-
-/* 🌗 Dark mode toggle - Top Bar အတွင်း သပ်ရပ်စွာ ကပ်ရန် */
-#modeToggle {
-  position: static;
-  background: transparent;
-  border: none;
-  outline: none;
-  box-shadow: none;
-  font-size: 1.5rem;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 4px;
-  color: #121212; /* ရိုးရိုး Mode (Light Mode) တွင် Icon ကို အမည်းရောင်ထားခြင်း */
-}
-
-#modeToggle:hover { 
-  transform: scale(1.1); 
-}
-
-/* 🌙 Dark Mode ရောက်လျှင် Icon အရောင် အဖြူပြောင်းရန် */
-body.dark-mode #modeToggle {
-  color: #ffffff;
-  fill: #ffffff; /* SVG Icon အသုံးပြုထားပါက အရောင်အဖြူပြောင်းရန် */
-}
-
-/* 📖 Reading Mode ရောက်လျှင် Icon အရောင် အမည်းပြောင်းရန် */
-body.reading-mode #modeToggle {
-  color: #121212;
-  fill: #121212; /* SVG Icon အသုံးပြုထားပါက အရောင်အမည်းပြောင်းရန် */
-}
-
-
-
-
-
 /* 📝 Main content */
 main {
   padding: 5rem 0.5rem 5rem; /* bottom padding = 5rem, category bar အောက် မဖုံးအောင် */
