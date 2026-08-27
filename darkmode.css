@@ -62,32 +62,35 @@ body {
 /* ၁။ index.html အတွက် (ညာဘက်အပေါ်ထောင့်မှာ Fixed ထားခြင်း) */
 /* ခလုတ်က main ထဲမှာဖြစ်ဖြစ်၊ body အောက်မှာ တိုက်ရိုက်ဖြစ်ဖြစ် ရှိနေရင် ဒီအတိုင်း ပေါ်ပါမယ် */
 
+/* --- ခလုတ်နေရာ သတ်မှတ်ချက်များ --- */
+
 #modeToggle {
-  position: fixed;
-  top: 10px;
-  right: 10px;
+  position: static;
   z-index: 9999;
   cursor: pointer;
-  transition: transform 0.2s ease, background 0.2s ease;
+  transition: transform 0.2s ease, color 0.3s ease;
 
-  /* 🌟 Setting ခလုတ်နှင့် အရွယ်အစား/ဒီဇိုင်း တထပ်တည်း ညှိခြင်း */
+  /* 🌟 နောက်ခံ၊ Border နှင့် အဝိုင်းပုံစံများကို ဖျောက်ခြင်း */
   display: inline-flex !important;
   align-items: center;
   justify-content: center;
-  width: 38px !important;            
-  height: 38px !important;           
-  font-size: 20px !important; /* အိုင်ကွန်ဆိုဒ်ကို အဝိုင်းနှင့် အချိုးကျအောင် ညှိပါသည် */
-  padding: 0 !important;
-  background: #f4ecd8 !important;
-  border: 1px solid #443300 !important;
-  border-radius: 50% !important;
-  color: #443300 !important;
+  width: auto !important;            
+  height: auto !important;           
+  font-size: 20px !important;
+  padding: 4px !important;
+  background: transparent !important; /* နောက်ခံ ဖျောက်ခြင်း */
+  border: none !important;            /* Border ဖျောက်ခြင်း */
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  color: #121212;                     /* ရိုးရိုး (Light Mode) တွင် Icon အမည်းရောင် */
 }
 
-/* 🌟 ခလုတ်ပေါ် Mouse တင်လျှင် Setting ခလုတ်အတိုင်း အရောင်ပြောင်းလဲမှု ထည့်သွင်းခြင်း */
+/* 🌟 ခလုတ်ပေါ် Mouse တင်လျှင် Scale သာ အလုပ်လုပ်စေခြင်း */
 #modeToggle:hover {
-  background: #eadebc !important;
+  background: transparent !important;
+  transform: scale(1.1);
 }
+
 
 
 
