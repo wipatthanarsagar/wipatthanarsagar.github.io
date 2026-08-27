@@ -73,14 +73,26 @@ body.dark-mode .top-controls {
     font-weight: 900 !important;
     line-height: 1 !important;
     display: inline-block;
+    color: #000000;
     margin-top: -4px;    /* လိုအပ်ပါက အပေါ်ကို 2px လောက် တိုးမြှင့်ပေးပါသည် */
 }
 
 .nav-text {
     font-size: 18px !important;
     font-weight: bold;
+    color: #000000;
     line-height: 1;         /* စာသား၏ line-height ကို 1 ထားမှ တည့်ပါမည် */
 }
+
+body.readimg-mode .nav-icon .nav-text {
+    color: #000000;
+}
+
+body.dark-mode .nav-icon .nav-text {
+    color: #ffffff;
+}
+
+
 
 /* ညာဘက်က ခလုတ်စုစည်းမှု (Layout မှန်စေရန်) */
 .right-controls {
@@ -96,12 +108,21 @@ body.dark-mode .top-controls {
     justify-content: center;
     background: none !important;
     border: none !important;
-    color: inherit;
+    color: #000000;
     padding: 0 !important;
     cursor: pointer;
     transition: 0.2s;
     margin-right: 0 !important;
 }
+
+body.readimg-mode .setting-btn {
+    color: #000000;
+}
+
+body.dark-mode .setting-btn {
+    color: #ffffff;
+}
+
 
 /* ⚙️ Setting ခလုတ်နှင့် Font ခလုတ်များ (ပထမပုံက ဆိုဒ်အတိုင်း) */
 .font-controls button {
