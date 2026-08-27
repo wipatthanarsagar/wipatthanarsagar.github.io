@@ -23,7 +23,7 @@ body.sepia-mode {
     justify-content: space-between;
     align-items: center;
     padding: 0 20px; 
-    background: #eadebc;
+    background: transparent;
     position: fixed; 
     top: 0;
     left: 0;
@@ -31,38 +31,28 @@ body.sepia-mode {
     width: 100vw; 
     height: 60px; 
     z-index: 1000;
-    border-bottom: 1px solid #d4c5a0;
+    border-bottom: none;
     box-sizing: border-box;
 }
-
-
 
 .back-link {
     display: flex;
     align-items: center;    /* ဒေါင်လိုက် အလယ်ချရန် */
     justify-content: center;
     text-decoration: none;
-    color: #443300;
-    gap: 4px;               /* icon နဲ့ စာကြား အကွာအဝေး */
-
-    /* +,- ခလုတ်တွေရဲ့ ပုံစံအတိုင်း border ထည့်ခြင်း */
-    background: #f4ecd8;                /* ခလုတ်နောက်ခံအရောင် */
-    border: 1px solid #443300 !important; /* အညိုရောင် ဘောင် */
-    width: 75px;              /* အကျယ် 60px */
-    height: 35px;             /* အမြင့် 30px */                  /* အတွင်းနေရာလွတ် */
-    border-radius: 50px;                 /* ထောင့်ဝိုင်း */
-    cursor: pointer;                    /* လက်ညှိုးပုံစံ */
-    font-weight: bold;                  /* စာသားအထူ */
+    color: inherit;
+    gap: 6px;               /* icon နဲ့ စာကြား အကွာအဝေး */
+    background: transparent;
+    border: none !important;
+    padding: 0;
+    cursor: pointer;        /* လက်ညှိုးပုံစံ */
+    font-weight: bold;      /* စာသားအထူ */
     transition: 0.2s;
 }
-.back-link:hover { background: #eadebc; }
 
-.nav-icon {
-    font-size: 28px !important;
-    font-weight: 900 !important;
-    line-height: 1 !important;
+.nav-icon-svg {
     display: inline-block;
-    margin-top: -4px;    /* လိုအပ်ပါက အပေါ်ကို 2px လောက် တိုးမြှင့်ပေးပါသည် */
+    vertical-align: middle;
 }
 
 .nav-text {
@@ -71,19 +61,30 @@ body.sepia-mode {
     line-height: 1;         /* စာသား၏ line-height ကို 1 ထားမှ တည့်ပါမည် */
 }
 
-
 /* ညာဘက်က ခလုတ်စုစည်းမှု (Layout မှန်စေရန်) */
 .right-controls {
     display: flex;
     align-items: center;
-    color: #443300;
-    gap: 10px; /* 🌟 ခလုတ်နှစ်ခု စပ်ကပ်မနေစေရန် အကွာအဝေးကို 8px မှ 20px သို့ တိုးမြှင့်ထားပါသည် */
-    font-size: 20px !important;
-    /* အရှင်ဘုရား လိုချင်သည့်အတိုင်း ဘယ်ဘက်သို့ တိုးရန် */
-    margin-right: 35px; /* ညာဘက်အစွန်းမှ ခပ်ခွာခွာဖြစ်အောင် နေရာချခြင်း */
+    color: inherit;
+    gap: 12px;
 }
 
-
+/* ⚙️ Setting ခလုတ် */
+.setting-btn {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: none !important;
+    padding: 0 !important;
+    cursor: pointer;
+    color: inherit;
+    transition: transform 0.2s ease;
+    margin-right: 0 !important;
+}
+.setting-btn:hover {
+    transform: scale(1.1);
+}
 
 /* ⚙️ Setting ခလုတ်နှင့် Font ခလုတ်များ (ပထမပုံက ဆိုဒ်အတိုင်း) */
 .font-controls button {
@@ -104,37 +105,13 @@ body.sepia-mode {
 }
 .font-controls button:hover { background: #eadebc; }
 
-
-.setting-btn {
-    display: inline-flex !important;
-    align-items: center;
-    justify-content: center;
-    width: 38px;            /* +,- ခလုတ်နဲ့ အတူတူ ဖြစ်စေရန် */
-    height: 38px;
-    color: #443300;
-    font-size: 26px !important; /* ဂီယာသင်္ကေတကို ကြီးစေရန် */
-    padding: 0 !important;
-    background: #f4ecd8;
-    border: 1px solid #443300;
-    border-radius: 50%;
-    cursor: pointer;
-    font-weight: bold;
-    transition: 0.2s;
-/* 🌟 ⚙️ ခလုတ်တစ်ခုတည်းကို ☀️ ခလုတ်ဆီကနေ ဘယ်ဘက်သို့ ခွာပြီး တိုးထွက်သွားစေရန် */
-    margin-right: 15px !important; 
-}
-.setting-btn:hover { background: #eadebc; }
-
-
 /* အလယ်က ဂဏန်း (25/30) နေရာမှန်စေရန် */
 #font-size-display {
     margin: 0 8px;
     font-weight: bold;
     color: #443300;
     font-size: 1.2rem;
-    
 }
-
 
 /* ၃။ Setting Menu Popup */
 .setting-overlay {
@@ -144,7 +121,6 @@ body.sepia-mode {
     display: none;
     z-index: 1100;
 }
-
 
 .setting-content {
     background: #f4ecd8;
@@ -213,7 +189,6 @@ body.sepia-mode {
     font-size: 16px !important;
 }
 
-
 /* Setting Header နှင့် ပိတ်ရန်ခလုတ် */
 .setting-header {
     display: flex;
@@ -279,8 +254,6 @@ body.sepia-mode {
     /* Blur (ဝါးခြင်း) ကို လုံးဝဖြုတ်လိုက်ပါပြီ */
 }
 .toc-toggle-btn:hover { background: rgba(68, 51, 0, 1) !important; }
-
-
 
 .top-btn {
     background: #443300;
@@ -604,7 +577,6 @@ article {
     color: #443300;
 }
 
-
 /* ===== Optimized Setting UI ===== */
 
 .preset-group {
@@ -678,7 +650,6 @@ article {
     gap: 10px;
     margin-bottom: 20px;
 }
-
 
 /* ==
    TOC SEARCH BAR
