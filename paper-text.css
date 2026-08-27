@@ -23,7 +23,7 @@ body.sepia-mode {
     justify-content: space-between;
     align-items: center;
     padding: 0 20px; 
-    background: #eadebc;
+    background: var(--topbar-bg, #ffffff);
     position: fixed; 
     top: 0;
     left: 0;
@@ -31,58 +31,96 @@ body.sepia-mode {
     width: 100vw; 
     height: 60px; 
     z-index: 1000;
-    border-bottom: 1px solid #d4c5a0;
+    border-bottom: 1px solid var(--topbar-border, #e5e5e5);
     box-sizing: border-box;
+    transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+body.sepia-mode .top-controls {
+    background: #eadebc;
+    border-bottom-color: #d4c5a0;
 }
 
 .back-link {
-    display: flex;
-    align-items: center;    /* ဒေါင်လိုက် အလယ်ချရန် */
+    display: inline-flex;
+    align-items: center;
     justify-content: center;
     text-decoration: none;
-    color: #443300;
-    gap: 6px;               /* icon နဲ့ စာကြား အကွာအဝေး */
-    background: transparent !important;
+    color: var(--text-color, #443300);
+    gap: 6px;
+    background: transparent;
     border: none !important;
     padding: 0;
-    cursor: pointer;        /* လက်ညှိုးပုံစံ */
-    font-weight: bold;      /* စာသားအထူ */
-    transition: 0.2s;
+    cursor: pointer;
+    font-weight: bold;
+    transition: opacity 0.2s ease;
 }
-.back-link:hover { opacity: 0.8; }
 
-.nav-icon-svg {
+.back-link:hover {
+    opacity: 0.8;
+}
+
+.nav-svg-icon {
     display: inline-block;
-    color: #443300;
+    vertical-align: middle;
 }
 
 .nav-text {
-    font-size: 18px !important;
+    font-size: 17px !important;
     font-weight: bold;
-    line-height: 1;         /* စာသား၏ line-height ကို 1 ထားမှ တည့်ပါမည် */
+    line-height: 1;
 }
 
 /* ညာဘက်က ခလုတ်စုစည်းမှု (Layout မှန်စေရန်) */
 .right-controls {
     display: flex;
     align-items: center;
-    color: #443300;
-    gap: 15px; 
-    font-size: 20px !important;
+    color: var(--text-color, #443300);
+    gap: 12px;
 }
 
 .setting-btn {
     display: inline-flex !important;
     align-items: center;
     justify-content: center;
-    color: #443300;
+    width: 38px;
+    height: 38px;
+    color: var(--text-color, #443300);
     padding: 0 !important;
     background: transparent !important;
     border: none !important;
     cursor: pointer;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+    margin-right: 0 !important;
+}
+
+.setting-btn:hover {
+    transform: rotate(30deg);
+    opacity: 0.8;
+}
+
+.setting-svg-icon {
+    display: block;
+}
+
+/* ⚙️ Setting ခလုတ်နှင့် Font ခလုတ်များ (ပထမပုံက ဆိုဒ်အတိုင်း) */
+.font-controls button {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    width: 30px;            /* ခလုတ်ကို စတုဂံပုံစံ ဖြစ်စေရန် အကျယ်သတ်မှတ်ခြင်း */
+    height: 30px;           /* ခလုတ်ကို အမြင့်သတ်မှတ်ခြင်း */
+    font-size: 24px !important; /* သင်္ကေတကို ကြီးစေရန် */
+    padding: 0 !important;  /* Padding ကို 0 ထားပြီး width/height နဲ့ ထိန်းပါ */
+    background: #f4ecd8;
+    border: 1px solid #443300;
+    border-radius: 50%;
+    cursor: pointer;
+    color: #443300;
+    font-weight: bold;
     transition: 0.2s;
 }
-.setting-btn:hover { opacity: 0.8; }
+.font-controls button:hover { background: #eadebc; }
 
 /* အလယ်က ဂဏန်း (25/30) နေရာမှန်စေရန် */
 #font-size-display {
@@ -371,23 +409,24 @@ body.sepia-mode {
 
 /* Fullscreen ခလုတ် Style */
 .fullscreen-round-btn {
-    width: 40px;
-    height: 40px;
+    width: 38px;
+    height: 38px;
     border-radius: 50%;
-    border: 1px solid #443300;
-    background: rgba(234, 222, 188, 0.4);
-    color: #443300;
+    border: none !important;
+    background: transparent !important;
+    color: var(--text-color, #443300);
     cursor: pointer;
-    position: fixed; 
+    position: relative; 
     font-size: 20px; 
-    top: 80px;
-    left: 20px;
-    display: flex;
+    top: auto;
+    left: auto;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
-    z-index: 2000; 
-    transition: 0.3s;}
-.fullscreen-round-btn:hover { background: rgba(234, 222, 188, 0.8); }
+    z-index: 1; 
+    transition: opacity 0.3s ease;
+}
+.fullscreen-round-btn:hover { opacity: 0.8; }
 
 /* Focus Mode အသက်ဝင်ချိန် */
 body.focus-mode .top-controls .back-link,
@@ -556,7 +595,6 @@ article {
     color: #443300;
 }
 
-
 /* ===== Optimized Setting UI ===== */
 
 .preset-group {
@@ -630,7 +668,6 @@ article {
     gap: 10px;
     margin-bottom: 20px;
 }
-
 
 /* ==
    TOC SEARCH BAR
