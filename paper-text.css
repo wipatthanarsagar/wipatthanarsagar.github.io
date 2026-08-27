@@ -23,7 +23,7 @@ body.sepia-mode {
     justify-content: space-between;
     align-items: center;
     padding: 0 20px; 
-    background: transparent;
+    background: #eadebc;
     position: fixed; 
     top: 0;
     left: 0;
@@ -31,7 +31,7 @@ body.sepia-mode {
     width: 100vw; 
     height: 60px; 
     z-index: 1000;
-    border-bottom: none;
+    border-bottom: 1px solid #d4c5a0;
     box-sizing: border-box;
 }
 
@@ -40,19 +40,20 @@ body.sepia-mode {
     align-items: center;    /* ဒေါင်လိုက် အလယ်ချရန် */
     justify-content: center;
     text-decoration: none;
-    color: inherit;
+    color: #443300;
     gap: 6px;               /* icon နဲ့ စာကြား အကွာအဝေး */
-    background: transparent;
+    background: transparent !important;
     border: none !important;
     padding: 0;
     cursor: pointer;        /* လက်ညှိုးပုံစံ */
     font-weight: bold;      /* စာသားအထူ */
     transition: 0.2s;
 }
+.back-link:hover { opacity: 0.8; }
 
 .nav-icon-svg {
     display: inline-block;
-    vertical-align: middle;
+    color: #443300;
 }
 
 .nav-text {
@@ -65,45 +66,23 @@ body.sepia-mode {
 .right-controls {
     display: flex;
     align-items: center;
-    color: inherit;
-    gap: 12px;
+    color: #443300;
+    gap: 15px; 
+    font-size: 20px !important;
 }
 
-/* ⚙️ Setting ခလုတ် */
 .setting-btn {
     display: inline-flex !important;
     align-items: center;
     justify-content: center;
-    background: transparent;
-    border: none !important;
-    padding: 0 !important;
-    cursor: pointer;
-    color: inherit;
-    transition: transform 0.2s ease;
-    margin-right: 0 !important;
-}
-.setting-btn:hover {
-    transform: scale(1.1);
-}
-
-/* ⚙️ Setting ခလုတ်နှင့် Font ခလုတ်များ (ပထမပုံက ဆိုဒ်အတိုင်း) */
-.font-controls button {
-    display: inline-flex !important;
-    align-items: center;
-    justify-content: center;
-    width: 30px;            /* ခလုတ်ကို စတုဂံပုံစံ ဖြစ်စေရန် အကျယ်သတ်မှတ်ခြင်း */
-    height: 30px;           /* ခလုတ်ကို အမြင့်သတ်မှတ်ခြင်း */
-    font-size: 24px !important; /* သင်္ကေတကို ကြီးစေရန် */
-    padding: 0 !important;  /* Padding ကို 0 ထားပြီး width/height နဲ့ ထိန်းပါ */
-    background: #f4ecd8;
-    border: 1px solid #443300;
-    border-radius: 50%;
-    cursor: pointer;
     color: #443300;
-    font-weight: bold;
+    padding: 0 !important;
+    background: transparent !important;
+    border: none !important;
+    cursor: pointer;
     transition: 0.2s;
 }
-.font-controls button:hover { background: #eadebc; }
+.setting-btn:hover { opacity: 0.8; }
 
 /* အလယ်က ဂဏန်း (25/30) နေရာမှန်စေရန် */
 #font-size-display {
@@ -577,6 +556,7 @@ article {
     color: #443300;
 }
 
+
 /* ===== Optimized Setting UI ===== */
 
 .preset-group {
@@ -650,6 +630,7 @@ article {
     gap: 10px;
     margin-bottom: 20px;
 }
+
 
 /* ==
    TOC SEARCH BAR
