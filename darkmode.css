@@ -14,7 +14,7 @@ body.reading-mode {
   --bg-color: #f4ecd8; /* မျက်လုံးအေးစေမည့် ဝါညိုရောင် */
   --text-color: #5b4636; /* အညိုရင့်ရောင်စာသား */
   --bottom-nav-bg: #ede4d3;
-  --nav-text: #8b4513;
+  --nav-text: #5b4636; /*#8b4513;*/
 }
 
 /* 🌙 Dark Mode Class */
