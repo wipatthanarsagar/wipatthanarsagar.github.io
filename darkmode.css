@@ -65,7 +65,7 @@ body {
 /* --- ခလုတ်နေရာ သတ်မှတ်ချက်များ --- */
 
 #modeToggle {
-  position: fixed;
+  position: static;
   z-index: 9999;
   cursor: pointer;
   transition: transform 0.2s ease, color 0.3s ease;
