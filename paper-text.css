@@ -389,10 +389,8 @@ body.dark-mode .setting-btn, body.dark-mode .toc-toggle-btn, body.dark-mode .top
     background: rgba(234, 222, 188, 0.4);
     color: #443300;
     cursor: pointer;
-    position: fixed; 
+    position: static; 
     font-size: 20px; 
-    top: 80px;
-    left: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
