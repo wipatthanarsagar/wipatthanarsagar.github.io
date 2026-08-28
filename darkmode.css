@@ -20,9 +20,9 @@ body.reading-mode {
 /* 🌙 Dark Mode Class */
 body.dark-mode {
   --bg-color: #000000;
-  --text-color: #EAB308;
+  --text-color: #ffffff;
   --bottom-nav-bg: #111111;
-  --nav-text: #EAB308;
+  --nav-text: #ffffff;
 }
 
 /* တစ်ဆိုဒ်လုံး၏ နောက်ခံနှင့် စာသားအရောင်ကို Variable ဖြင့် ချိတ်ဆက်ခြင်း */
@@ -100,8 +100,8 @@ body.dark-mode #modeToggle {
 
 /* 📖 Reading Mode ရောက်လျှင် Icon အရောင် အမည်းပြောင်းရန် */
 body.reading-mode #modeToggle {
-  color:  #433422;
-  fill:  #433422; /* SVG Icon အသုံးပြုထားပါက အရောင်အမည်းပြောင်းရန် */
+  color: #5b4636;
+  fill: #5b4636; /* SVG Icon အသုံးပြုထားပါက အရောင်အမည်းပြောင်းရန် */
 }
 
 /* --- paper.html အတွက် သီးသန့် Dark Mode စာသားအဖြူရောင် --- */
@@ -119,10 +119,7 @@ body:not(.dark-mode):not(.reading-mode) .book-header h1 {
   color: #000000 !important;
 }
 
-/* ၁။ Reading Mode ဖွင့်ထားရင် Body ထဲက စာသားအားလုံးကို အဝါရောင်ပြမည် */
-body.reading-mode {
-  color: #EAB308 !important;
-}
+
 
 
 /* ၂။ paper.html အတွက်သာ သီးသန့် (အညိုရောင် ပြန်ပြောင်းခြင်း) */
