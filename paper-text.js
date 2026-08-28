@@ -215,6 +215,13 @@ function downloadPDF() {
 
 function toggleReadingMode() {
     document.body.classList.toggle('focus-mode');
+}
+
+
+
+
+/*function toggleReadingMode() {
+    document.body.classList.toggle('focus-mode');
     const fsBtn = document.getElementById('fs-btn');
     if (document.body.classList.contains('focus-mode')) {
         fsBtn.innerHTML = '✖';
@@ -223,7 +230,7 @@ function toggleReadingMode() {
         fsBtn.innerHTML = '⛶';
         fsBtn.style.background = 'rgba(234, 222, 188, 0.4)';
     }
-}
+}*/
 
 /* == LAST READ SYSTEM == */
 function saveCurrentPage() {
