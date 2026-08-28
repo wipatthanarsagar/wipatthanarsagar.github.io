@@ -110,7 +110,7 @@ body.dark-mode .nav-text {
     gap: 15px;
 }
 
-.setting-btn, .toc-toggle-btn, .top-btn {
+.setting-btn, .toc-toggle-btn, .top-btn, .fs-nav-btn {
     display: inline-flex !important;
     align-items: center;
     justify-content: center;
@@ -124,12 +124,12 @@ body.dark-mode .nav-text {
     text-decoration: none;
 }
 
-body.reading-mode .setting-btn, body.reading-mode .toc-toggle-btn, body.reading-mode .top-btn {
+body.reading-mode .setting-btn, body.reading-mode .toc-toggle-btn, body.reading-mode .top-btn, body.reading-mode .fs-nav-btn {
     color:  #5b4636;
     fill:  #5b4636;
 }
 
-body.dark-mode .setting-btn, body.dark-mode .toc-toggle-btn, body.dark-mode .top-btn {
+body.dark-mode .setting-btn, body.dark-mode .toc-toggle-btn, body.dark-mode .top-btn, body.dark-mode .fs-nav-btn {
     color: #ffffff;
 }
 
@@ -380,34 +380,18 @@ body.dark-mode .setting-btn, body.dark-mode .toc-toggle-btn, body.dark-mode .top
         background: transparent !important;
     }}
 
-/* Fullscreen ခလုတ် Style */
-.fullscreen-round-btn {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    border: 1px solid #443300;
-    background: rgba(234, 222, 188, 0.4);
-    color: #443300;
-    cursor: pointer;
-    position: static; 
-    font-size: 20px; 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 2000; 
-    transition: 0.3s;}
-.fullscreen-round-btn:hover { background: rgba(234, 222, 188, 0.8); }
-
 /* Focus Mode အသက်ဝင်ချိန် */
 body.focus-mode .top-controls .back-link,
-body.focus-mode .top-controls .right-controls,
+body.focus-mode .top-controls .right-controls > *:not(#fs-btn),
 body.focus-mode .book-header {
     display: none !important;}
 
 body.focus-mode .top-controls {
     background: transparent !important;
     border: none !important;
-    box-shadow: none !important;}
+    box-shadow: none !important;
+    justify-content: flex-end;
+}
 
 /* မာတိကာတွင် လက်ရှိဖတ်နေသည့် အခန်းကို Highlight ပြရန် */
 .toc-list li a.active-chapter {
