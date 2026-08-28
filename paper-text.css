@@ -71,11 +71,21 @@ body.dark-mode .top-controls {
 
 /*Fullscreen အမှားခလုပ် ဆိုဒ်ကြီးအောင်*/
 .svg-nav-iconfs {
-    width: 30px;
-    height: 30px;
+    width: 30px !important; 
+    height: 30px !important;
     display: inline-block;
     color: #000000;
     vertical-align: middle;
+}
+
+body.reading-mode .svg-nav-iconfs {
+    color:  #5b4636;
+    fill:  #5b4636;
+}
+
+body.dark-mode .svg-nav-iconfs {
+    color: #ffffff;
+    fill: #ffffff;
 }
 
 .nav-icon {
@@ -103,17 +113,6 @@ body.dark-mode .svg-nav-icon {
     fill: #ffffff;
 }
 
-body.reading-mode .svg-nav-iconfs {
-    color:  #5b4636;
-    fill:  #5b4636;
-}
-
-body.dark-mode .svg-nav-iconfs {
-    color: #ffffff;
-    fill: #ffffff;
-}
-
-
 body.reading-mode .nav-text {
     color:  #5b4636;
 }
@@ -133,8 +132,8 @@ body.dark-mode .nav-text {
 
 /*Fullscreen btn ဆိုဒ်ကြီးရန်*/
 .fs-nav-btn {
-    width: 30px;
-    height: 30px;
+    width: 30px !important;
+    height: 30px !important; 
     display: inline-flex !important;
     align-items: center;
     justify-content: center;
