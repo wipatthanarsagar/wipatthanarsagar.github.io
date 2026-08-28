@@ -131,7 +131,34 @@ body.dark-mode .nav-text {
     gap: 15px;
 }
 
-.setting-btn, .toc-toggle-btn, .top-btn, .fs-nav-btn {
+/*Fullscreen btn ဆိုဒ်ကြီးရန်*/
+.fs-nav-btn {
+    width: 30px;
+    height: 30px;
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    background: none !important;
+    border: none !important;
+    color: #000000;
+    padding: 0 !important;
+    cursor: pointer;
+    transition: 0.2s;
+    margin-right: 0 !important;
+    text-decoration: none;
+} 
+
+body.reading-mode .fs-nav-btn {
+color:  #5b4636;
+    fill:  #5b4636;
+}
+
+body.dark-mode .fs-nav-btn { 
+    color: #ffffff;
+    fill: #ffffff;
+}
+
+.setting-btn, .toc-toggle-btn, .top-btn {
     display: inline-flex !important;
     align-items: center;
     justify-content: center;
@@ -145,19 +172,14 @@ body.dark-mode .nav-text {
     text-decoration: none;
 }
 
-/*Fullscreen btn ဆိုဒ်ကြီးရန်*/
-.fs-nav-btn {
-    width: 30px;
-    height: 30px;
-} 
-
-body.reading-mode .setting-btn, body.reading-mode .toc-toggle-btn, body.reading-mode .top-btn, body.reading-mode .fs-nav-btn {
+body.reading-mode .setting-btn, body.reading-mode .toc-toggle-btn, body.reading-mode .top-btn {
     color:  #5b4636;
     fill:  #5b4636;
 }
 
-body.dark-mode .setting-btn, body.dark-mode .toc-toggle-btn, body.dark-mode .top-btn, body.dark-mode .fs-nav-btn {
+body.dark-mode .setting-btn, body.dark-mode .toc-toggle-btn, body.dark-mode .top-btn {
     color: #ffffff;
+    fill: #ffffff;
 }
 
 
