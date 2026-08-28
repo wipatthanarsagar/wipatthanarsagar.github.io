@@ -72,8 +72,87 @@ body.dark-mode .top-controls {
 
 
 
-/* Fullscreen Icon အပြင်ဘောင် Size ကို ပုံသေ 30px သတ်မှတ်ခြင်း */
+
+
+
+
+
+
+
+
+
+/* Fullscreen Button အပြည့်အဝ ထန်းချုပ်ခြင်း */
+.fs-nav-btn {
+    width: 30px !important;
+    height: 30px !important; 
+    min-width: 30px !important;
+    min-height: 30px !important;
+    max-width: 30px !important;
+    max-height: 30px !important;
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    background: none !important;
+    border: none !important;
+    color: #000000;
+    padding: 0 !important;
+    cursor: pointer;
+    transition: 0.2s;
+    margin-right: 0 !important;
+    text-decoration: none;
+    box-sizing: border-box !important;
+} 
+
+/* SVG Icon Size ကို သီးသန့် မြဲနေစေရန် */
 .svg-nav-iconfs {
+    width: 30px !important; 
+    height: 30px !important;
+    min-width: 30px !important;
+    min-height: 30px !important;
+    max-width: 30px !important;
+    max-height: 30px !important;
+    display: block !important;
+    color: #000000;
+    vertical-align: middle;
+}
+
+/* ၁။ ပုံမှန်အခြေအနေ Expand Icon Path */
+.svg-nav-iconfs path {
+    d: path("M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z");
+}
+
+/* ၂။ Focus Mode သို့မဟုတ် Reading Mode ဖြစ်ချိန် Compress Icon Path */
+body.focus-mode .svg-nav-iconfs path,
+body.reading-mode .svg-nav-iconfs path {
+    d: path("M5 16h3v3h2v-5H5v2zm3-8H5v2h5V5H8v3zm6 11h2v-3h3v-2h-5v5zm2-11V5h-2v5h5V8h-3z");
+}
+
+/* Focus Mode အသက်ဝင်ချိန်တွင် fs-btn မပျောက်ဘဲ Size 30px အတိုင်း တည်ရှိနေစေရန် */
+body.focus-mode .top-controls .right-controls #fs-btn {
+    display: inline-flex !important;
+    width: 30px !important;
+    height: 30px !important;
+}
+
+body.reading-mode .fs-nav-btn,
+body.reading-mode .svg-nav-iconfs {
+    color: #5b4636;
+    fill: #5b4636;
+}
+
+body.dark-mode .fs-nav-btn,
+body.dark-mode .svg-nav-iconfs {
+    color: #ffffff;
+    fill: #ffffff;
+}
+
+
+
+
+
+
+/* Fullscreen Icon အပြင်ဘောင် Size ကို ပုံသေ 30px သတ်မှတ်ခြင်း */
+/*.svg-nav-iconfs {
     width: 30px !important; 
     height: 30px !important;
     min-width: 30px !important;
@@ -84,17 +163,17 @@ body.dark-mode .top-controls {
 }
 
 /* ၁။ ပုံမှန်အခြေအနေတွင် ပေါ်မည့် Icon (Expand Icon Path) */
-.svg-nav-iconfs path {
+/*.svg-nav-iconfs path {
     d: path("M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z");
 }
 
 /* ၂။ Fullscreen/Focus Mode ဖြစ်သွားချိန်တွင် ပြောင်းသွားမည့် Icon (Compress Icon Path) */
-body.focus-mode .svg-nav-iconfs path {
+/*body.focus-mode .svg-nav-iconfs path {
     d: path("M5 16h3v3h2v-5H5v2zm3-8H5v2h5V5H8v3zm6 11h2v-3h3v-2h-5v5zm2-11V5h-2v5h5V8h-3z");
-}
+}*/
 
 /* Fullscreen Button Wrapper Style */
-.fs-nav-btn {
+/*.fs-nav-btn {
     width: 30px !important;
     height: 30px !important; 
     min-width: 30px !important;
@@ -122,7 +201,7 @@ body.dark-mode .fs-nav-btn,
 body.dark-mode .svg-nav-iconfs {
     color: #ffffff;
     fill: #ffffff;
-}
+}*/
 
 
 
