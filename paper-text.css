@@ -110,7 +110,7 @@ body.dark-mode .nav-text {
     gap: 15px;
 }
 
-.setting-btn {
+.setting-btn, .toc-toggle-btn, .top-btn {
     display: inline-flex !important;
     align-items: center;
     justify-content: center;
@@ -121,14 +121,15 @@ body.dark-mode .nav-text {
     cursor: pointer;
     transition: 0.2s;
     margin-right: 0 !important;
+    text-decoration: none;
 }
 
-body.reading-mode .setting-btn {
+body.reading-mode .setting-btn, body.reading-mode .toc-toggle-btn, body.reading-mode .top-btn {
     color:  #5b4636;
     fill:  #5b4636;
 }
 
-body.dark-mode .setting-btn {
+body.dark-mode .setting-btn, body.dark-mode .toc-toggle-btn, body.dark-mode .top-btn {
     color: #ffffff;
 }
 
@@ -267,63 +268,6 @@ body.dark-mode .setting-btn {
 }
 /*စက်တင် ထွက် ခလုပ်အဆုံး*/
 
-/* ၄။ Floating Buttons (Left Side) */
-.floating-left-group {
-    position: fixed;
-    bottom: 25px;
-    left: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center; 
-    gap: 12px; 
-    z-index: 999;
-}
-
-.toc-toggle-btn {
-    /* အညိုအကြည်ရောင် (နောက်ဆုံးက 0.8 သည် အရောင်စူးမှု) */
-    background: rgba(68, 51, 0, 0.8) !important; 
-    
-    color: #f4ecd8;
-    border: none;
-    width: 45px;  
-    height: 45px; 
-     /* ဖြည့်စွက်ရမည့်အပိုင်း - အလယ်ကွက်တိကျစေရန် */
-    display: flex;
-    align-items: center;     /* အထက်အောက် အလယ်ညှိပေးတာ */
-    justify-content: center;
-    font-size: 26px;
-    border-radius: 50%; 
-    cursor: pointer;
-    font-weight: bold;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    text-align: center;
-    transition: 0.2s;
-    /* Blur (ဝါးခြင်း) ကို လုံးဝဖြုတ်လိုက်ပါပြီ */
-}
-.toc-toggle-btn:hover { background: rgba(68, 51, 0, 1) !important; }
-
-.top-btn {
-    background: #443300;
-    color: #f4ecd8;
-    width: 40px;  
-    height: 40px; 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%; 
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 20px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    opacity: 0.8; 
-    transition: 0.3s;
-}
-
-.top-btn:hover {
-    opacity: 1;
-    transform: scale(1.1); 
-}
-
 /* ၅။ မာတိကာ Popup Overlay */
 .toc-overlay {
     position: fixed;
@@ -415,7 +359,6 @@ body.dark-mode .setting-btn {
 
 @media print {
     .top-controls, 
-    .floating-left-group, 
     .setting-overlay, 
     .toc-overlay,
     #modeToggle {
@@ -460,7 +403,6 @@ body.dark-mode .setting-btn {
 /* Focus Mode အသက်ဝင်ချိန် */
 body.focus-mode .top-controls .back-link,
 body.focus-mode .top-controls .right-controls,
-body.focus-mode .floating-left-group,
 body.focus-mode .book-header {
     display: none !important;}
 
