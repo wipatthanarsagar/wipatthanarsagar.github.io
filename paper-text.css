@@ -37,12 +37,12 @@ body.sepia-mode {
 }
 
 body.reading-mode .top-controls {
-    background: #eadebc;
+    background:  #f4ecd8;
     border-bottom: 1px solid #d4c5a0;
 }
 
 body.dark-mode .top-controls {
-    background: #1e1e1e;
+    background: #000000;
     border-bottom: 1px solid #333;
 }
 
@@ -85,8 +85,8 @@ body.dark-mode .top-controls {
 }
 
 body.reading-mode .svg-nav-icon {
-    color:  #433422;
-    fill:  #433422;
+    color:  #5b4636;
+    fill:  #5b4636;
 }
 
 body.dark-mode .svg-nav-icon {
@@ -94,7 +94,7 @@ body.dark-mode .svg-nav-icon {
 }
 
 body.reading-mode .nav-text {
-    color:  #433422;
+    color:  #5b4636;
 }
 
 body.dark-mode .nav-text {
@@ -124,8 +124,8 @@ body.dark-mode .nav-text {
 }
 
 body.reading-mode .setting-btn {
-    color:  #433422;
-    fill:  #433422;
+    color:  #5b4636;
+    fill:  #5b4636;
 }
 
 body.dark-mode .setting-btn {
