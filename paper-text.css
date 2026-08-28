@@ -72,15 +72,6 @@ body.dark-mode .top-controls {
 
 
 
-
-
-
-
-
-
-
-
-
 /* Fullscreen Button အပြည့်အဝ ထန်းချုပ်ခြင်း */
 .fs-nav-btn {
     width: 30px !important;
@@ -147,91 +138,6 @@ body.dark-mode .svg-nav-iconfs {
 }
 
 
-
-
-
-
-/* Fullscreen Icon အပြင်ဘောင် Size ကို ပုံသေ 30px သတ်မှတ်ခြင်း */
-/*.svg-nav-iconfs {
-    width: 30px !important; 
-    height: 30px !important;
-    min-width: 30px !important;
-    min-height: 30px !important;
-    display: inline-block;
-    color: #000000;
-    vertical-align: middle;
-}
-
-/* ၁။ ပုံမှန်အခြေအနေတွင် ပေါ်မည့် Icon (Expand Icon Path) */
-/*.svg-nav-iconfs path {
-    d: path("M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z");
-}
-
-/* ၂။ Fullscreen/Focus Mode ဖြစ်သွားချိန်တွင် ပြောင်းသွားမည့် Icon (Compress Icon Path) */
-/*body.focus-mode .svg-nav-iconfs path {
-    d: path("M5 16h3v3h2v-5H5v2zm3-8H5v2h5V5H8v3zm6 11h2v-3h3v-2h-5v5zm2-11V5h-2v5h5V8h-3z");
-}*/
-
-/* Fullscreen Button Wrapper Style */
-/*.fs-nav-btn {
-    width: 30px !important;
-    height: 30px !important; 
-    min-width: 30px !important;
-    min-height: 30px !important;
-    display: inline-flex !important;
-    align-items: center;
-    justify-content: center;
-    background: none !important;
-    border: none !important;
-    color: #000000;
-    padding: 0 !important;
-    cursor: pointer;
-    transition: 0.2s;
-    margin-right: 0 !important;
-    text-decoration: none;
-} 
-
-body.reading-mode .fs-nav-btn,
-body.reading-mode .svg-nav-iconfs {
-    color: #5b4636;
-    fill: #5b4636;
-}
-
-body.dark-mode .fs-nav-btn,
-body.dark-mode .svg-nav-iconfs {
-    color: #ffffff;
-    fill: #ffffff;
-}*/
-
-
-
-
-
-
-
-
-
-/*Fullscreen အမှားခလုပ် ဆိုဒ်ကြီးအောင်*/
-/*.svg-nav-iconfs {
-    width: 30px !important; 
-    height: 30px !important;
-    min-width: 30px !important;
-    min-height: 30px !important;
-    display: inline-block;
-    color: #000000;
-    vertical-align: middle;
-}
-
-body.reading-mode .svg-nav-iconfs {
-    color:  #5b4636;
-    fill:  #5b4636;
-}
-
-body.dark-mode .svg-nav-iconfs {
-    color: #ffffff;
-    fill: #ffffff;
-}*/
-
 .nav-icon {
     font-size: 28px !important;
     font-weight: 900 !important;
@@ -274,34 +180,6 @@ body.dark-mode .nav-text {
     gap: 15px;
 }
 
-/*Fullscreen btn ဆိုဒ်ကြီးရန်*/
-/*.fs-nav-btn {
-    width: 30px !important;
-    height: 30px !important; 
-    min-width: 30px !important;
-    min-height: 30px !important;
-    display: inline-flex !important;
-    align-items: center;
-    justify-content: center;
-    background: none !important;
-    border: none !important;
-    color: #000000;
-    padding: 0 !important;
-    cursor: pointer;
-    transition: 0.2s;
-    margin-right: 0 !important;
-    text-decoration: none;
-} 
-
-body.reading-mode .fs-nav-btn {
-color:  #5b4636;
-    fill:  #5b4636;
-}
-
-body.dark-mode .fs-nav-btn { 
-    color: #ffffff;
-    fill: #ffffff;
-}*/
 
 .setting-btn, .toc-toggle-btn, .top-btn {
     display: inline-flex !important;
