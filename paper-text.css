@@ -73,6 +73,8 @@ body.dark-mode .top-controls {
 .svg-nav-iconfs {
     width: 30px !important; 
     height: 30px !important;
+    min-width: 30px !important;
+    min-height: 30px !important;
     display: inline-block;
     color: #000000;
     vertical-align: middle;
@@ -134,6 +136,8 @@ body.dark-mode .nav-text {
 .fs-nav-btn {
     width: 30px !important;
     height: 30px !important; 
+    min-width: 30px !important;
+    min-height: 30px !important;
     display: inline-flex !important;
     align-items: center;
     justify-content: center;
