@@ -69,6 +69,15 @@ body.dark-mode .top-controls {
     vertical-align: middle;
 }
 
+/*Fullscreen အမှားခလုပ် ဆိုဒ်ကြီးအောင်*/
+.svg-nav-iconfs {
+    width: 30px;
+    heigh: 30px;
+    display: inline-block;
+    color: #000000;
+    vertical-align: middle;
+}
+
 .nav-icon {
     font-size: 28px !important;
     font-weight: 900 !important;
@@ -91,7 +100,19 @@ body.reading-mode .svg-nav-icon {
 
 body.dark-mode .svg-nav-icon {
     color: #ffffff;
+    fill: #ffffff;
 }
+
+body.reading-mode .svg-nav-iconfs {
+    color:  #5b4636;
+    fill:  #5b4636;
+}
+
+body.dark-mode .svg-nav-iconfs {
+    color: #ffffff;
+    fill: #ffffff;
+}
+
 
 body.reading-mode .nav-text {
     color:  #5b4636;
@@ -123,6 +144,12 @@ body.dark-mode .nav-text {
     margin-right: 0 !important;
     text-decoration: none;
 }
+
+/*Fullscreen btn ဆိုဒ်ကြီးရန်*/
+.fs-nav-btn {
+    width: 30px;
+    height: 30px;
+} 
 
 body.reading-mode .setting-btn, body.reading-mode .toc-toggle-btn, body.reading-mode .top-btn, body.reading-mode .fs-nav-btn {
     color:  #5b4636;
