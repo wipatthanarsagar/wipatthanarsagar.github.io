@@ -153,22 +153,16 @@ main {
   left: 15px;
   width: 50px;
   height: 50px;
-  background-color: #121212;
   color: #000000;
-  border: 1px solid rgba(234, 179, 8, 0.4);
-  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 1000;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  transition: transform 0.2s ease, background-color 0.2s ease;
   text-decoration: none;
 }
 
 .fixed-message-btn:hover {
   transform: scale(1.08);
-  background-color: #1f1f1f;
 }
 
 body.dark-mode .fixed-message-btn {
