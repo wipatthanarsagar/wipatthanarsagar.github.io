@@ -128,7 +128,7 @@ body.dark-mode .top-bar {
 }
 
 body.dark-mode .brand-title {
-  color: #EAB308; /* Dark mode တွင် အဝါရောင် စာသား */
+  color: #ffffff; /* Dark mode တွင် အဝါရောင် စာသား */
 }
 
 /* --- Reading Mode အရောင်ပြောင်းလဲခြင်း --- */
@@ -138,7 +138,7 @@ body.reading-mode .top-bar {
 }
 
 body.reading-mode .brand-title {
-  color: #433422;
+  color: #5b4636;
 }
 
 /* --- Main Content အပေါ်သို့ မရောက်စေရန် Padding ထည့်ခြင်း --- */
@@ -146,12 +146,41 @@ main {
   padding-top: 4.5rem !important; /* Top Bar Height (56px) ထက် အနည်းငယ် ပိုပေးထားခြင်း */
 }
 
-.fixed-logo {
-  position: fixed; /* နေရာကို ပုံသေထားရန် */
-  bottom: 110px;    /* အောက်ခြေ menu bar ရဲ့ အမြင့်ထက် နည်းနည်းပိုထားပါ */
-  left: 10px;      /* ပင်မခလုတ်ရှိမယ့် ဘယ်ဘက်အခြမ်းမှာ ထားရန် */
-  z-index: 1000;   /* တခြားအရာတွေရဲ့ အပေါ်မှာ ပေါ်နေစေရန် */
+/* ဘယ်ဘက်ထောင့်စွန်း ပုံသေ စာပို့ရန် SVG Message ခလုတ် */
+.fixed-message-btn {
+  position: fixed;
+  bottom: 110px;
+  left: 15px;
+  width: 50px;
+  height: 50px;
+  background-color: #121212;
+  color: #000000;
+  border: 1px solid rgba(234, 179, 8, 0.4);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease, background-color 0.2s ease;
+  text-decoration: none;
 }
+
+.fixed-message-btn:hover {
+  transform: scale(1.08);
+  background-color: #1f1f1f;
+}
+
+body.dark-mode .fixed-message-btn {
+  color: #ffffff;
+  fill: #ffffff;
+}
+
+body.reading-mode .fixed-message-btn {
+  color: #5b4636;
+  fill: #5b4636;
+}
+
 
 /* စာသားကို Select လုပ်လိုက်တဲ့အခါ ပေါ်မယ့်အရောင် */
 ::selection {
@@ -164,15 +193,6 @@ main {
     background-color: #ffcc00 !important;
     color: #000000 !important;
 }
-
-.fixed-logo img {
-  width: 80px;     /* 8mm ခန့်ရှိသော pixel အတိုင်းအတာ (လိုအပ်သလို ပြင်နိုင်သည်) */
-  height: 80px;
-  border-radius: 50%; /* လိုဂိုကို အဝိုင်းပုံစံ ဖြစ်စေချင်လျှင် သုံးပါ */
-  object-fit: cover;
-  transition: 0.3s;
-}
-.fixed-logo img:hover { transform: scale(1.05); }
 
 /* --- ဓာတ်ပုံဘေးဆွဲ CSS အစ --- */
 
