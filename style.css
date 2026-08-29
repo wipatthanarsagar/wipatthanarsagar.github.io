@@ -119,6 +119,7 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 12px; /* ခလုတ် နှစ်ခုကြား အကွာအဝေး */
 }
 
 /* --- Dark Mode ရောက်ပါက Header Bar အရောင်ပြောင်းလဲခြင်း --- */
@@ -146,19 +147,14 @@ main {
   padding-top: 4.5rem !important; /* Top Bar Height (56px) ထက် အနည်းငယ် ပိုပေးထားခြင်း */
 }
 
-/* ဘယ်ဘက်ထောင့်စွန်း ပုံသေ စာပို့ရန် SVG Message ခလုတ် */
+/* စာပို့ရန် SVG Message ခလုတ် (Top Bar ညာဘက် ထည့်သွင်းထားသည်) */
 .fixed-message-btn {
-  position: fixed;
-  bottom: 110px;
-  left: 15px;
-  width: 50px;
-  height: 50px;
   color: #000000;
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 1000;
   text-decoration: none;
+  transition: transform 0.2s ease;
 }
 
 .fixed-message-btn:hover {
