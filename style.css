@@ -8,7 +8,10 @@ Body {
 
 /* 📝 Main content */
 main {
-  padding: 5rem 0.5rem 5rem; /* bottom padding = 5rem, category bar အောက် မဖုံးအောင် */
+  padding-top: 56px; /* Top Bar အမြင့် 56px အတိုင်း ကွက်တိနေရာယူရန် */
+  padding-bottom: 400px;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
   text-align: center;
 }
 
