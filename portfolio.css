@@ -338,6 +338,31 @@ body:not(.dark-mode) .gallery-item .text {
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 12px; /* ခလုတ် နှစ်ခုကြား အကွာအဝေး */
+}
+
+/* စာပို့ရန် SVG Message ခလုတ် (Top Bar ညာဘက် ထည့်သွင်းထားသည်) */
+.fixed-message-btn {
+  color: #000000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: transform 0.2s ease;
+}
+
+.fixed-message-btn:hover {
+  transform: scale(1.08);
+}
+
+body.dark-mode .fixed-message-btn {
+  color: #ffffff;
+  fill: #ffffff;
+}
+
+body.reading-mode .fixed-message-btn {
+  color: #5b4636;
+  fill: #5b4636;
 }
 
 /* --- Dark Mode ရောက်ပါက Header Bar အရောင်ပြောင်းလဲခြင်း --- */
@@ -357,7 +382,7 @@ body.reading-mode .top-bar {
 }
 
 body.reading-mode .brand-title {
-  color: #433422;
+  color: #5b4636;
 }
 
 
