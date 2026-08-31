@@ -15,25 +15,28 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
-.main-wrapper {
-    width: 100%;
-    max-width: 720px; /* 💻 Desktop တွင် အချိုးကျကျယ်ပြန့်စေရန် 480px မှ 720px သို့ ပြောင်းလဲထားပါသည် */
-    margin-left: auto;
-    margin-right: auto;
-    /* အရှင်ဘုရား အလိုရှိတဲ့ အတိုင်းအတာများ */
-    margin-top: 120px !important;
-    margin-bottom: 400px; 
-    padding: 0 1rem; /* ဘေးဘောင်အတွက်ပဲ padding သုံးပါမည် */
-    display: block; 
-    box-sizing: border-box;
+/* 📝 Main content */
+main {
+  padding-top: 56px; /* Top Bar အမြင့် 56px အတိုင်း index.html နှင့် တစ်ထပ်တည်း ညီစေရန် */
+  padding-bottom: 400px;
 }
 
+.main-wrapper {
+  width: 100%;
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0; /* Inline margin-top ကို ဖျောက်ပြီး 0 ပြောင်းပါ */
+  padding: 0 1rem;
+  display: block; 
+  box-sizing: border-box;
+}
 
 /* Profile Section */
 .profile-header {
-    text-align: center;
-    margin-top: 120px; 
-    margin-bottom: 50px;
+  text-align: center;
+  margin-top: 0; /* အပေါ်က ပိုနေသော Margin 120px ကို 0 သို့ ပြောင်းပါ */
+  margin-bottom: 50px;
 }
 
 .avatar-container {
