@@ -360,44 +360,6 @@ body.reading-mode .brand-title {
   color: #433422;
 }
 
-.fixed-logo {
-  position: fixed; /* နေရာကို ပုံသေထားရန် */
-  bottom: 110px;    /* အောက်ခြေ menu bar ရဲ့ အမြင့်ထက် နည်းနည်းပိုထားပါ */
-  left: 10px;      /* ပင်မခလုတ်ရှိမယ့် ဘယ်ဘက်အခြမ်းမှာ ထားရန် */
-  z-index: 1000;   /* တခြားအရာတွေရဲ့ အပေါ်မှာ ပေါ်နေစေရန် */
-}
-
-.fixed-logo img {
-  width: 80px;     /* 8mm ခန့်ရှိသော pixel အတိုင်းအတာ (လိုအပ်သလို ပြင်နိုင်သည်) */
-  height: 80px;
-  border-radius: 50%; /* လိုဂိုကို အဝိုင်းပုံစံ ဖြစ်စေချင်လျှင် သုံးပါ */
-  object-fit: cover;
-  transition: 0.3s;
-}
-.fixed-logo img:hover { transform: scale(1.05); }
-
-/*စာပို့ခလုပ် အစ*/
-/* 📜 Fixed Manuscript Button Style */
-.fixed-manuscript-btn {
-    position: fixed;
-    bottom: 120px;          /* အောက်ခြေမှ ၁၂၀ pixel အကွာ */
-    left: 50%;              /* ဘယ်ဘက်မှ ၅၀ ရာခိုင်နှုန်း */
-    transform: translateX(-50%); /* အလယ်ဗဟို ကွက်တိဖြစ်အောင် ညှိခြင်း */
-    z-index: 20;            /* အပေါ်ဆုံးမှာ ပေါ်နေစေရန် */
-}
-
-.fixed-manuscript-btn a {
-    font-size: 2.5rem;      /* ခလုတ်အရွယ်အစား */
-    text-decoration: none;  /* မျဉ်းတားဖျောက်ရန် */
-    display: block;
-    transition: transform 0.2s ease; /* နှိပ်လိုက်ရင် တုံ့ပြန်မှု ရှိစေရန် */
-}
-.fixed-manuscript-btn a:hover { transform: translateY(-5px); }
-
-.fixed-manuscript-btn a:active {
-    transform: scale(0.9);  /* နှိပ်လိုက်ရင် နည်းနည်းကျုံ့သွားစေရန် */
-}
-/*စာပို့ခလုပ် အဆုံး*/
 
 /* စာသားကို Select လုပ်လိုက်တဲ့အခါ ပေါ်မယ့်အရောင် အစ */
 ::selection {
