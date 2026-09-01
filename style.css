@@ -40,13 +40,14 @@ main {
 .avatar-container {
     width: 120px;
     height: 120px;
-    margin: 1rem auto;
+    margin: 100px auto 0;
     border-radius: 50%;
     border: 1px solid #FFD700;
     padding: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
+    box-sizing: border-box;
 }
 
 .avatar {
@@ -143,11 +144,6 @@ body.reading-mode .top-bar {
 
 body.reading-mode .brand-title {
   color: #5b4636;
-}
-
-/* --- Main Content အပေါ်သို့ မရောက်စေရန် Padding ထည့်ခြင်း --- */
-main {
-  padding-top: 4.5rem !important; /* Top Bar Height (56px) ထက် အနည်းငယ် ပိုပေးထားခြင်း */
 }
 
 /* စာပို့ရန် SVG Message ခလုတ် (Top Bar ညာဘက် ထည့်သွင်းထားသည်) */
