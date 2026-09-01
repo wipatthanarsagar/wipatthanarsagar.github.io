@@ -320,7 +320,7 @@ body:not(.dark-mode) .gallery-item .text {
 .brand-title {
   font-size: 1.2rem;
   font-weight: 700;
-  color: #121212;
+  color: #000000;
   transition: color 0.3s ease;
 }
 
@@ -365,12 +365,12 @@ body.reading-mode .fixed-message-btn {
 
 /* --- Dark Mode ရောက်ပါက Header Bar အရောင်ပြောင်းလဲခြင်း --- */
 body.dark-mode .top-bar {
-  background-color: #121212;
+  background-color: #000000;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 body.dark-mode .brand-title {
-  color: #EAB308; /* Dark mode တွင် အဝါရောင် စာသား */
+  color: #ffffff; /* Dark mode တွင် အဝါရောင် စာသား */
 }
 
 /* --- Reading Mode အရောင်ပြောင်းလဲခြင်း --- */
