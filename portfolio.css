@@ -32,20 +32,17 @@ main {
   box-sizing: border-box;
 }
 
-/* Profile Section */
-.profile-header {
-  text-align: center;
-  margin-top: 0; /* အပေါ်က ပိုနေသော Margin 120px ကို 0 သို့ ပြောင်းပါ */
-  margin-bottom: 50px;
-}
-
 .avatar-container {
     width: 120px;
     height: 120px;
-    margin: 0 auto 20px;
+    margin: 100px auto 20px;
     border-radius: 50%;
     border: 1px solid var(--primary-gold);
     padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
 }
 
 .avatar {
@@ -53,10 +50,8 @@ main {
     height: 100%;
     border-radius: 50%;
     object-fit: cover;
-    filter: grayscale(20%);
+    display: block;
 }
-
-
 
 .profile-tagline {
     color: var(--primary-gold);
