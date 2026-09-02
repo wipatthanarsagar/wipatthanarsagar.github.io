@@ -134,6 +134,7 @@ body.dark-mode .top-bar {
 
 body.dark-mode .brand-title {
   color: #ffffff; /* Dark mode တွင် အဝါရောင် စာသား */
+font-weight: 500;
 }
 
 /* --- Reading Mode အရောင်ပြောင်းလဲခြင်း --- */
@@ -195,7 +196,7 @@ body.reading-mode .fixed-message-btn {
     border: 1px solid #000000; 
     margin-top: 100px;
     color: #000000;
-  font-weight: 900;
+  font-weight: bold;
     text-align: center;
 }
 
@@ -208,7 +209,7 @@ color: #5b4636;
 body.dark-mode .section-title {
 color: #ffffff;
  background-color: #000000;
-  border: 1px solid #ffffff; 
+  border: 0.5px solid #ffffff; 
   font-weight: 500;
 }
 
