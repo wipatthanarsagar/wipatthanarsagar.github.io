@@ -195,6 +195,7 @@ body.reading-mode .fixed-message-btn {
     border: 1px solid #000000; 
     margin-top: 100px;
     color: #000000;
+  font-weight: 900;
     text-align: center;
 }
 
@@ -208,7 +209,7 @@ body.dark-mode .section-title {
 color: #ffffff;
  background-color: #000000;
   border: 1px solid #ffffff; 
-  font-weight: 600;
+  font-weight: 500;
 }
 
 
