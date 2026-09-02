@@ -91,6 +91,13 @@ main {
   box-sizing: border-box;
   z-index: 9999;
   
+
+/*အပေါ် မှာ အမဲတန်းလေးမပေါ်ရန်*/
+border-top: none !important;
+  outline: none !important;
+  box-shadow: none; /*အပေါ်မှာအမဲတန်းလေးမပေါ်ရန် အဆုံး*/
+
+
   /* Light Mode အခြေခံ အရောင်များ */
   background-color: #ffffff;
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
@@ -128,7 +135,7 @@ main {
 
 /* --- Dark Mode ရောက်ပါက Header Bar အရောင်ပြောင်းလဲခြင်း --- */
 body.dark-mode .top-bar {
-  background-color: #121212;
+  background-color: #000000;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
