@@ -12,5 +12,5 @@
 https://github.com/wipatthanarsagar/wipatthanarsagar.github.io
 
 
-ဒီအောက်က လင့်ကလဲ thaychinthabaw.netlify.app အတွက် မူရင်းကုဒ်တွေ ပါပဲ
-https://github.com/charitytheinfiniteuniverse/charitytheinfiniteuniverse.github.io
+ဒီအောက်က လင့်ကလဲ hokehmanakyoeshi.github.io အတွက် မူရင်းကုဒ်တွေ ပါပဲ
+https://github.com/hokehmanakyoeshi/hokehmanakyoeshi.github.io
