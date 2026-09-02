@@ -192,7 +192,7 @@ body.reading-mode .fixed-message-btn {
     padding-left: 12px;
     background-color:#ffffff; 
     border-radius:20px;
-    border: 1px solid rgba(255, 215, 0, 0.3); 
+    border: 1px #000000; 
     margin-top: 100px;
     color: #000000;
     text-align: center;
@@ -201,11 +201,13 @@ body.reading-mode .fixed-message-btn {
 body.reading-mode .section-title {
 color: #5b4636;
  background-color: #f4ecd8;
+  border: 1px #5b4636; 
 }
 
 body.dark-mode .section-title {
 color: #ffffff;
  background-color: #000000;
+  border: 1px #ffffff; 
 }
 
 
