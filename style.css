@@ -91,13 +91,6 @@ main {
   box-sizing: border-box;
   z-index: 9999;
   
-
-/*အပေါ် မှာ အမဲတန်းလေးမပေါ်ရန်*/
-border-top: none !important;
-  outline: none !important;
-  box-shadow: none; /*အပေါ်မှာအမဲတန်းလေးမပေါ်ရန် အဆုံး*/
-
-
   /* Light Mode အခြေခံ အရောင်များ */
   background-color: #ffffff;
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
@@ -114,7 +107,7 @@ border-top: none !important;
 .brand-title {
   font-size: 1.2rem;
   font-weight: 700;
-  color: #121212;
+  color: #000000;
   transition: color 0.3s ease;
 }
 
@@ -197,13 +190,20 @@ body.reading-mode .fixed-message-btn {
     font-size: 1.1rem;
     margin: 60px 0 10px 5px;
     padding-left: 12px;
-    background-color:#121212; 
+    background-color:#000000; 
     border-radius:20px;
     border: 1px solid rgba(255, 215, 0, 0.3); 
     margin-top: 100px;
-    color: #EAB308;
+    color: #ffffff;
     text-align: center;
 }
+
+body.reading-mode .section-title {
+color: ##5b4636;
+}
+
+
+
 
 /* အောက်ဆုံးကြေညာစာအတွက် အစ */
 /* 🏢 အချက်အလက်များစုစည်းမှု အပြင်ဘက်ဘောင် */
