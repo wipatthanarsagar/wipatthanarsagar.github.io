@@ -4,7 +4,7 @@ export const novelChapters = [
 
     { id: "pati-h-h1", // HTML က ID နဲ့ ကွက်တိ တူရပါမယ်
         title: "ခုဒ္ဒကနိကာယ်",
-        audio: "/audio/ဒုက္ခအရိယသစ္စာ.mp3",
+        audio: "",
         tocClass: "main-title",         
         headerTag: "h1", 
 content: ` 
@@ -13,7 +13,7 @@ content: `
 },
 { id: "pati-h-h2", // HTML က ID နဲ့ ကွက်တိ တူရပါမယ်
         title: "ပဋိသမ္ဘိဒါမဂ်",
-        audio: "/audio/ဒုက္ခသမုဒယအရိယသစ္စာ.mp3",
+        audio: "",
         tocClass: "main-title",         
         headerTag: "h2", 
 content: ` 
@@ -23,7 +23,7 @@ content: `
 
   { id: "pati-h-h2", // HTML က ID နဲ့ ကွက်တိ တူရပါမယ်
         title: "မဟာဝဂ်",
-        audio: "/audio/ဒုက္ခနိရောဓအရိယသစ္စာ.mp3",
+        audio: "",
         tocClass: "main-title",         
         headerTag: "h2", 
 content: ` 
@@ -33,7 +33,7 @@ content: `
     {
     id: "pati-m-t0", // HTML က ID နဲ့ ကွက်တိ တူရပါမယ်
         title: "ဉာဏ်စဉ် မာတိကာ",
-        audio: "https://archive.org/download/20260531_20260531_1241/%E1%80%92%E1%80%AF%E1%80%80%E1%80%B9%E1%80%81%E1%80%A1%E1%80%9B%E1%80%AD%E1%80%9A%E1%80%9E%E1%80%85%E1%80%B9%E1%80%85%E1%80%AC.mp3",
+        audio: "",
         tocClass: "title",         
         headerTag: "h3", 
 content: `
@@ -214,7 +214,7 @@ content: `
     {
         id: "pati-m-t1", // HTML က ID နဲ့ ကွက်တိ တူရပါမယ်
         title: "၁-သုတမယဉာဏ် အကျယ်ပြခြင်း",
-        audio: "https://archive.org/download/20260531_20260531_1241/%E1%80%92%E1%80%AF%E1%80%80%E1%80%B9%E1%80%81%E1%80%A1%E1%80%9B%E1%80%AD%E1%80%9A%E1%80%9E%E1%80%85%E1%80%B9%E1%80%85%E1%80%AC.mp3",
+        audio: "",
         tocClass: "title",
         headerTag: "h3", 
 content: `
@@ -440,7 +440,7 @@ content: `
 {
         id: "pati-m-t2", // HTML က ID နဲ့ ကွက်တိ တူရပါမယ်
 title: "ဒုတိယအခန်း",
-        audio: "https://archive.org/download/20260531_20260531_1241/%E1%80%92%E1%80%AF%E1%80%80%E1%80%B9%E1%80%81%E1%80%A1%E1%80%9B%E1%80%AD%E1%80%9A%E1%80%9E%E1%80%85%E1%80%B9%E1%80%85%E1%80%AC.mp3",
+        audio: "",
         tocClass: "title",
     headerTag: "h3", 
     content: `
@@ -1137,7 +1137,7 @@ title: "ဒုတိယအခန်း",
     {
         id: "pati-m-t3", // HTML က ID နဲ့ ကွက်တိ တူရပါမယ်
         title: "တတိယအခန်း",
-        audio: "https://archive.org/download/20260531_20260531_1241/%E1%80%92%E1%80%AF%E1%80%80%E1%80%B9%E1%80%81%E1%80%A1%E1%80%9B%E1%80%AD%E1%80%9A%E1%80%9E%E1%80%85%E1%80%B9%E1%80%85%E1%80%AC.mp3",
+        audio: "",
         tocClass: "title",
         headerTag: "h3", 
 content: `
@@ -1326,7 +1326,7 @@ content: `
     {
         id: "pati-m-t4", // HTML က ID နဲ့ ကွက်တိ တူရပါမယ်
       title: "စတုတ္ထအခန်း",
-        audio: "https://archive.org/download/20260531_20260531_1241/%E1%80%92%E1%80%AF%E1%80%80%E1%80%B9%E1%80%81%E1%80%A1%E1%80%9B%E1%80%AD%E1%80%9A%E1%80%9E%E1%80%85%E1%80%B9%E1%80%85%E1%80%AC.mp3",
+        audio: "",
         tocClass: "title",
         headerTag: "h3", 
   content: `
@@ -1771,7 +1771,7 @@ content: `
     {
         id: "pati-m-t5", // HTML က ID နဲ့ ကွက်တိ တူရပါမယ်
        title: "၂-သီလမယဉာဏ် အကျယ်ပြခြင်း",
-        audio: "https://archive.org/download/20260531_20260531_1241/%E1%80%92%E1%80%AF%E1%80%80%E1%80%B9%E1%80%81%E1%80%A1%E1%80%9B%E1%80%AD%E1%80%9A%E1%80%9E%E1%80%85%E1%80%B9%E1%80%85%E1%80%AC.mp3",
+        audio: "",
         tocClass: "title",
         headerTag: "h3", 
  content: `
@@ -1931,7 +1931,7 @@ content: `
 {
         id: "pati-m-t6", // HTML က ID နဲ့ ကွက်တိ တူရပါမယ်
        title: "၃-သမထဘာဝနာမယဉာဏ် အကျယ်ပြခြင်း",
-        audio: "https://archive.org/download/20260531_20260531_1241/%E1%80%92%E1%80%AF%E1%80%80%E1%80%B9%E1%80%81%E1%80%A1%E1%80%9B%E1%80%AD%E1%80%9A%E1%80%9E%E1%80%85%E1%80%B9%E1%80%85%E1%80%AC.mp3",
+        audio: "",
         tocClass: "title",
     headerTag: "h3", 
     content: `
@@ -1977,7 +1977,7 @@ content: `
     {
         id: "pati-m-t7", // HTML က ID နဲ့ ကွက်တိ တူရပါမယ်
        title: "၄-ဓမ္မဋ္ဌိတိဉာဏ် အကျယ်ပြခြင်း",
-        audio: "https://archive.org/download/20260531_20260531_1241/%E1%80%92%E1%80%AF%E1%80%80%E1%80%B9%E1%80%81%E1%80%A1%E1%80%9B%E1%80%AD%E1%80%9A%E1%80%9E%E1%80%85%E1%80%B9%E1%80%85%E1%80%AC.mp3",
+        audio: "",
         tocClass: "title",
         headerTag: "h3", 
         content: `
@@ -2033,7 +2033,7 @@ content: `
     {
         id: "pati-m-t8", // HTML က ID နဲ့ ကွက်တိ တူရပါမယ်
        title: "၅-သမ္မသနဉာဏ် အကျယ်ပြခြင်း",
-        audio: "https://archive.org/download/20260531_20260531_1241/%E1%80%92%E1%80%AF%E1%80%80%E1%80%B9%E1%80%81%E1%80%A1%E1%80%9B%E1%80%AD%E1%80%9A%E1%80%9E%E1%80%85%E1%80%B9%E1%80%85%E1%80%AC.mp3",
+        audio: "",
         tocClass: "title",
         headerTag: "h3", 
         content: `
@@ -2072,7 +2072,7 @@ content: `
     {
         id: "pati-m-t9", // HTML က ID နဲ့ ကွက်တိ တူရပါမယ်
        title: "၆-ဥဒယဗ္ဗယဉာဏ် အကျယ်ပြခြင်း",
-        audio: "https://archive.org/download/20260531_20260531_1241/%E1%80%92%E1%80%AF%E1%80%80%E1%80%B9%E1%80%81%E1%80%A1%E1%80%9B%E1%80%AD%E1%80%9A%E1%80%9E%E1%80%85%E1%80%B9%E1%80%85%E1%80%AC.mp3",
+        audio: "",
         tocClass: "title",
        headerTag: "h3", 
         content: `
@@ -2187,7 +2187,7 @@ content: `
     {
         id: "pati-m-t10", // HTML က ID နဲ့ ကွက်တိ တူရပါမယ်
        title: "၇-ဘင်္ဂါနုပဿနာဉာဏ် အကျယ်ပြခြင်း",
-        audio: "https://archive.org/download/20260531_20260531_1241/%E1%80%92%E1%80%AF%E1%80%80%E1%80%B9%E1%80%81%E1%80%A1%E1%80%9B%E1%80%AD%E1%80%9A%E1%80%9E%E1%80%85%E1%80%B9%E1%80%85%E1%80%AC.mp3",
+        audio: "",
         tocClass: "title",
        headerTag: "h3", 
         content: `
@@ -2235,7 +2235,7 @@ content: `
     {
         id: "pati-m-t11", // HTML က ID နဲ့ ကွက်တိ တူရပါမယ်
         title: "၈-အာဒီနဝဉာဏ် အကျယ်ပြခြင်း",
-        audio: "https://archive.org/download/20260531_20260531_1241/%E1%80%92%E1%80%AF%E1%80%80%E1%80%B9%E1%80%81%E1%80%A1%E1%80%9B%E1%80%AD%E1%80%9A%E1%80%9E%E1%80%85%E1%80%B9%E1%80%85%E1%80%AC.mp3",
+        audio: "",
         tocClass: "title",
 headerTag: "h3", 
 content: `
@@ -2340,7 +2340,7 @@ content: `
 {
         id: "pati-m-t12", // HTML က ID နဲ့ ကွက်တိ တူရပါမယ်
       title: "၉-သင်္ခါရုပေက္ခာဉာဏ် အကျယ်ပြခြင်း",
-        audio: "https://archive.org/download/20260531_20260531_1241/%E1%80%92%E1%80%AF%E1%80%80%E1%80%B9%E1%80%81%E1%80%A1%E1%80%9B%E1%80%AD%E1%80%9A%E1%80%9E%E1%80%85%E1%80%B9%E1%80%85%E1%80%AC.mp3",
+        audio: "",
         tocClass: "title",
   headerTag: "h3", 
     content: `
@@ -2522,7 +2522,7 @@ content: `
 {
         id: "pati-m-t13", // HTML က ID နဲ့ ကွက်တိ တူရပါမယ်
         title: "၁၀-ဂေါတြဘူဉာဏ် အကျယ်ပြခြင်း",
-        audio: "https://archive.org/download/20260531_20260531_1241/%E1%80%92%E1%80%AF%E1%80%80%E1%80%B9%E1%80%81%E1%80%A1%E1%80%9B%E1%80%AD%E1%80%9A%E1%80%9E%E1%80%85%E1%80%B9%E1%80%85%E1%80%AC.mp3",
+        audio: "",
         tocClass: "title",
 headerTag: "h3", 
 content: `
@@ -2600,7 +2600,7 @@ content: `
     {
         id: "pati-m-t14", // HTML က ID နဲ့ ကွက်တိ တူရပါမယ်
        title: "၁၁-မဂ်ဉာဏ် အကျယ်ပြခြင်း",
-        audio: "https://archive.org/download/20260531_20260531_1241/%E1%80%92%E1%80%AF%E1%80%80%E1%80%B9%E1%80%81%E1%80%A1%E1%80%9B%E1%80%AD%E1%80%9A%E1%80%9E%E1%80%85%E1%80%B9%E1%80%85%E1%80%AC.mp3",
+        audio: "",
         tocClass: "title",
       headerTag: "h3", 
         content: `
@@ -2652,7 +2652,7 @@ content: `
     {
         id: "pati-m-t15", // HTML က ID နဲ့ ကွက်တိ တူရပါမယ်
       title: "၁၂-ဖိုလ်ဉာဏ် အကျယ်ပြခြင်း",
-        audio: "https://archive.org/download/20260531_20260531_1241/%E1%80%92%E1%80%AF%E1%80%80%E1%80%B9%E1%80%81%E1%80%A1%E1%80%9B%E1%80%AD%E1%80%9A%E1%80%9E%E1%80%85%E1%80%B9%E1%80%85%E1%80%AC.mp3",
+        audio: "",
         tocClass: "title",
       headerTag: "h3", 
         content: `
@@ -2698,7 +2698,7 @@ content: `
     {
         id: "pati-m-t16", // HTML က ID နဲ့ ကွက်တိ တူရပါမယ်
       title: "၁၃-ဝိမုတ္တိဉာဏ် အကျယ်ပြခြင်း",
-        audio: "https://archive.org/download/20260531_20260531_1241/%E1%80%92%E1%80%AF%E1%80%80%E1%80%B9%E1%80%81%E1%80%A1%E1%80%9B%E1%80%AD%E1%80%9A%E1%80%9E%E1%80%85%E1%80%B9%E1%80%85%E1%80%AC.mp3",
+        audio: "",
         tocClass: "title",
        headerTag: "h3", 
         content: `
@@ -2736,7 +2736,7 @@ content: `
     {
         id: "pati-m-t17", // HTML က ID နဲ့ ကွက်တိ တူရပါမယ်
         title: "၁၄-ပစ္စဝေက္ခဏာဉာဏ် အကျယ်ပြခြင်း",
-        audio: "https://archive.org/download/20260531_20260531_1241/%E1%80%92%E1%80%AF%E1%80%80%E1%80%B9%E1%80%81%E1%80%A1%E1%80%9B%E1%80%AD%E1%80%9A%E1%80%9E%E1%80%85%E1%80%B9%E1%80%85%E1%80%AC.mp3",
+        audio: "",
         tocClass: "title",
 headerTag: "h3", 
 content: `
@@ -2918,7 +2918,7 @@ content: `
     {
         id: "pati-m-t18", // HTML က ID နဲ့ ကွက်တိ တူရပါမယ်
        title: "၁၅-ဝတ္ထုနာနတ္တဉာဏ် အကျယ်ပြခြင်း",
-        audio: "https://archive.org/download/20260531_20260531_1241/%E1%80%92%E1%80%AF%E1%80%80%E1%80%B9%E1%80%81%E1%80%A1%E1%80%9B%E1%80%AD%E1%80%9A%E1%80%9E%E1%80%85%E1%80%B9%E1%80%85%E1%80%AC.mp3",
+        audio: "",
         tocClass: "title",
        headerTag: "h3", 
         content: `
@@ -2980,7 +2980,7 @@ content: `
     {
         id: "pati-m-t19", // HTML က ID နဲ့ ကွက်တိ တူရပါမယ်
        title: "၁၆-ဂေါစရနာနတ္တဉာဏ် အကျယ်ပြခြင်း",
-        audio: "https://archive.org/download/20260531_20260531_1241/%E1%80%92%E1%80%AF%E1%80%80%E1%80%B9%E1%80%81%E1%80%A1%E1%80%9B%E1%80%AD%E1%80%9A%E1%80%9E%E1%80%85%E1%80%B9%E1%80%85%E1%80%AC.mp3",
+        audio: "",
         tocClass: "title",
       headerTag: "h3", 
         content: `
@@ -3042,7 +3042,7 @@ content: `
     {
         id: "pati-m-t20", // HTML က ID နဲ့ ကွက်တိ တူရပါမယ်
       title: "၁၇-စရိယာနာနတ္တဉာဏ် အကျယ်ပြခြင်း",
-        audio: "https://archive.org/download/20260531_20260531_1241/%E1%80%92%E1%80%AF%E1%80%80%E1%80%B9%E1%80%81%E1%80%A1%E1%80%9B%E1%80%AD%E1%80%9A%E1%80%9E%E1%80%85%E1%80%B9%E1%80%85%E1%80%AC.mp3",
+        audio: "",
         tocClass: "title",
         headerTag: "h3", 
 content: `
@@ -3192,7 +3192,7 @@ content: `
         {
         id: "pati-m-t21", // HTML က ID နဲ့ ကွက်တိ တူရပါမယ်
       title: "၁၈-ဘူမိနာနတ္တဉာဏ် အကျယ်ပြခြင်း",
-        audio: "https://archive.org/download/20260531_20260531_1241/%E1%80%92%E1%80%AF%E1%80%80%E1%80%B9%E1%80%81%E1%80%A1%E1%80%9B%E1%80%AD%E1%80%9A%E1%80%9E%E1%80%85%E1%80%B9%E1%80%85%E1%80%AC.mp3",
+        audio: "",
         tocClass: "title",
         headerTag: "h3", 
 content: `
@@ -3228,7 +3228,7 @@ content: `
 {
         id: "pati-m-t22", // HTML က ID နဲ့ ကွက်တိ တူရပါမယ်
       title: "၁၉-ဓမ္မနာနတ္တဉာဏ် အကျယ်ပြခြင်း",
-        audio: "https://archive.org/download/20260531_20260531_1241/%E1%80%92%E1%80%AF%E1%80%80%E1%80%B9%E1%80%81%E1%80%A1%E1%80%9B%E1%80%AD%E1%80%9A%E1%80%9E%E1%80%85%E1%80%B9%E1%80%85%E1%80%AC.mp3",
+        audio: "",
         tocClass: "title",
         headerTag: "h3", 
 content: `
@@ -3299,7 +3299,7 @@ content: `
 {
         id: "pati-m-t23", // HTML က ID နဲ့ ကွက်တိ တူရပါမယ်
       title: "၂၀-၂၄-ဉာဏပဉ္စက အကျယ်ပြခြင်း",
-        audio: "https://archive.org/download/20260531_20260531_1241/%E1%80%92%E1%80%AF%E1%80%80%E1%80%B9%E1%80%81%E1%80%A1%E1%80%9B%E1%80%AD%E1%80%9A%E1%80%9E%E1%80%85%E1%80%B9%E1%80%85%E1%80%AC.mp3",
+        audio: "",
         tocClass: "title",
         headerTag: "h3", 
 content: ` 
@@ -3327,7 +3327,7 @@ content: `
 {
         id: "pati-m-t24", // HTML က ID နဲ့ ကွက်တိ တူရပါမယ်
       title: "၂၅-၂၈-ပဋိသမ္ဘိဒါဉာဏ် အကျယ်ပြခြင်း",
-        audio: "https://archive.org/download/20260531_20260531_1241/%E1%80%92%E1%80%AF%E1%80%80%E1%80%B9%E1%80%81%E1%80%A1%E1%80%9B%E1%80%AD%E1%80%9A%E1%80%9E%E1%80%85%E1%80%B9%E1%80%85%E1%80%AC.mp3",
+        audio: "",
         tocClass: "title",
         headerTag: "h3", 
 content: ` 
@@ -3430,7 +3430,7 @@ content: `
  {
         id: "pati-m-t25", // HTML က ID နဲ့ ကွက်တိ တူရပါမယ်
       title: "၂၉-၃၁-ဉာဏ်သုံးပါး အကျယ်ပြခြင်း",
-        audio: "https://archive.org/download/20260531_20260531_1241/%E1%80%92%E1%80%AF%E1%80%80%E1%80%B9%E1%80%81%E1%80%A1%E1%80%9B%E1%80%AD%E1%80%9A%E1%80%9E%E1%80%85%E1%80%B9%E1%80%85%E1%80%AC.mp3",
+        audio: "",
         tocClass: "title",
         headerTag: "h3", 
 content: ` 
