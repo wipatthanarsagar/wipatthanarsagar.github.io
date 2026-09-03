@@ -61,6 +61,10 @@ main {
 }
 
 /* Cards */
+.bio-card {
+    margin-top: 50px;
+}
+    
 .bio-card, .focus-card {
     background: var(--card-bg);
     padding: 30px;
