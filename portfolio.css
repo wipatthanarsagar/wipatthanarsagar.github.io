@@ -371,6 +371,7 @@ body.dark-mode .top-bar {
 
 body.dark-mode .brand-title {
   color: #ffffff; /* Dark mode တွင် အဝါရောင် စာသား */
+    font-weight: 500;
 }
 
 /* --- Reading Mode အရောင်ပြောင်းလဲခြင်း --- */
@@ -420,16 +421,33 @@ button:active, a:active {
 
 
 /* ၂။ ခေါင်းစဉ် အလှပြင်ဆင်ခြင်း အစ*/
+
 .section-title {
     font-size: 1.1rem;
     margin: 60px 0 10px 5px;
-    /*border-left: 5px solid #EAB308; /* အဝါရောင် ဘေးလိုင်းလေး */
     padding-left: 12px;
-  background-color:#121212; 
-  border-radius:20px;
-    border: 1px solid rgba(255, 215, 0, 0.3); 
-    margin-top: 100px; 
-color: #EAB308;
-text-align: center;
+    background-color:#ffffff; 
+    border-radius:20px;
+    border: 1px solid #000000; 
+    margin-top: 100px;
+    color: #000000;
+  font-weight: bold;
+    text-align: center;
 }
+
+body.reading-mode .section-title {
+color: #5b4636;
+ background-color: #f4ecd8;
+  border: 1px solid #5b4636; 
+}
+
+body.dark-mode .section-title {
+color: #ffffff;
+ background-color: #000000;
+  border: 0.5px solid #ffffff; 
+  font-weight: 500;
+}
+
+
+
 /* ၂။ ခေါင်းစဉ် အလှပြင်ဆင်ခြင်း အဆုံး*/
