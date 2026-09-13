@@ -1,8 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
-  <!-- အဝါရောင် နောက်ခံ စက်ဝိုင်း -->
-  <circle cx="50" cy="50" r="50" fill="#FFC107"/>
+  <!-- ပင်မ အဝါရောင် နောက်ခံ စက်ဝိုင်း -->
+  <circle cx="50" cy="50" r="50" fill="#EBA818"/>
 
-  <!-- စကားပြော သင်္ကေတ -->
+  <!-- စကားပြော သင်္ကေတ (Speech Bubble Outline) -->
   <path d="M 16 50 
            A 34 34 0 1 1 84 50 
            A 34 34 0 0 1 58 82 
@@ -16,21 +16,26 @@
         stroke-linejoin="miter" 
         stroke-miterlimit="10"/>
 
-  <!-- စကားပြောသင်္ကေတ၏ စက်ဝိုင်းအလယ်ဗဟို (50, 50) တွင် အတိအကျ ညှိထားသော အိုင်ကွန် -->
-  <g transform="translate(50, 50) scale(0.6) translate(-50, -50)" fill="#ffc107" stroke="#ffc107">
-    <!-- အပြင်ဘက် စက်ဝိုင်းကွင်း -->
-    <circle cx="50" cy="50" r="32" fill="none" stroke-width="5.0" />
+  <!-- အလယ်ဗဟို (50, 50) တွင် ညှိထားသော ဓမ္မစက်ဝန်း (Stroke အထူ မျှခြေညှိထားသည်) -->
+  <g transform="translate(50, 50) scale(0.6) translate(-50, -50)" fill="#EBA818" stroke="#EBA818">
     
-    <!-- ဝင်ရိုးချောင်း ၈ ချောင်း -->
-    <g fill="none" stroke-width="5.0" stroke-linecap="round">
-      <path d="M 50,50 L 50,10" />
-      <path d="M 50,50 L 90,50" />
-      <path d="M 50,50 L 50,90" />
-      <path d="M 50,50 L 10,50" />
-      <path d="M 50,50 L 78,22" />
-      <path d="M 50,50 L 78,78" />
-      <path d="M 50,50 L 22,78" />
-      <path d="M 50,50 L 22,22" />
+    <!-- အပြင်ဘက် စက်ဝိုင်းကွင်း (Rim) - Stroke 7.0 (လက်တွေ့ 4.2px) -->
+    <circle cx="50" cy="50" r="32" fill="none" stroke-width="7.0" />
+    
+    <!-- မဂ္ဂင် ၈ ပါး ဝင်ရိုးချောင်းများ - Stroke 6.0 (လက်တွေ့ 3.6px) -->
+    <g fill="none" stroke-width="6.0" stroke-linecap="round">
+      <path d="M 50,50 L 50,18" />
+      <path d="M 50,50 L 82,50" />
+      <path d="M 50,50 L 50,82" />
+      <path d="M 50,50 L 18,50" />
+      <path d="M 50,50 L 72.6,27.4" />
+      <path d="M 50,50 L 72.6,72.6" />
+      <path d="M 50,50 L 27.4,72.6" />
+      <path d="M 50,50 L 27.4,27.4" />
     </g>
+
+    <!-- အလယ် ဗဟို ဝင်ရိုး (Hub) -->
+    <circle cx="50" cy="50" r="7.5" fill="#EBA818" stroke="none" />
+    
   </g>
 </svg>
