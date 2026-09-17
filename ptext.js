@@ -4,7 +4,7 @@ export const ptextChapters = [
     
     {
         id: "paper-b1",
-        title: "သေခြင်းသဘော စာမူ",
+        title: "ဝိပဿနာစကား စာမူ",
         audio: "", // Archive သို့မဟုတ် Repo လင့်ခ် ထည့်ရန်
         headerTag: "h1", // h1, h2, h3 ကြိုက်တာ သုံးနိုင်ပါတယ်
         tocClass: "main-title",
@@ -12,7 +12,7 @@ export const ptextChapters = [
     
     {
         id: "paper-b2",
-        title: "ဝိပဿနာအခြေခံ ☸️",
+        title: "ဝိပဿနာအခြေခံ",
         audio: "", // Archive သို့မဟုတ် Repo လင့်ခ် ထည့်ရန်
         headerTag: "h1", // h1, h2, h3 ကြိုက်တာ သုံးနိုင်ပါတယ်
         tocClass: "main-title",
