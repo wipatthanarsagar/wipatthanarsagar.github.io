@@ -1,7 +1,7 @@
 Body {
   font-family: "Myanmar Text", sans-serif;
   background-color: #ffffff;
-  color: #EAB308; /* စာအဝါ */
+  color: #C49102; /* စာအဝါ */
   margin: 0;
   padding: 0;
 }
@@ -174,13 +174,13 @@ body.reading-mode .fixed-message-btn {
 
 /* စာသားကို Select လုပ်လိုက်တဲ့အခါ ပေါ်မယ့်အရောင် */
 ::selection {
-    background-color: #ffcc00 !important; /* အရှင်ဘုရား ကြိုက်နှစ်သက်သော အဝါရောင် */
+    background-color: #C49102 !important; /* အရှင်ဘုရား ကြိုက်နှစ်သက်သော အဝါရောင် */
     color: #000000 !important;           /* စာလုံးအရောင်ကို အမည်းရောင်ပြောင်းခြင်း */
 }
 
 /* Safari browser အတွက်ပါ ထည့်သွင်းခြင်း */
 ::-moz-selection {
-    background-color: #ffcc00 !important;
+    background-color: #C49102 !important;
     color: #000000 !important;
 }
 
@@ -230,7 +230,7 @@ color: #ffffff;
 /* 📦 အချက်အလက်ပြ ကွက်လပ်တစ်ခုချင်းစီ (1000017054.jpg ပုံစံအတိုင်း) */
 .info-box {
     background-color: #121212; 
-    color: #EAB308;            
+    color: #C49102;            
     padding: 12px 20px;        
     border-radius: 50px; /* ထောင့်ကို အနည်းငယ်ပဲ ဝိုင်းရန် */
     font-size: 15px;           
@@ -314,7 +314,7 @@ color: #ffffff;
     font-weight: bold;         /* စာလုံးကို အထူ (Bold) လုပ်ခြင်း */
     text-align: center;
     color: #000000;            /* စာလုံးအရောင်ကို အဖြူရောင်ပြောင်းခြင်း */
-    background-color: #EAB308; /* စာသားနောက်ခံ */
+    background-color: #C49102; /* စာသားနောက်ခံ */
     border-radius: 50px;       /* ခလုတ်ထောင့်လေးတွေကို ဝိုင်းဝိုင်းလေး ဖြစ်စေရန် */
     display: inline-block;     /* စာသားအကျယ်အတိုင်းပဲ နောက်ခံအရောင်ယူရန် */
     box-shadow: 0 2px 6px rgba(255, 204, 0, 0.3); /* ခလုတ်လေး ကြွနေသတ်ပုံစံ Shadow ထည့်ခြင်း */
