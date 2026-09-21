@@ -406,7 +406,7 @@ body.reading-mode .brand-title {
 /* ၁။ တစ်ကမ္ဘာလုံးရှိ နှိပ်သမျှ အရာအားလုံးအတွက် (Safari အပါအဝင်) */
 * {
     /* ဖုန်းမှာ နှိပ်လိုက်ရင် ပေါ်တဲ့ အပြာရောင်ကို အဝါဖျော့ပြောင်းခြင်း (iOS Safari အတွက် အဓိက) */
-    -webkit-tap-highlight-color: rgba(255, 204, 0, 0.4) !important;
+    -webkit-tap-highlight-color: #C49102 !important;
 }
 
 /* ၂။ Desktop မှာ Tab ခလုတ်နှိပ်လို့ဖြစ်ဖြစ်၊ Mouse နဲ့နှိပ်လို့ဖြစ်ဖြစ် ပေါ်တဲ့ အပြာရောင်ဘောင်ကို ဖျောက်ခြင်း */
@@ -417,7 +417,7 @@ body.reading-mode .brand-title {
 
 /* ၃။ Safari မှာ ခလုတ်တွေ နှိပ်လိုက်တဲ့အခါ အပြာရောင် Highlight ဖြစ်တာကို တားဆီးရန် */
 button:active, a:active {
-    background-color: rgba(255, 204, 0, 0.2) !important;
+    background-color: #C49102 !important;
 }
 
 /* နှိပ်လိုက်ရင် အဝါရောင် ပေါ်ရန် အဆုံး*/
