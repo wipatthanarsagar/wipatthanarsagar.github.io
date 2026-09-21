@@ -25,7 +25,7 @@ content: `
         title: "၁-မဟာဝဂ်",
         audio: "",
         tocClass: "main-title",         
-        headerTag: "h2", 
+        headerTag: "h1", 
 content: ` 
 `
 },  
@@ -213,7 +213,7 @@ content: `
   { id: "pati-nnkh1", // HTML က ID နဲ့ ကွက်တိ တူရပါမယ်
         title: "၁-ဉာဏကထာ",
         audio: "",
-        tocClass: "main-title",         
+        tocClass: "sub-title",         
         headerTag: "h2", 
 content: ` 
 `},
