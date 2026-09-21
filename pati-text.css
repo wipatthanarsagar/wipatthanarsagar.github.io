@@ -424,13 +424,13 @@ body.focus-mode .top-controls {
 
 /* စာသားကို Select လုပ်လိုက်တဲ့အခါ ပေါ်မယ့်အရောင် အစ */
 ::selection {
-    background-color: #ffcc00 !important; /* အရှင်ဘုရား ကြိုက်နှစ်သက်သော အဝါရောင် */
+    background-color: #C49102 !important; /* အရှင်ဘုရား ကြိုက်နှစ်သက်သော အဝါရောင် */
     color: #000000 !important;           /* စာလုံးအရောင်ကို အမည်းရောင်ပြောင်းခြင်း */
 }
 
 /* Safari browser အတွက်ပါ ထည့်သွင်းခြင်း */
 ::-moz-selection {
-    background-color: #ffcc00 !important;
+    background-color: #C49102 !important;
     color: #000000 !important;
 }/* စာသားကို Select လုပ်လိုက်တဲ့အခါ ပေါ်မယ့်အရောင် အဆုံး */
 
@@ -486,16 +486,16 @@ body.focus-mode .top-controls {
 /* ၁။ တစ်ကမ္ဘာလုံးရှိ နှိပ်သမျှ အရာအားလုံးအတွက် (Safari အပါအဝင်) */
 * { /* ဖုန်းမှာ နှိပ်လိုက်ရင် ပေါ်တဲ့ အပြာရောင်ကို အဝါဖျော့ပြောင်းခြင်း (iOS Safari အတွက် အဓိက) */
     -webkit-tap-highlight-color:
-    rgba(255, 204, 0, 0.4) !important;}
+    #C49102 !important;}
 
 /* ၂။ Desktop မှာ Tab ခလုတ်နှိပ်လို့ဖြစ်ဖြစ်၊ Mouse နဲ့နှိပ်လို့ဖြစ်ဖြစ် ပေါ်တဲ့ အပြာရောင်ဘောင်ကို ဖျောက်ခြင်း */
 *:focus {
-    outline: 2px solid #ffcc00 !important; /* အပြာရောင်အစား အဝါရောင်ဘောင်ပြောင်းခြင်း */
+    outline: 2px solid #C49102 !important; /* အပြာရောင်အစား အဝါရောင်ဘောင်ပြောင်းခြင်း */
     outline-offset: 1px;}
 
 /* ၃။ Safari မှာ ခလုတ်တွေ နှိပ်လိုက်တဲ့အခါ အပြာရောင် Highlight ဖြစ်တာကို တားဆီးရန် */
 button:active, a:active {
-    background-color: rgba(255, 204, 0, 0.2) !important;
+    background-color: #C49102 !important;
 }/* နှိပ်လိုက်ရင် အဝါရောင် ပေါ်ရန် အဆုံး*/
 
 /* paper.html ထဲတွင် ဖိထားမှ စာရွေးလိုတဲ့ ကုဒ် အစ*/
