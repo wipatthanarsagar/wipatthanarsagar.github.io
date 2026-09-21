@@ -379,15 +379,15 @@ color: #ffffff;
 
 /* နှိပ်လိုက်ရင် အဝါရောင် ပေါ်ရန် အစ */
 * {
-    -webkit-tap-highlight-color: rgba(255, 204, 0, 0.4) !important;
+    -webkit-tap-highlight-color: #C49102 !important;
 }
 
 *:focus {
-    outline: 2px solid #ffcc00 !important;
+    outline: 2px solid #C49102 !important;
     outline-offset: 1px;
 }
 
 button:active, a:active {
-    background-color: rgba(255, 204, 0, 0.2) !important;
+    background-color: #C49102 !important;
 }
 /* နှိပ်လိုက်ရင် အဝါရောင် ပေါ်ရန် အဆုံး */
