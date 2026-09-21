@@ -15,7 +15,7 @@ content: `
         title: "ပဋိသမ္ဘိဒါမဂ်ပါဠိတော် မြန်မာပြန်",
         audio: "",
         tocClass: "main-title",         
-        headerTag: "h2", 
+        headerTag: "h1", 
 content: ` 
 
 `
