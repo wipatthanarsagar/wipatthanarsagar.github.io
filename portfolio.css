@@ -1,5 +1,5 @@
 :root {
-    --primary-gold: #EAB308; /* အနည်းငယ် နူးညံ့သော ရွှေရောင် */
+    --primary-gold:  #EAB308; /* အနည်းငယ် နူးညံ့သော ရွှေရောင် */
     --bg-dark: #080808;
     --card-bg: rgba(255, 255, 255, 0.03);
     --text-main: #e0e0e0;
@@ -36,8 +36,8 @@ main {
     width: 120px;
     height: 120px;
     margin: 100px auto 20px;
-    border-radius: 50%;
-    border: 1px solid var(--primary-gold);
+  /*  border-radius: 50%;
+    border: 1px solid var(--primary-gold);*/
     padding: 5px;
     display: flex;
     justify-content: center;
@@ -391,13 +391,13 @@ body.reading-mode .brand-title {
 
 /* စာသားကို Select လုပ်လိုက်တဲ့အခါ ပေါ်မယ့်အရောင် အစ */
 ::selection {
-    background-color: #ffcc00 !important; /* အရှင်ဘုရား ကြိုက်နှစ်သက်သော အဝါရောင် */
+    background-color: #C49102 !important; /* အရှင်ဘုရား ကြိုက်နှစ်သက်သော အဝါရောင် */
     color: #000000 !important;           /* စာလုံးအရောင်ကို အမည်းရောင်ပြောင်းခြင်း */
 }
 
 /* Safari browser အတွက်ပါ ထည့်သွင်းခြင်း */
 ::-moz-selection {
-    background-color: #ffcc00 !important;
+    background-color: #C49102 !important;
     color: #000000 !important;
 }
 /* စာသားကို Select လုပ်လိုက်တဲ့အခါ ပေါ်မယ့်အရောင် အဆုံး */
@@ -411,7 +411,7 @@ body.reading-mode .brand-title {
 
 /* ၂။ Desktop မှာ Tab ခလုတ်နှိပ်လို့ဖြစ်ဖြစ်၊ Mouse နဲ့နှိပ်လို့ဖြစ်ဖြစ် ပေါ်တဲ့ အပြာရောင်ဘောင်ကို ဖျောက်ခြင်း */
 *:focus {
-    outline: 2px solid #ffcc00 !important; /* အပြာရောင်အစား အဝါရောင်ဘောင်ပြောင်းခြင်း */
+    outline: 2px solid #C49102 !important; /* အပြာရောင်အစား အဝါရောင်ဘောင်ပြောင်းခြင်း */
     outline-offset: 1px;
 }
 
