@@ -3,10 +3,10 @@
 :root {
   /* White Mode (မူလလက်ရှိအရောင်) */
   --bg-color: #ffffff;
-  --text-color:  #EAB308;
+  --text-color:  #000000;
   --bottom-nav-bg: #ffffff;
   --nav-text: #000000;
-  --accent-gold: #EAB308;
+  --accent-gold: #C49102;
 }
 
 /* 📒 Reading Mode Class */
