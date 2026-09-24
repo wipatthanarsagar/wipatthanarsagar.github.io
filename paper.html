@@ -149,20 +149,30 @@
                     </div>
                 </div>
 
-                <!-- 🌟 Custom Color Feature UI (Added at the bottom of setting body) -->
-                <div class="setting-item-group custom-color-group">
-                    <span class="setting-title2">အရောင်ကိုယ်တိုင်သတ်မှတ်ရန်</span>
-                    <div class="color-input-row">
-                        <input type="text" id="custom-bg-input" placeholder="Bg Hex (#f4ecd8)" />
-                        <input type="text" id="custom-text-input" placeholder="Text Hex (#5b4636)" />
-                    </div>
-                    <div class="color-btn-row">
-                        <button id="custom-confirm-btn" class="preset-btn active-preset">အတည်ပြုမည်</button>
-                        <button id="custom-reset-btn" class="preset-btn">မူလအတိုင်း</button>
-                    </div>
-                    <div id="color-history-container" class="color-history-container"></div>
-                </div>
         
+            <!-- Custom Color Picker Section -->
+            <div class="setting-item-group custom-color-group">
+                <span class="setting-title2">စိတ်ကြိုက်အရောင်ဖန်တီးရန်</span>
+                <div class="color-input-stack">
+                    <div class="color-input-row">
+                        <label for="custom-text-color">စာသားအရောင် (Hex):</label>
+                        <input type="text" id="custom-text-color" placeholder="#5b4636" maxlength="7">
+                    </div>
+                    <div class="color-input-row">
+                        <label for="custom-bg-color">နောက်ခံအရောင် (Hex):</label>
+                        <input type="text" id="custom-bg-color" placeholder="#f4ecd8" maxlength="7">
+                    </div>
+                </div>
+                <div class="color-action-row">
+                    <button id="apply-custom-color" class="preset-btn active-preset">အတည်ပြုမည်</button>
+                    <button id="reset-custom-color" class="preset-btn">မူလအတိုင်း</button>
+                </div>
+                <div class="color-history-section">
+                    <span class="setting-title2" style="font-size:14px !important; margin-top:8px;">မှတ်တမ်းနှင့် အကြိုက်ဆုံးများ</span>
+                    <div id="color-history-container" class="color-history-grid"></div>
+                </div>
+            </div>
+            <!-- End Custom Color Picker Section -->
             </div> 
         </div>
     </div>
