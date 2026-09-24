@@ -14,7 +14,7 @@ let fontResizeObserver = null;
 function buildSemanticParagraphs() {
     let globalIndex = 1;
     
-    // စာတွေ dynamic ဝင်မယ့် အဓိက Container နှင့် မာတိကာ Container ကို ဖမ်းယူခြင်း
+    // စာသားတွေ dynamic ဝင်မယ့် အဓိက Container နှင့် မာတိကာ Container ကို ဖမ်းယူခြင်း
     const container = document.getElementById('js-audio-chapters-container') || document.querySelector('.audio-chapters-list');
     const tocList = document.getElementById('toc-list');
     
@@ -430,6 +430,41 @@ function init() {
     }
     renderWeight();
     
+    /* ===== TEXT ALIGN SYSTEM INIT ===== */
+    const alignLeftBtn = document.getElementById('align-left-btn');
+    const alignJustifyBtn = document.getElementById('align-justify-btn');
+    const savedTextAlign = localStorage.getItem('userTextAlign') || 'left';
+
+    const applyTextAlign = (alignMode) => {
+        if (alignMode === 'justify') {
+            document.body.classList.add('text-align-justify');
+            if (alignLeftBtn) alignLeftBtn.classList.remove('active-preset');
+            if (alignJustifyBtn) alignJustifyBtn.classList.add('active-preset');
+        } else {
+            document.body.classList.remove('text-align-justify');
+            if (alignLeftBtn) alignLeftBtn.classList.add('active-preset');
+            if (alignJustifyBtn) alignJustifyBtn.classList.remove('active-preset');
+        }
+        localStorage.setItem('userTextAlign', alignMode);
+    };
+
+    applyTextAlign(savedTextAlign);
+
+    if (alignLeftBtn) {
+        alignLeftBtn.onclick = () => {
+            saveReadingPosition();
+            applyTextAlign('left');
+            triggerLayoutObserver();
+        };
+    }
+    if (alignJustifyBtn) {
+        alignJustifyBtn.onclick = () => {
+            saveReadingPosition();
+            applyTextAlign('justify');
+            triggerLayoutObserver();
+        };
+    }
+    
     /* ===== LAST READ ===== */
     saveCurrentPage();
     showLastReadLink();
@@ -613,7 +648,7 @@ function init() {
     }, 100);
 }
 
-// 🌟 Custom Color Picker Feature Implementation Logic (Hex & RGB Support Added)
+// 🌟 Custom Color Picker Feature Implementation Logic (Hex & RGB Support Added with Refined UI/UX)
 function initCustomColorFeature() {
     const textColorInput = document.getElementById('custom-text-color');
     const bgColorInput = document.getElementById('custom-bg-color');
@@ -656,29 +691,28 @@ function initCustomColorFeature() {
             chip.className = 'color-chip';
 
             chip.innerHTML = `
-                <div class="color-chip-top" data-action="apply">
-                    <div class="color-preview-group">
-                        <div class="color-preview-item">
-                            <span>စာသား:</span>
-                            <div class="color-preview-box" style="background:${item.text};"></div>
-                        </div>
-                        <div class="color-preview-item">
-                            <span>နောက်ခံ:</span>
-                            <div class="color-preview-box" style="background:${item.bg};"></div>
-                        </div>
+                <div class="color-chip-preview-row">
+                    <div class="color-preview-box" style="color: ${item.text}; background: ${item.bg};" title="စာသားအရောင်">စာ</div>
+                    <div class="color-preview-box" style="color: #443300; background: ${item.bg};" title="နောက်ခံအရောင်">နောက်</div>
+                    <div class="color-chip-details">
+                        <span>စာသား: ${item.text}</span>
+                        <span>နောက်ခံ: ${item.bg}</span>
                     </div>
                 </div>
-                <div class="color-chip-bottom">
-                    <div class="color-chip-actions">
-                        <button class="color-chip-btn fav-btn" title="အကြိုက်ဆုံးအဖြစ်မှတ်ရန်">${item.favorite ? '★ အကြိုက်ဆုံး' : '☆ အကြိုက်ဆုံး'}</button>
+                <div class="color-chip-actions">
+                    <div class="color-chip-left-actions">
+                        <button class="color-chip-btn use-btn">သုံးရန်</button>
+                        <button class="color-chip-btn fav-btn" title="အကြိုက်ဆုံးအဖြစ်မှတ်ရန်">${item.favorite ? '★' : '☆'}</button>
+                    </div>
+                    <div class="delete-container">
                         <button class="color-chip-btn del-btn" title="ဖျက်ရန်">🗑 ဖျက်ရန်</button>
                     </div>
                 </div>
-                <div class="delete-container" style="display:none;"></div>
+                <div class="delete-confirm-slot"></div>
             `;
 
-            // Click chip top area to apply color
-            chip.querySelector('.color-chip-top').onclick = () => {
+            // "သုံးရန်" ခလုတ်ကို နှိပ်၍ အရောင်အသုံးပြုခြင်း
+            chip.querySelector('.use-btn').onclick = () => {
                 textColorInput.value = item.text;
                 bgColorInput.value = item.bg;
                 applyColors(item.text, item.bg);
@@ -695,32 +729,28 @@ function initCustomColorFeature() {
                 saveAndRender();
             };
 
-            // Delete with inline UI confirmation below buttons
+            // Delete with inline UI confirmation below the buttons (No side-scrolling issue)
             const delBtn = chip.querySelector('.del-btn');
-            const delContainer = chip.querySelector('.delete-container');
-            const chipActions = chip.querySelector('.color-chip-actions');
-
+            const confirmSlot = chip.querySelector('.delete-confirm-slot');
             delBtn.onclick = (e) => {
                 e.stopPropagation();
-                chipActions.style.display = 'none';
-                delContainer.style.display = 'block';
-                delContainer.innerHTML = `
+                confirmSlot.innerHTML = `
                     <div class="delete-confirm-box">
-                        <span>သေချာပြီလား?</span>
-                        <div class="delete-confirm-btns">
+                        <span>ဒီအရောင်မှတ်တမ်းကို ဖျက်မှာ သေချာပြီလား?</span>
+                        <div class="delete-confirm-buttons">
                             <button class="yes-del">ဖျက်မည်</button>
                             <button class="no-del">မဖျက်</button>
                         </div>
                     </div>
                 `;
-                delContainer.querySelector('.yes-del').onclick = (ev) => {
+                confirmSlot.querySelector('.yes-del').onclick = (ev) => {
                     ev.stopPropagation();
                     history.splice(index, 1);
                     saveAndRender();
                 };
-                delContainer.querySelector('.no-del').onclick = (ev) => {
+                confirmSlot.querySelector('.no-del').onclick = (ev) => {
                     ev.stopPropagation();
-                    renderChips();
+                    confirmSlot.innerHTML = '';
                 };
             };
 
