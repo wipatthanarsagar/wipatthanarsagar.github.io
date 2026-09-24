@@ -410,147 +410,6 @@ function changeWeight(amount) {
     }
 }
 
-/* == 🌟 CUSTOM COLOR PICKER & HISTORY SYSTEM == */
-const HEX_REGEX = /^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/;
-
-function applyCustomColors(textColor, bgColor, saveToHistory = true) {
-    const contentArea = document.getElementById('reading-content');
-    if (contentArea) {
-        contentArea.style.color = textColor;
-    }
-    document.body.style.backgroundColor = bgColor;
-    
-    // Dark/Reading mode overrides ကို တားဆီးရန် Flag သတ်မှတ်ခြင်း
-    window.__customColorActive = true;
-    localStorage.setItem('customColorActive', 'true');
-    localStorage.setItem('customTextColor', textColor);
-    localStorage.setItem('customBgColor', bgColor);
-
-    if (saveToHistory) {
-        addColorHistory(textColor, bgColor);
-    }
-}
-
-function loadSavedCustomColors() {
-    const isActive = localStorage.getItem('customColorActive');
-    if (isActive === 'true') {
-        const textCol = localStorage.getItem('customTextColor');
-        const bgCol = localStorage.getItem('customBgColor');
-        if (textCol && bgCol) {
-            const contentArea = document.getElementById('reading-content');
-            if (contentArea) contentArea.style.color = textCol;
-            document.body.style.backgroundColor = bgCol;
-            window.__customColorActive = true;
-            
-            const txtInput = document.getElementById('custom-text-color');
-            const bgInput = document.getElementById('custom-bg-color');
-            if (txtInput) txtInput.value = textCol;
-            if (bgInput) bgInput.value = bgCol;
-        }
-    }
-    renderColorHistory();
-}
-
-function addColorHistory(textColor, bgColor) {
-    let history = JSON.parse(localStorage.getItem('colorHistoryList')) || [];
-    // ထပ်နေတာရှိရင် ဖယ်မယ်
-    history = history.filter(item => !(item.textColor === textColor && item.bgColor === bgColor));
-    
-    history.unshift({
-        textColor: textColor,
-        bgColor: bgColor,
-        favorite: false
-    });
-
-    // မူလ History ၅ ခုထိန်းသိမ်းရန် (Favorite ပါလျှင် မဖျက်ဘဲ ဆက်ထားမည်)
-    let favorites = history.filter(item => item.favorite);
-    let nonFavorites = history.filter(item => !item.favorite);
-
-    if (nonFavorites.length > 5) {
-        nonFavorites = nonFavorites.slice(0, 5);
-    }
-    
-    localStorage.setItem('colorHistoryList', JSON.stringify([...favorites, ...nonFavorites]));
-    renderColorHistory();
-}
-
-function renderColorHistory() {
-    const container = document.getElementById('color-chips-list');
-    if (!container) return;
-    container.innerHTML = '';
-
-    let history = JSON.parse(localStorage.getItem('colorHistoryList')) || [];
-    if (history.length === 0) {
-        container.innerHTML = '<span style="font-size:12px; color:#443300; text-align:center; display:block;">မှတ်သားထားသော အရောင်များ မရှိသေးပါ</span>';
-        return;
-    }
-
-    history.forEach((item, index) => {
-        const chip = document.createElement('div');
-        chip.className = 'color-chip-item';
-        chip.style.backgroundColor = item.bgColor;
-        chip.style.color = item.textColor;
-
-        chip.innerHTML = `
-            <div class="color-chip-info">
-                <div class="color-preview-box" style="background:${item.bgColor}; color:${item.textColor}; border-color:${item.textColor};"></div>
-                <span>စာ: ${item.textColor} | နောက်: ${item.bgColor}</span>
-            </div>
-            <div class="color-chip-actions">
-                <button class="fav-btn" title="Favorite">${item.favorite ? '★' : '☆'}</button>
-                <button class="del-btn" title="Delete">🗑</button>
-            </div>
-        `;
-
-        // Chip ကို နှိပ်လျှင် အရောင် ತန်းပြောင်းရန်
-        chip.querySelector('.color-chip-info').onclick = () => {
-            const txtInput = document.getElementById('custom-text-color');
-            const bgInput = document.getElementById('custom-bg-color');
-            if (txtInput) txtInput.value = item.textColor;
-            if (bgInput) bgInput.value = item.bgColor;
-            applyCustomColors(item.textColor, item.bgColor, false);
-        };
-
-        // Favorite ခလုတ်
-        chip.querySelector('.fav-btn').onclick = (e) => {
-            e.stopPropagation();
-            history[index].favorite = !history[index].favorite;
-            localStorage.setItem('colorHistoryList', JSON.stringify(history));
-            renderColorHistory();
-        };
-
-        // Delete ခလုတ် (Confirmation ပါဝင်သည်)
-        chip.querySelector('.del-btn').onclick = (e) => {
-            e.stopPropagation();
-            if (confirm('ဤအရောင်ကို ဖျက်ရန် သေချာပါသလား?')) {
-                history.splice(index, 1);
-                localStorage.setItem('colorHistoryList', JSON.stringify(history));
-                renderColorHistory();
-            }
-        };
-
-        container.appendChild(chip);
-    });
-}
-
-function resetCustomColors() {
-    localStorage.removeItem('customColorActive');
-    localStorage.removeItem('customTextColor');
-    localStorage.removeItem('customBgColor');
-    window.__customColorActive = false;
-
-    const txtInput = document.getElementById('custom-text-color');
-    const bgInput = document.getElementById('custom-bg-color');
-    if (txtInput) txtInput.value = '';
-    if (bgInput) bgInput.value = '';
-
-    // မူလ Dark/Light/Reading Mode အခြေအနေသို့ ပြန်လည်သက်ရောက်စေရန်
-    const contentArea = document.getElementById('reading-content');
-    if (contentArea) contentArea.style.color = '';
-    document.body.style.backgroundColor = '';
-    location.reload();
-}
-
 /* == MAIN INIT == */
 function init() {
     const article = document.querySelector('article');
@@ -585,34 +444,6 @@ function init() {
         currentWeight = parseInt(savedFW);
     }
     renderWeight();
-    
-    // Custom Color ကို စတင်ချိန်တွင် စစ်ဆေးတင်ခြင်း
-    loadSavedCustomColors();
-
-    /* ===== CUSTOM COLOR EVENT LISTENERS ===== */
-    const applyBtn = document.getElementById('apply-custom-color');
-    const resetBtn = document.getElementById('reset-custom-color');
-    
-    if (applyBtn) {
-        applyBtn.onclick = () => {
-            const txtInput = document.getElementById('custom-text-color');
-            const bgInput = document.getElementById('custom-bg-color');
-            const txtVal = txtInput ? txtInput.value.trim() : '';
-            const bgVal = bgInput ? bgInput.value.trim() : '';
-
-            if (!HEX_REGEX.test(txtVal) || !HEX_REGEX.test(bgVal)) {
-                alert('ကျေးဇူးပြု၍ မှန်ကန်သော Hex Color ကုဒ်များ (ဥပမာ - #5b4636 သို့မဟုတ် #fff) ကို ထည့်သွင်းပေးပါ။');
-                return;
-            }
-            applyCustomColors(txtVal, bgVal, true);
-        };
-    }
-
-    if (resetBtn) {
-        resetBtn.onclick = () => {
-            resetCustomColors();
-        };
-    }
     
     /* ===== LAST READ ===== */
     saveCurrentPage();
@@ -787,11 +618,165 @@ function init() {
             }
         });
     }
+
+    // 🌟 Custom Hex Color Feature Initialization & Logic
+    initCustomColorFeature();
     
     // 🌟 အားလုံးပြီးဆုံးကြောင်း အချက်ပေးခြင်း (Auto Play အတွက်)
     setTimeout(() => {
         document.dispatchEvent(new Event('paperReady'));
     }, 100);
+}
+
+// 🌟 Custom Color Picker Feature Implementation Logic
+function initCustomColorFeature() {
+    const textColorInput = document.getElementById('custom-text-color');
+    const bgColorInput = document.getElementById('custom-bg-color');
+    const confirmBtn = document.getElementById('color-confirm-btn');
+    const resetBtn = document.getElementById('color-reset-btn');
+    const chipsList = document.getElementById('color-chips-list');
+
+    if (!textColorInput || !bgColorInput || !confirmBtn || !resetBtn || !chipsList) return;
+
+    let history = JSON.parse(localStorage.getItem('customColorHistory')) || [];
+
+    const applyColors = (textHex, bgHex) => {
+        // Darkmode override guard: mark custom color active so darkmode/readingmode classes won't overwrite inline styles
+        document.body.setAttribute('data-custom-color', 'true');
+        
+        document.body.style.backgroundColor = bgHex;
+        const article = document.querySelector('article');
+        if (article) {
+            article.style.color = textHex;
+            const headers = article.querySelectorAll('h1, h2, h3, p');
+            headers.forEach(el => el.style.color = textHex);
+        }
+        localStorage.setItem('userCustomTextHex', textHex);
+        localStorage.setItem('userCustomBgHex', bgHex);
+    };
+
+    // Load saved custom colors if exist
+    const savedTextHex = localStorage.getItem('userCustomTextHex');
+    const savedBgHex = localStorage.getItem('userCustomBgHex');
+    if (savedTextHex && savedBgHex) {
+        textColorInput.value = savedTextHex;
+        bgColorInput.value = savedBgHex;
+        applyColors(savedTextHex, savedBgHex);
+    }
+
+    const renderChips = () => {
+        chipsList.innerHTML = '';
+        history.forEach((item, index) => {
+            const chip = document.createElement('div');
+            chip.className = 'color-chip';
+            chip.style.backgroundColor = item.bg;
+            chip.style.color = item.text;
+
+            chip.innerHTML = `
+                <div class="color-chip-info" data-action="apply">
+                    <div class="color-preview-box" style="background:${item.bg}; color:${item.text}; border-color:${item.text};"></div>
+                    <span>T:${item.text} | B:${item.bg}</span>
+                </div>
+                <div class="color-chip-actions">
+                    <button class="color-chip-btn fav-btn" title="အကြိုက်ဆုံးအဖြစ်မှတ်ရန်">${item.favorite ? '★' : '☆'}</button>
+                    <div class="delete-container" style="display:inline-block;">
+                        <button class="color-chip-btn del-btn" title="ဖျက်ရန်">🗑</button>
+                    </div>
+                </div>
+            `;
+
+            // Click chip info to apply color
+            chip.querySelector('.color-chip-info').onclick = () => {
+                textColorInput.value = item.text;
+                bgColorInput.value = item.bg;
+                applyColors(item.text, item.bg);
+            };
+
+            // Favorite toggle
+            chip.querySelector('.fav-btn').onclick = (e) => {
+                e.stopPropagation();
+                item.favorite = !item.favorite;
+                saveAndRender();
+            };
+
+            // Delete with inline UI confirmation (No alert box)
+            const delBtn = chip.querySelector('.del-btn');
+            const delContainer = chip.querySelector('.delete-container');
+            delBtn.onclick = (e) => {
+                e.stopPropagation();
+                delContainer.innerHTML = `
+                    <div class="delete-confirm-box">
+                        <span>သေချာပြီလား?</span>
+                        <button class="yes-del">ဖျက်မည်</button>
+                        <button class="no-del">မဖျက်</button>
+                    </div>
+                `;
+                delContainer.querySelector('.yes-del').onclick = (ev) => {
+                    ev.stopPropagation();
+                    history.splice(index, 1);
+                    saveAndRender();
+                };
+                delContainer.querySelector('.no-del').onclick = (ev) => {
+                    ev.stopPropagation();
+                    renderChips();
+                };
+            };
+
+            chipsList.appendChild(chip);
+        });
+    };
+
+    const saveAndRender = () => {
+        // Keep favorites and limit non-favorites to max 5
+        let favs = history.filter(h => h.favorite);
+        let nonFavs = history.filter(h => !h.favorite);
+        if (nonFavs.length > 5) {
+            nonFavs = nonFavs.slice(nonFavs.length - 5);
+        }
+        history = [...favs, ...nonFavs];
+        localStorage.setItem('customColorHistory', JSON.stringify(history));
+        renderChips();
+    };
+
+    confirmBtn.onclick = () => {
+        const textVal = textColorInput.value.trim();
+        const bgVal = bgColorInput.value.trim();
+        const hexRegex = /^#([0-9A-F]{3}){1,2}$/i;
+
+        if (!hexRegex.test(textVal) || !hexRegex.test(bgVal)) {
+            return;
+        }
+
+        applyColors(textVal, bgVal);
+
+        // Add to history if not exact duplicate
+        const exists = history.some(h => h.text.toLowerCase() === textVal.toLowerCase() && h.bg.toLowerCase() === bgVal.toLowerCase());
+        if (!exists) {
+            history.unshift({ text: textVal, bg: bgVal, favorite: false });
+            saveAndRender();
+        }
+    };
+
+    resetBtn.onclick = () => {
+        document.body.removeAttribute('data-custom-color');
+        localStorage.removeItem('userCustomTextHex');
+        localStorage.removeItem('userCustomBgHex');
+        textColorInput.value = '';
+        bgColorInput.value = '';
+        document.body.style.backgroundColor = '';
+        const article = document.querySelector('article');
+        if (article) {
+            article.style.color = '';
+            article.querySelectorAll('h1, h2, h3, p').forEach(el => el.style.color = '');
+        }
+        // Re-trigger darkmode/readingmode state
+        if (typeof setIconAndStatusBar === 'function') {
+            // standard reload or let darkmode handle
+        }
+        location.reload();
+    };
+
+    renderChips();
 }
 
 /* ===== EXPORT FUNCTIONS TO GLOBAL WINDOW ===== */
