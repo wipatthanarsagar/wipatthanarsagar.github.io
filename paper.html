@@ -149,23 +149,18 @@
                     </div>
                 </div>
 
-                <!-- 🌟 ချိန်ညှိချက်များ (Setting) ၏ အောက်ဆုံးတွင် ထည့်သွင်းထားသော စာသားနှင့်နောက်ခံ အရောင်ပြင်ဆင်သည့်စနစ် -->
-                <div class="setting-item-group color-customizer-group">
-                    <span class="setting-title2">စာသားနှင့် နောက်ခံအရောင် (Hex)</span>
-                    <div class="color-input-wrapper">
-                        <input type="text" id="textColorInput" placeholder="စာသား (ဥပမာ: #000000)">
-                        <input type="text" id="bgColorInput" placeholder="နောက်ခံ (ဥပမာ: #ffffff)">
+                <!-- 🌟 Setting Menu အောက်ဆုံးခလုတ်၏ အောက်တွင် ထည့်သွင်းထားသော Custom Color/Highlight Feature -->
+                <div class="setting-item-group custom-color-group">
+                    <span class="setting-title2">စာဖတ်ခန်း အရောင်ညှိရန်</span>
+                    <div class="color-picker-row">
+                        <label for="custom-bg-picker">နောက်ခံအရောင်:</label>
+                        <input type="color" id="custom-bg-picker" value="#f4ecd8">
                     </div>
-                    <div class="color-action-btns">
-                        <button id="colorConfirmBtn" class="preset-btn active-preset">Confirm</button>
-                        <button id="colorResetBtn" class="preset-btn">Reset</button>
+                    <div class="color-picker-row">
+                        <label for="custom-text-picker">စာသားအရောင်:</label>
+                        <input type="color" id="custom-text-picker" value="#5b4636">
                     </div>
-                    <div id="colorErrorMsg" class="color-error-text"></div>
-                    
-                    <div class="color-history-section">
-                        <span class="history-label">မှတ်တမ်းအရောင်များ (၅ ခု)</span>
-                        <div id="colorHistoryList" class="color-chips-container"></div>
-                    </div>
+                    <button class="setting-item" id="reset-custom-color-btn" style="margin-top: 8px;">မူလအရောင်သို့ ပြန်ထားရန်</button>
                 </div>
         
             </div> 
