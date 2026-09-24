@@ -726,75 +726,44 @@ article {
     margin-bottom: 30px !important;
 }
 
-/* 🌟 Custom Color Picker UI Styles အသစ် */
-.custom-color-section {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.color-input-stack {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    margin-bottom: 5px;
-}
-
-.color-field-row {
+/* 🌟 Custom Color Picker UI Styles */
+.custom-color-section .color-input-wrapper {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 4px;
+    margin-bottom: 10px;
 }
-
-.color-field-row label {
+.custom-color-section .color-input-wrapper label {
     font-size: 13px;
     font-weight: bold;
     color: #443300;
 }
-
-.color-field-row input {
+.custom-color-section .color-input-wrapper input {
     width: 100%;
-    padding: 8px 10px;
-    background: #f4ecd8;
+    padding: 8px 12px;
     border: 1px solid #443300;
     border-radius: 6px;
+    background: #f4ecd8;
     color: #443300;
-    font-weight: bold;
     font-size: 14px;
     box-sizing: border-box;
     outline: none;
 }
-
-.color-action-btns {
+.color-action-group {
     display: flex;
     gap: 8px;
-    justify-content: center;
-    margin-bottom: 10px;
+    margin-top: 10px;
 }
-
-.color-action-btns button {
-    flex: 1;
-    padding: 8px;
-    font-size: 14px;
-}
-
-.setting-title3 {
-    display: block;
-    font-size: 13px;
-    font-weight: bold;
-    color: #443300;
-    margin-bottom: 6px;
-    text-align: left;
-}
-
-.color-chips-grid {
+.color-chips-list {
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: 8px;
+    margin-top: 8px;
+    max-height: 160px;
+    overflow-y: auto;
 }
-
-.color-chip-item {
+.color-chip {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -802,38 +771,49 @@ article {
     border-radius: 6px;
     border: 1px solid #443300;
     cursor: pointer;
+    font-size: 12px;
+    font-weight: bold;
     transition: 0.2s;
 }
-
 .color-chip-info {
     display: flex;
     align-items: center;
-    gap: 8px;
-    font-size: 12px;
-    font-weight: bold;
+    gap: 6px;
+    flex-grow: 1;
 }
-
 .color-preview-box {
-    width: 20px;
-    height: 20px;
-    border-radius: 4px;
+    width: 18px;
+    height: 18px;
+    border-radius: 3px;
     border: 1px solid #443300;
 }
-
 .color-chip-actions {
     display: flex;
     gap: 6px;
+    align-items: center;
 }
-
-.color-chip-actions button {
+.color-chip-btn {
     background: none;
     border: none;
     cursor: pointer;
     font-size: 14px;
     padding: 2px 4px;
-    border-radius: 4px;
+    color: #443300;
 }
-
-.color-chip-actions button:hover {
-    background: rgba(68, 51, 0, 0.1);
+.delete-confirm-box {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    background: #dcd0b2;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 11px;
+}
+.delete-confirm-box button {
+    background: #443300;
+    color: #f4ecd8;
+    border: none;
+    padding: 1px 4px;
+    border-radius: 3px;
+    cursor: pointer;
 }
