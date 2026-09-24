@@ -726,40 +726,61 @@ article {
     margin-bottom: 30px !important;
 }
 
-/* 🌟 Custom Color Feature Styles */
+/* Custom Color Picker Styles */
+.custom-color-group .color-input-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
 .custom-color-group .color-input-row {
     display: flex;
-    gap: 8px;
-    margin-bottom: 8px;
+    flex-direction: column;
+    gap: 4px;
+    text-align: left;
 }
+
+.custom-color-group .color-input-row label {
+    font-size: 13px;
+    font-weight: bold;
+    color: #443300;
+}
+
 .custom-color-group .color-input-row input {
-    flex: 1;
-    padding: 8px;
+    width: 100%;
+    padding: 8px 10px;
     border: 1px solid #443300;
     border-radius: 6px;
     background: #f4ecd8;
     color: #443300;
+    font-weight: bold;
     font-size: 14px;
-    outline: none;
-    text-align: center;
+    box-sizing: border-box;
 }
-.custom-color-group .color-btn-row {
+
+.custom-color-group .color-action-row {
     display: flex;
     gap: 8px;
+    justify-content: center;
+    margin-bottom: 12px;
 }
-.custom-color-group .color-btn-row button {
+
+.custom-color-group .color-action-row button {
     flex: 1;
-    margin: 0;
-    padding: 8px;
+    padding: 8px 10px;
     font-size: 14px;
 }
-.color-history-container {
+
+.color-history-grid {
     display: flex;
-    flex-direction: column;
-    gap: 6px;
-    margin-top: 10px;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    margin-top: 6px;
 }
-.color-history-item {
+
+.color-chip {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -767,18 +788,25 @@ article {
     border-radius: 6px;
     border: 1px solid #443300;
     cursor: pointer;
-    font-size: 13px;
+    font-size: 12px;
     font-weight: bold;
+    min-width: 90px;
+    transition: transform 0.15s ease;
 }
-.color-history-actions {
+
+.color-chip:hover {
+    transform: scale(1.03);
+}
+
+.color-chip-actions {
     display: flex;
-    gap: 6px;
+    gap: 4px;
     align-items: center;
+    margin-left: 6px;
 }
-.color-history-actions button {
-    background: none;
-    border: none;
+
+.color-chip-actions span {
     cursor: pointer;
     font-size: 14px;
-    padding: 2px 4px;
+    padding: 0 2px;
 }
