@@ -14,7 +14,7 @@ let fontResizeObserver = null;
 function buildSemanticParagraphs() {
     let globalIndex = 1;
     
-    // စာသားတွေ dynamic ဝင်မယ့် အဓိက Container နှင့် မာတိကာ Container ကို ဖမ်းယူခြင်း
+    // စာတွေ dynamic ဝင်မယ့် အဓိက Container နှင့် မာတိကာ Container ကို ဖမ်းယူခြင်း
     const container = document.getElementById('js-audio-chapters-container') || document.querySelector('.audio-chapters-list');
     const tocList = document.getElementById('toc-list');
     
@@ -410,6 +410,107 @@ function changeWeight(amount) {
     }
 }
 
+/* 🌟 Custom Color Feature Logic */
+function initCustomColorFeature() {
+    const bgInput = document.getElementById('custom-bg-input');
+    const textInput = document.getElementById('custom-text-input');
+    const confirmBtn = document.getElementById('custom-confirm-btn');
+    const resetBtn = document.getElementById('custom-reset-btn');
+    const historyContainer = document.getElementById('color-history-container');
+
+    if (!bgInput || !textInput || !confirmBtn || !resetBtn || !historyContainer) return;
+
+    let history = JSON.parse(localStorage.getItem('customColorHistory')) || [];
+
+    function applyCustomColors(bgColor, textColor) {
+        document.documentElement.style.setProperty('--bg-color', bgColor);
+        document.documentElement.style.setProperty('--text-color', textColor);
+        
+        const contentArea = document.querySelector('.content-area');
+        if (contentArea) {
+            contentArea.style.backgroundColor = bgColor;
+            contentArea.style.color = textColor;
+        }
+        document.body.style.backgroundColor = bgColor;
+        document.body.style.color = textColor;
+    }
+
+    // Load saved custom color if exists
+    const activeCustom = JSON.parse(localStorage.getItem('activeCustomColor'));
+    if (activeCustom) {
+        applyCustomColors(activeCustom.bg, activeCustom.text);
+    }
+
+    function renderHistory() {
+        historyContainer.innerHTML = '';
+        history.forEach((item, index) => {
+            const row = document.createElement('div');
+            row.className = 'color-history-item';
+            row.style.backgroundColor = item.bg;
+            row.style.color = item.text;
+            row.innerHTML = `
+                <span>Bg: ${item.bg} | Text: ${item.text}</span>
+                <div class="color-history-actions" onclick="event.stopPropagation()">
+                    <button class="fav-btn" title="Favorite">${item.isFav ? '★' : '☆'}</button>
+                    <button class="del-btn" title="Delete">🗑</button>
+                </div>
+            `;
+
+            row.addEventListener('click', () => {
+                applyCustomColors(item.bg, item.text);
+                localStorage.setItem('activeCustomColor', JSON.stringify(item));
+            });
+
+            row.querySelector('.fav-btn').addEventListener('click', () => {
+                item.isFav = !item.isFav;
+                localStorage.setItem('customColorHistory', JSON.stringify(history));
+                renderHistory();
+            });
+
+            row.querySelector('.del-btn').addEventListener('click', () => {
+                history.splice(index, 1);
+                localStorage.setItem('customColorHistory', JSON.stringify(history));
+                renderHistory();
+            });
+
+            historyContainer.appendChild(row);
+        });
+    }
+
+    renderHistory();
+
+    confirmBtn.addEventListener('click', () => {
+        const bg = bgInput.value.trim();
+        const text = textInput.value.trim();
+        const hexRegex = /^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/;
+
+        if (!hexRegex.test(bg) || !hexRegex.test(text)) {
+            alert('ကျေးဇူးပြု၍ မှန်ကန်သော Hex Code ထည့်ပါ (ဥပမာ - #ffffff)');
+            return;
+        }
+
+        applyCustomColors(bg, text);
+        const newEntry = { bg, text, isFav: false };
+        localStorage.setItem('activeCustomColor', JSON.stringify(newEntry));
+
+        // Add to history (limit un-favorited items to 5)
+        history.unshift(newEntry);
+        let nonFavs = history.filter(h => !h.isFav);
+        let favs = history.filter(h => h.isFav);
+        if (nonFavs.length > 5) {
+            nonFavs = nonFavs.slice(0, 5);
+        }
+        history = [...favs, ...nonFavs];
+        localStorage.setItem('customColorHistory', JSON.stringify(history));
+        renderHistory();
+    });
+
+    resetBtn.addEventListener('click', () => {
+        localStorage.removeItem('activeCustomColor');
+        location.reload();
+    });
+}
+
 /* == MAIN INIT == */
 function init() {
     const article = document.querySelector('article');
@@ -618,50 +719,14 @@ function init() {
             }
         });
     }
-
-    /* ===== CUSTOM COLOR PICKER SYSTEM (Dark/Reading Mode ကို မထိခိုက်စေရန် စနစ်ထည့်သွင်းခြင်း) ===== */
-    const bgPicker = document.getElementById('custom-bg-picker');
-    const textPicker = document.getElementById('custom-text-picker');
-    const resetColorBtn = document.getElementById('reset-custom-color-btn');
-
-    // သိမ်းထားသော Custom အရောင်များကို ပြန်ဖော်ရန်
-    const savedCustomBg = localStorage.getItem('userCustomBg');
-    const savedCustomText = localStorage.getItem('userCustomText');
-
-    if (savedCustomBg && savedCustomText) {
-        document.documentElement.style.setProperty('--bg-color', savedCustomBg);
-        document.documentElement.style.setProperty('--text-color', savedCustomText);
-        if (bgPicker) bgPicker.value = savedCustomBg;
-        if (textPicker) textPicker.value = savedCustomText;
-    }
-
-    if (bgPicker && textPicker) {
-        bgPicker.addEventListener('input', (e) => {
-            const val = e.target.value;
-            document.documentElement.style.setProperty('--bg-color', val);
-            localStorage.setItem('userCustomBg', val);
-        });
-
-        textPicker.addEventListener('input', (e) => {
-            const val = e.target.value;
-            document.documentElement.style.setProperty('--text-color', val);
-            localStorage.setItem('userCustomText', val);
-        });
-    }
-
-    if (resetColorBtn) {
-        resetColorBtn.addEventListener('click', () => {
-            localStorage.removeItem('userCustomBg');
-            localStorage.removeItem('userCustomText');
-            // မူလ darkmode.js ရဲ့ စနစ်အတိုင်း Mode အလိုက် အရောင်ပြန်လည်သက်ရောက်စေရန် Reload လုပ်ပေးခြင်း
-            location.reload();
-        });
-    }
     
     // 🌟 အားလုံးပြီးဆုံးကြောင်း အချက်ပေးခြင်း (Auto Play အတွက်)
     setTimeout(() => {
         document.dispatchEvent(new Event('paperReady'));
     }, 100);
+
+    // Initialize Custom Color Feature
+    initCustomColorFeature();
 }
 
 /* ===== EXPORT FUNCTIONS TO GLOBAL WINDOW ===== */
