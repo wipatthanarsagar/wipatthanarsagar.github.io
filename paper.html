@@ -149,18 +149,18 @@
                     </div>
                 </div>
 
-                <!-- 🌟 Setting Menu အောက်ဆုံးခလုတ်၏ အောက်တွင် ထည့်သွင်းထားသော Custom Color/Highlight Feature -->
+                <!-- 🌟 Custom Color Feature UI (Added at the bottom of setting body) -->
                 <div class="setting-item-group custom-color-group">
-                    <span class="setting-title2">စာဖတ်ခန်း အရောင်ညှိရန်</span>
-                    <div class="color-picker-row">
-                        <label for="custom-bg-picker">နောက်ခံအရောင်:</label>
-                        <input type="color" id="custom-bg-picker" value="#f4ecd8">
+                    <span class="setting-title2">အရောင်ကိုယ်တိုင်သတ်မှတ်ရန်</span>
+                    <div class="color-input-row">
+                        <input type="text" id="custom-bg-input" placeholder="Bg Hex (#f4ecd8)" />
+                        <input type="text" id="custom-text-input" placeholder="Text Hex (#5b4636)" />
                     </div>
-                    <div class="color-picker-row">
-                        <label for="custom-text-picker">စာသားအရောင်:</label>
-                        <input type="color" id="custom-text-picker" value="#5b4636">
+                    <div class="color-btn-row">
+                        <button id="custom-confirm-btn" class="preset-btn active-preset">အတည်ပြုမည်</button>
+                        <button id="custom-reset-btn" class="preset-btn">မူလအတိုင်း</button>
                     </div>
-                    <button class="setting-item" id="reset-custom-color-btn" style="margin-top: 8px;">မူလအရောင်သို့ ပြန်ထားရန်</button>
+                    <div id="color-history-container" class="color-history-container"></div>
                 </div>
         
             </div> 
