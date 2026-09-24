@@ -726,112 +726,20 @@ article {
     margin-bottom: 30px !important;
 }
 
-/* 🌟 Hex Color Customizer UI Styles for Setting Menu */
-.color-customizer-group {
+/* 🌟 Custom Color Picker UI Styles */
+.color-picker-row {
     display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-.color-input-wrapper {
-    display: flex;
-    gap: 6px;
-}
-.color-input-wrapper input {
-    width: 50%;
-    padding: 6px 8px;
-    border: 1px solid #443300;
-    border-radius: 4px;
-    background: #f4ecd8;
-    color: #443300;
-    font-size: 12px;
-    outline: none;
-    box-sizing: border-box;
-}
-.color-action-btns {
-    display: flex;
-    gap: 8px;
-}
-.color-action-btns button {
-    flex: 1;
-    padding: 6px;
-    font-size: 13px;
-}
-.color-error-text {
-    color: #b71c1c;
-    font-size: 12px;
-    font-weight: bold;
-    min-height: 15px;
-    text-align: center;
-}
-.color-history-section {
-    margin-top: 5px;
-    border-top: 1px dashed #443300;
-    padding-top: 6px;
-}
-.history-label {
-    display: block;
-    font-size: 12px;
-    color: #443300;
-    margin-bottom: 4px;
-    font-weight: bold;
-    text-align: center;
-}
-.color-chips-container {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-    max-height: 160px;
-    overflow-y: auto;
-}
-.color-chip-row {
-    display: flex;
-    align-items: center;
     justify-content: space-between;
-    background: #f4ecd8;
+    align-items: center;
+    margin: 8px 0;
+    font-weight: bold;
+    color: #443300;
+}
+.color-picker-row input[type="color"] {
+    width: 50px;
+    height: 30px;
     border: 1px solid #443300;
     border-radius: 4px;
-    padding: 4px 6px;
-    gap: 6px;
-}
-.color-chip-preview {
-    width: 24px;
-    height: 24px;
-    border-radius: 50%;
-    border: 1px solid #443300;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 10px;
-    font-weight: bold;
-    flex-shrink: 0;
-}
-.color-chip-info {
-    font-size: 11px;
-    color: #443300;
-    flex-grow: 1;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-}
-.color-chip-btns {
-    display: flex;
-    gap: 3px;
-}
-.chip-mini-btn {
-    background: #f4ecd8;
-    border: 1px solid #443300;
-    color: #443300;
-    border-radius: 3px;
-    width: 20px;
-    height: 20px;
-    font-size: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     cursor: pointer;
-    padding: 0;
-    font-weight: bold;
-}
-.chip-mini-btn:hover {
-    background: #eadebc;
+    background: transparent;
 }
