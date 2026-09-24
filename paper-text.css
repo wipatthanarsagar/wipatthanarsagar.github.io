@@ -358,10 +358,17 @@ body.dark-mode .setting-btn, body.dark-mode .toc-toggle-btn, body.dark-mode .top
     word-wrap: break-word;
 
     
-    /* 🌟 ဤနေရာကို အသစ်ထည့်သွင်းပေးပါ */
-    text-align: justify; 
-    -webkit-text-align-last: left; /* စာပိုဒ်၏ နောက်ဆုံးစာကြောင်း ဘယ်ဘက်သို့ ကပ်စေရန် (ချန်လှပ်နိုင်သည်) */
+    /* 🌟 မူလ အနေအထား (ဘယ်ကပ်) */
+    text-align: left; 
+    -webkit-text-align-last: left;
     text-align-last: left;
+}
+
+/* 🌟 Justify ရွေးချယ်ထားစဉ် အသက်ဝင်မည့် CSS အပိုင်း (တောင်းဆိုထားသည့်အတိုင်း ဤ Justify code အပိုင်းကိုသာ အသုံးပြုပြင်ဆင်ထားပါသည်) */
+body.text-align-justify .content-area {
+    text-align: justify !important;
+    -webkit-text-align-last: left !important;
+    text-align-last: left !important;
 }
 
 @media print {
@@ -706,7 +713,7 @@ article {
     margin-bottom: 30px !important;
 }
 
-/* 🌟 Custom Color Picker UI Styles (Updated Layout) */
+/* 🌟 Custom Color Picker UI Styles (Updated with refined UX layout) */
 .custom-color-section .color-input-wrapper {
     display: flex;
     flex-direction: column;
@@ -746,85 +753,86 @@ article {
 .color-chip {
     display: flex;
     flex-direction: column;
+    gap: 8px;
     padding: 10px;
     border-radius: 8px;
     border: 1px solid #443300;
     background: #f4ecd8;
-    gap: 8px;
+    transition: 0.2s;
 }
-.color-chip-top {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    cursor: pointer;
-}
-.color-preview-group {
+.color-chip-preview-row {
     display: flex;
     align-items: center;
     gap: 10px;
-    flex-grow: 1;
 }
-.color-preview-item {
+.color-preview-box {
     display: flex;
     align-items: center;
-    gap: 4px;
+    justify-content: center;
+    width: 32px;
+    height: 26px;
+    border-radius: 4px;
+    border: 1px solid #443300;
     font-size: 11px;
     font-weight: bold;
 }
-.color-preview-box {
-    width: 22px;
-    height: 22px;
-    border-radius: 4px;
-    border: 1px solid #443300;
-}
-.color-chip-bottom {
+.color-chip-details {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-top: 1px solid rgba(68, 51, 0, 0.15);
-    padding-top: 6px;
+    flex-direction: column;
+    font-size: 11px;
+    font-weight: bold;
+    color: #443300;
 }
 .color-chip-actions {
     display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px dashed #d4c5a0;
+    padding-top: 6px;
+}
+.color-chip-left-actions {
+    display: flex;
     gap: 8px;
     align-items: center;
-    width: 100%;
-    justify-content: flex-end;
 }
 .color-chip-btn {
     background: #eadebc;
     border: 1px solid #443300;
     border-radius: 4px;
     cursor: pointer;
-    font-size: 13px;
-    padding: 4px 10px;
-    color: #443300;
+    font-size: 12px;
     font-weight: bold;
+    padding: 3px 8px;
+    color: #443300;
 }
 .color-chip-btn:hover {
     background: #dcd0b2;
 }
+.fav-btn {
+    font-size: 14px;
+    padding: 2px 6px;
+}
 .delete-container {
-    width: 100%;
+    position: relative;
+    display: inline-block;
 }
 .delete-confirm-box {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: #dcd0b2;
-    padding: 6px 10px;
-    border-radius: 6px;
+    flex-direction: column;
+    gap: 6px;
+    background: #eadebc;
     border: 1px solid #443300;
+    padding: 8px;
+    border-radius: 6px;
     font-size: 12px;
-    font-weight: bold;
-    color: #443300;
-    margin-top: 4px;
+    margin-top: 6px;
     width: 100%;
     box-sizing: border-box;
 }
-.delete-confirm-btns {
+.delete-confirm-buttons {
     display: flex;
     gap: 6px;
+    justify-content: flex-end;
 }
 .delete-confirm-box button {
     background: #443300;
@@ -834,5 +842,5 @@ article {
     border-radius: 4px;
     cursor: pointer;
     font-weight: bold;
-    font-size: 12px;
+    font-size: 11px;
 }
