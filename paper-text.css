@@ -364,26 +364,6 @@ body.dark-mode .setting-btn, body.dark-mode .toc-toggle-btn, body.dark-mode .top
     text-align-last: left;
 }
 
-/* စာပိုဒ်များကို ဘယ်ဘက်နှင့် ညာဘက် အစွန်းနှစ်ဖက်လုံး ညီညာစေရန် */
-/*.content-area, 
-.content-area p { 
-    padding: 20px; 
-    line-height: 2.0; 
-    font-size: 19px; 
-    white-space: pre-line;
-    width: 100%;
-    box-sizing: border-box;
-    overflow-wrap: break-word; 
-    word-wrap: break-word;
-    
-    /* 🌟 ဤနေရာကို အသစ်ထည့်သွင်းပေးပါ */
-   /* text-align: justify; 
-    -webkit-text-align-last: left; /* စာပိုဒ်၏ နောက်ဆုံးစာကြောင်း ဘယ်ဘက်သို့ ကပ်စေရန် (ချန်လှပ်နိုင်သည်) */
-   /* text-align-last: left;
-}*/
-
-
-
 @media print {
     .top-controls, 
     .setting-overlay, 
