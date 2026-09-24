@@ -677,9 +677,13 @@ function initCustomColorFeature() {
                 applyColors(item.text, item.bg);
             };
 
-            // Favorite toggle
+            // Favorite toggle with limit checking (maximum 4 favorites allowed)
             chip.querySelector('.fav-btn').onclick = (e) => {
                 e.stopPropagation();
+                const currentFavCount = history.filter(h => h.favorite).length;
+                if (!item.favorite && currentFavCount >= 4) {
+                    return; // အများဆုံး ၄ ခုသာ အကြိုက်ဆုံးလုပ်ခွင့်ပြုသည်
+                }
                 item.favorite = !item.favorite;
                 saveAndRender();
             };
@@ -712,13 +716,6 @@ function initCustomColorFeature() {
     };
 
     const saveAndRender = () => {
-        // Keep favorites and limit non-favorites to max 5
-        let favs = history.filter(h => h.favorite);
-        let nonFavs = history.filter(h => !h.favorite);
-        if (nonFavs.length > 5) {
-            nonFavs = nonFavs.slice(nonFavs.length - 5);
-        }
-        history = [...favs, ...nonFavs];
         localStorage.setItem('customColorHistory', JSON.stringify(history));
         renderChips();
     };
@@ -750,12 +747,30 @@ function initCustomColorFeature() {
 
         applyColors(textVal, bgVal);
 
-        // Add to history if not exact duplicate
-        const exists = history.some(h => h.text.toLowerCase() === textVal.toLowerCase() && h.bg.toLowerCase() === bgVal.toLowerCase());
-        if (!exists) {
+        // Check if exact color combination already exists in history
+        const existingIndex = history.findIndex(h => h.text.toLowerCase() === textVal.toLowerCase() && h.bg.toLowerCase() === bgVal.toLowerCase());
+        
+        if (existingIndex !== -1) {
+            // If already exists, move it to the top (most recent)
+            const item = history.splice(existingIndex, 1)[0];
+            history.unshift(item);
+        } else {
+            // Add new color to the top
             history.unshift({ text: textVal, bg: bgVal, favorite: false });
-            saveAndRender();
+            
+            // Auto remove the oldest non-favorite item if needed
+            const nonFavs = history.filter(h => !h.favorite);
+            if (nonFavs.length > 0) {
+                // Find the oldest non-favorite item (which is at the bottom/end of the non-favorites list)
+                const oldestNonFav = nonFavs[nonFavs.length - 1];
+                const oldestIndex = history.indexOf(oldestNonFav);
+                if (oldestIndex !== -1) {
+                    history.splice(oldestIndex, 1);
+                }
+            }
         }
+
+        saveAndRender();
     };
 
     resetBtn.onclick = () => {
