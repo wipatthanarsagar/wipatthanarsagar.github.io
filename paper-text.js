@@ -758,14 +758,19 @@ function initCustomColorFeature() {
             // Add new color to the top
             history.unshift({ text: textVal, bg: bgVal, favorite: false });
             
-            // Auto remove the oldest non-favorite item if needed
+            // Auto remove the oldest non-favorite item if needed, keeping total history limit up to 5 items maximum
             const nonFavs = history.filter(h => !h.favorite);
-            if (nonFavs.length > 0) {
-                // Find the oldest non-favorite item (which is at the bottom/end of the non-favorites list)
-                const oldestNonFav = nonFavs[nonFavs.length - 1];
-                const oldestIndex = history.indexOf(oldestNonFav);
-                if (oldestIndex !== -1) {
-                    history.splice(oldestIndex, 1);
+            if (nonFavs.length > 0 || history.length > 5) {
+                if (nonFavs.length > 0) {
+                    // Find the oldest non-favorite item and remove it
+                    const oldestNonFav = nonFavs[nonFavs.length - 1];
+                    const oldestIndex = history.indexOf(oldestNonFav);
+                    if (oldestIndex !== -1) {
+                        history.splice(oldestIndex, 1);
+                    }
+                } else if (history.length > 5) {
+                    // Fallback if all 5 are favorites, remove the very last one
+                    history.pop();
                 }
             }
         }
