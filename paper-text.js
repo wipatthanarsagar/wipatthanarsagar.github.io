@@ -14,7 +14,7 @@ let fontResizeObserver = null;
 function buildSemanticParagraphs() {
     let globalIndex = 1;
     
-    // စာသားတွေ dynamic ဝင်မယ့် အဓိက Container နှင့် မာတိကာ Container ကို ဖမ်းယူခြင်း
+    // စာတွေ dynamic ဝင်မယ့် အဓိက Container နှင့် မာတိကာ Container ကို ဖမ်းယူခြင်း
     const container = document.getElementById('js-audio-chapters-container') || document.querySelector('.audio-chapters-list');
     const tocList = document.getElementById('toc-list');
     
@@ -654,24 +654,31 @@ function initCustomColorFeature() {
         history.forEach((item, index) => {
             const chip = document.createElement('div');
             chip.className = 'color-chip';
-            chip.style.backgroundColor = item.bg;
-            chip.style.color = item.text;
 
             chip.innerHTML = `
-                <div class="color-chip-info" data-action="apply">
-                    <div class="color-preview-box" style="background:${item.bg}; color:${item.text}; border-color:${item.text};"></div>
-                    <span>T:${item.text} | B:${item.bg}</span>
-                </div>
-                <div class="color-chip-actions">
-                    <button class="color-chip-btn fav-btn" title="အကြိုက်ဆုံးအဖြစ်မှတ်ရန်">${item.favorite ? '★' : '☆'}</button>
-                    <div class="delete-container" style="display:inline-block;">
-                        <button class="color-chip-btn del-btn" title="ဖျက်ရန်">🗑</button>
+                <div class="color-chip-top" data-action="apply">
+                    <div class="color-preview-group">
+                        <div class="color-preview-item">
+                            <span>စာသား:</span>
+                            <div class="color-preview-box" style="background:${item.text};"></div>
+                        </div>
+                        <div class="color-preview-item">
+                            <span>နောက်ခံ:</span>
+                            <div class="color-preview-box" style="background:${item.bg};"></div>
+                        </div>
                     </div>
                 </div>
+                <div class="color-chip-bottom">
+                    <div class="color-chip-actions">
+                        <button class="color-chip-btn fav-btn" title="အကြိုက်ဆုံးအဖြစ်မှတ်ရန်">${item.favorite ? '★ အကြိုက်ဆုံး' : '☆ အကြိုက်ဆုံး'}</button>
+                        <button class="color-chip-btn del-btn" title="ဖျက်ရန်">🗑 ဖျက်ရန်</button>
+                    </div>
+                </div>
+                <div class="delete-container" style="display:none;"></div>
             `;
 
-            // Click chip info to apply color
-            chip.querySelector('.color-chip-info').onclick = () => {
+            // Click chip top area to apply color
+            chip.querySelector('.color-chip-top').onclick = () => {
                 textColorInput.value = item.text;
                 bgColorInput.value = item.bg;
                 applyColors(item.text, item.bg);
@@ -688,16 +695,22 @@ function initCustomColorFeature() {
                 saveAndRender();
             };
 
-            // Delete with inline UI confirmation (No alert box)
+            // Delete with inline UI confirmation below buttons
             const delBtn = chip.querySelector('.del-btn');
             const delContainer = chip.querySelector('.delete-container');
+            const chipActions = chip.querySelector('.color-chip-actions');
+
             delBtn.onclick = (e) => {
                 e.stopPropagation();
+                chipActions.style.display = 'none';
+                delContainer.style.display = 'block';
                 delContainer.innerHTML = `
                     <div class="delete-confirm-box">
                         <span>သေချာပြီလား?</span>
-                        <button class="yes-del">ဖျက်မည်</button>
-                        <button class="no-del">မဖျက်</button>
+                        <div class="delete-confirm-btns">
+                            <button class="yes-del">ဖျက်မည်</button>
+                            <button class="no-del">မဖျက်</button>
+                        </div>
                     </div>
                 `;
                 delContainer.querySelector('.yes-del').onclick = (ev) => {
