@@ -217,21 +217,6 @@ function toggleReadingMode() {
     document.body.classList.toggle('focus-mode');
 }
 
-
-
-
-/*function toggleReadingMode() {
-    document.body.classList.toggle('focus-mode');
-    const fsBtn = document.getElementById('fs-btn');
-    if (document.body.classList.contains('focus-mode')) {
-        fsBtn.innerHTML = '✖';
-        fsBtn.style.background = 'rgba(234, 222, 188, 0.2)';
-    } else {
-        fsBtn.innerHTML = '⛶';
-        fsBtn.style.background = 'rgba(234, 222, 188, 0.4)';
-    }
-}*/
-
 /* == LAST READ SYSTEM == */
 function saveCurrentPage() {
     const activeChapterLink = document.querySelector('.active-chapter');
@@ -628,7 +613,7 @@ function init() {
     }, 100);
 }
 
-// 🌟 Custom Color Picker Feature Implementation Logic
+// 🌟 Custom Color Picker Feature Implementation Logic (Hex & RGB Support Added)
 function initCustomColorFeature() {
     const textColorInput = document.getElementById('custom-text-color');
     const bgColorInput = document.getElementById('custom-bg-color');
@@ -738,12 +723,28 @@ function initCustomColorFeature() {
         renderChips();
     };
 
-    confirmBtn.onclick = () => {
-        const textVal = textColorInput.value.trim();
-        const bgVal = bgColorInput.value.trim();
+    // Helper function to validate and format color input (Hex or RGB)
+    const parseColorInput = (inputVal) => {
+        inputVal = inputVal.trim();
         const hexRegex = /^#([0-9A-F]{3}){1,2}$/i;
+        const rgbRegex = /^rgb\(\s*(\d{1,3})\s*,\s*(\d{1,3})\s*,\s*(\d{1,3})\s*\)$/i;
+        const rawRgbNumbers = /^(\d{1,3})\s*,\s*(\d{1,3})\s*,\s*(\d{1,3})$/;
 
-        if (!hexRegex.test(textVal) || !hexRegex.test(bgVal)) {
+        if (hexRegex.test(inputVal)) {
+            return inputVal;
+        } else if (rgbRegex.test(inputVal)) {
+            return inputVal;
+        } else if (rawRgbNumbers.test(inputVal)) {
+            return `rgb(${inputVal})`;
+        }
+        return null;
+    };
+
+    confirmBtn.onclick = () => {
+        const textVal = parseColorInput(textColorInput.value);
+        const bgVal = parseColorInput(bgColorInput.value);
+
+        if (!textVal || !bgVal) {
             return;
         }
 
@@ -768,10 +769,6 @@ function initCustomColorFeature() {
         if (article) {
             article.style.color = '';
             article.querySelectorAll('h1, h2, h3, p').forEach(el => el.style.color = '');
-        }
-        // Re-trigger darkmode/readingmode state
-        if (typeof setIconAndStatusBar === 'function') {
-            // standard reload or let darkmode handle
         }
         location.reload();
     };
