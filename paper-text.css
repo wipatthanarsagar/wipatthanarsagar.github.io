@@ -222,6 +222,7 @@ body.dark-mode .setting-btn, body.dark-mode .toc-toggle-btn, body.dark-mode .top
     align-items: center;
     justify-content: center;
     gap: 8px;
+    color: #443300;
     width: 100% !important;
     box-sizing: border-box;
     padding: 8px 14px !important;
