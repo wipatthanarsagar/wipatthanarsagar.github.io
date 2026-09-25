@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="my">
 <head>
     <meta charset="UTF-8">
@@ -66,12 +65,14 @@
                 <span class="setting-close-btn" onclick="toggleSetting()">×</span>
             </div>
             <div class="setting-body">
-                <button class="setting-menu-refresh" onclick="location.reload()">
-                    <span class="nav-icon">⟳</span>
-                    <span class="nav-text">အသစ်ဖြစ်အောင်လုပ်ရန်</span>
-                </button>
+                <div class="setting-top-actions">
+                    <button class="preset-btn setting-menu-refresh" onclick="location.reload()">
+                        <span class="nav-icon">⟳</span>
+                        <span class="nav-text">အသစ်ဖြစ်အောင်လုပ်ရန်</span>
+                    </button>
 
-                <button class="setting-item" onclick="downloadPDF()">📄 စာအုပ်အဖြစ်သိမ်းရန်</button>
+                    <button class="preset-btn setting-item" onclick="downloadPDF()">📄 စာအုပ်အဖြစ်သိမ်းရန်</button>
+                </div>
 
                 <div class="setting-item-group">
                     <span class="setting-title2">စာလုံးအရွယ်အစား</span>
@@ -171,7 +172,7 @@
                         <input type="text" id="custom-bg-color" placeholder="#f4ecd8 သို့ rgb(244,236,216)">
                     </div>
                     <div class="preset-group color-action-group">
-                        <button class="preset-btn" id="color-confirm-btn">သုံးရန်</button>
+                        <button class="preset-btn" id="color-confirm-btn">အတည်ပြုရန်</button>
                         <button class="preset-btn" id="color-reset-btn">မူလအတိုင်း</button>
                     </div>
                     <div class="color-history-container" id="color-history-container">
