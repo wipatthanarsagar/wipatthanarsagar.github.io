@@ -245,12 +245,12 @@ body.dark-mode .setting-btn, body.dark-mode .toc-toggle-btn, body.dark-mode .top
     transform: translateY(-1px);
 }
 
-.setting-menu-refresh .nav-icon {
+.setting-menu-refresh .nav-icon-refresh {
     font-size: 20px !important;
     line-height: 1;
 }
 
-.setting-menu-refresh .nav-text {
+.setting-menu-refresh .nav-text-refresh {
     color: #443300; !important;
     font-size: 16px !important;
 }
