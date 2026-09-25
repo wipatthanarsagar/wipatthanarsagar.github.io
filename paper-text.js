@@ -702,7 +702,7 @@ function initCustomColorFeature() {
                 <div class="color-chip-actions">
                     <div class="color-chip-left-actions">
                         <button class="color-chip-btn use-btn">သုံးရန်</button>
-                        <button class="color-chip-btn fav-btn" title="အကြိုက်ဆုံးအဖြစ်မှတ်ရန်">${item.favorite ? '★ သိမ်း' : '☆ ကြိုက်'}</button>
+                        <button class="color-chip-btn fav-btn" title="အကြိုက်ဆုံးအဖြစ်မှတ်ရန်">${item.favorite ? '★' : '☆'}</button>
                     </div>
                     <div class="delete-container">
                         <button class="color-chip-btn del-btn" title="ဖျက်ရန်">🗑 ဖျက်ရန်</button>
