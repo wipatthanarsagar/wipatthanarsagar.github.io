@@ -209,24 +209,31 @@ body.dark-mode .setting-btn, body.dark-mode .toc-toggle-btn, body.dark-mode .top
 }
 .setting-item:hover { background: #dcd0b2; }
 
-/* ၁။ အသစ်လုပ်ရန် ခလုတ် (Refresh) */
+/* ၁။ အသစ်လုပ်ရန် ခလုတ် (Refresh) နှင့် စာအုပ်အဖြစ်သိမ်းရန် အပေါ်ဆုံး ခလုတ်အစုအဝေး */
+.setting-top-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin: 8px 0 15px 0;
+}
+
 .setting-menu-refresh {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 8px;
-    width: 100%;
-    padding: 12px;
-    margin: 8px 0;
-    background: #eadebc;
-    border: 1px solid #443300;
-    color: #443300;
-    border-radius: 50px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: 0.2s;
+    width: 100% !important;
+    box-sizing: border-box;
+    padding: 8px 14px !important;
+    margin: 0 !important;
+    border-radius: 50px !important;
+    font-size: 16px !important;
 }
-.setting-menu-refresh:hover { background: #dcd0b2; }
+
+.setting-top-actions .setting-item {
+    margin: 0 !important;
+    border-radius: 50px !important;
+}
 
 .setting-menu-refresh .nav-icon {
     font-size: 20px !important;
