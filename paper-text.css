@@ -233,6 +233,15 @@ body.dark-mode .setting-btn, body.dark-mode .toc-toggle-btn, body.dark-mode .top
 .setting-top-actions .setting-item {
     margin: 0 !important;
     border-radius: 50px !important;
+    /* Preset ခလုတ်များနှင့် UI တစ်ထပ်တည်းဖြစ်စေရန် background နှင့် border ကို .preset-btn စတိုင်အတိုင်း ညှိခြင်း */
+    background: #f4ecd8 !important;
+    border: 1px solid #443300 !important;
+    color: #443300 !important;
+    padding: 8px 14px !important;
+}
+.setting-top-actions .setting-item:hover {
+    background: #eadebc !important;
+    transform: translateY(-1px);
 }
 
 .setting-menu-refresh .nav-icon {
