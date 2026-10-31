@@ -124,7 +124,8 @@ main {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: var(--card-bg);
+    /*background: var(--card-bg);*/
+    background: #c49102;
     padding: 18px 25px;
     border-radius: 20px;
     text-decoration: none;
